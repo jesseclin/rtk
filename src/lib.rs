@@ -27,7 +27,7 @@ use cmds::ruby::{rake_cmd, rspec_cmd, rubocop_cmd};
 use cmds::rust::{cargo_cmd, runner};
 use cmds::scala::sbt_cmd;
 use cmds::system::{
-    ast_grep_cmd, ctest_cmd, deps, env_cmd, find_cmd, format_cmd, json_cmd, local_llm, log_cmd, ls,
+    ast_grep_cmd, ctest_cmd, deps, env_cmd, find_cmd, format_cmd, heal_cmd, json_cmd, local_llm, log_cmd, ls,
     pipe_cmd, read, search, summary, tree, wc_cmd,
 };
 
@@ -345,6 +345,19 @@ enum Commands {
         shell: Option<String>,
         /// Test command (e.g. cargo test)
         #[arg(trailing_var_arg = true, allow_hyphen_values = true)]
+        command: Vec<String>,
+    },
+
+    /// Automatically heal and retry failed tool commands using a local/fast LLM
+    Heal {
+        /// Timeout in milliseconds for the repair LLM request
+        #[arg(long)]
+        timeout_ms: Option<u64>,
+        /// Model name for the repair LLM
+        #[arg(long)]
+        model: Option<String>,
+        /// Command to run and heal
+        #[arg(trailing_var_arg = true, allow_hyphen_values = true, required = true)]
         command: Vec<String>,
     },
 
@@ -2816,6 +2829,15 @@ fn run_cli() -> Result<i32> {
             }
         }
 
+        Commands::Heal {
+            timeout_ms,
+            model,
+            command,
+        } => {
+            heal_cmd::run(&command, timeout_ms, model.as_deref(), cli.verbose)
+                .context("Failed to run heal command")?
+        }
+
         Commands::Json {
             file,
             depth,
@@ -4087,6 +4109,7 @@ fn is_operational_command(cmd: &Commands) -> bool {
             | Commands::Bun { .. }
             | Commands::Bunx { .. }
             | Commands::Deno { .. }
+            | Commands::Heal { .. }
     )
 }
 
@@ -4115,6 +4138,7 @@ mod tests {
             &["gradlew", "build"],
             &["mvn", "test"],
             &["mvnd", "test"],
+            &["heal", "--", "git", "status"],
         ];
 
         for args in commands {
