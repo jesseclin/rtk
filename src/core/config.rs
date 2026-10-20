@@ -31,6 +31,8 @@ pub struct Config {
     pub limits: LimitsConfig,
     #[serde(default)]
     pub awareness: AwarenessConfig,
+    #[serde(default)]
+    pub heal: HealConfig,
 }
 
 /// How much the agent is told about RTK by the instructions file `rtk init` writes.
@@ -243,6 +245,68 @@ impl Default for LimitsConfig {
     }
 }
 
+fn default_heal_endpoint() -> String {
+    "http://localhost:11434/v1".to_string()
+}
+
+fn default_heal_model() -> String {
+    "qwen2.5-coder:1.5b".to_string()
+}
+
+fn default_heal_timeout_ms() -> u64 {
+    3000
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub struct HealConfig {
+    #[serde(default)]
+    pub enabled: bool,
+    #[serde(default = "default_heal_endpoint")]
+    pub endpoint: String,
+    #[serde(default = "default_heal_model")]
+    pub model: String,
+    #[serde(default = "default_heal_timeout_ms")]
+    pub timeout_ms: u64,
+}
+
+impl Default for HealConfig {
+    fn default() -> Self {
+        Self {
+            enabled: false,
+            endpoint: default_heal_endpoint(),
+            model: default_heal_model(),
+            timeout_ms: default_heal_timeout_ms(),
+        }
+    }
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct ResolvedHealConfig {
+    pub enabled: bool,
+    pub endpoint: String,
+    pub model: String,
+    pub api_key: Option<String>,
+    pub timeout_ms: u64,
+}
+
+impl HealConfig {
+    pub fn resolve(&self) -> ResolvedHealConfig {
+        let endpoint = user_env::var("RTK_HEAL_ENDPOINT").unwrap_or_else(|| self.endpoint.clone());
+        let model = user_env::var("RTK_HEAL_MODEL").unwrap_or_else(|| self.model.clone());
+        let api_key = user_env::var("RTK_HEAL_API_KEY");
+        let timeout_ms = user_env::var("RTK_HEAL_TIMEOUT_MS")
+            .and_then(|s| s.parse::<u64>().ok())
+            .unwrap_or(self.timeout_ms);
+        ResolvedHealConfig {
+            enabled: self.enabled,
+            endpoint,
+            model,
+            api_key,
+            timeout_ms,
+        }
+    }
+}
+
 /// Get limits config. Falls back to defaults if config can't be loaded.
 pub fn limits() -> LimitsConfig {
     Config::load().map(|c| c.limits).unwrap_or_default()
@@ -266,6 +330,12 @@ pub fn hook_rewrite_params() -> (Vec<String>, Vec<String>) {
         c.hooks.exclude_commands.clone(),
         c.hooks.transparent_prefixes.clone(),
     )
+}
+
+/// Check if auto-healing of failed tool calls is enabled.
+#[allow(dead_code)]
+pub fn heal_enabled() -> bool {
+    cached_config().heal.enabled
 }
 
 /// Process-wide cached `Config::load()` result, populated on first use.
@@ -979,5 +1049,46 @@ enabled = false
             reparsed.retriever.tee_directory,
             Some(PathBuf::from("/custom/tee"))
         );
+    }
+
+    #[test]
+    fn test_heal_config_defaults_and_env_overrides() {
+        let cfg = Config::default();
+        assert!(!cfg.heal.enabled);
+        assert_eq!(cfg.heal.endpoint, "http://localhost:11434/v1");
+        assert_eq!(cfg.heal.model, "qwen2.5-coder:1.5b");
+        assert_eq!(cfg.heal.timeout_ms, 3000);
+
+        crate::core::user_env::with_vars(
+            &[
+                ("RTK_HEAL_ENDPOINT", Some("http://127.0.0.1:9999/v1")),
+                ("RTK_HEAL_MODEL", Some("claude-3-5-haiku-20241022")),
+                ("RTK_HEAL_API_KEY", Some("sk-test-123")),
+                ("RTK_HEAL_TIMEOUT_MS", Some("1500")),
+            ],
+            || {
+                let resolved = cfg.heal.resolve();
+                assert_eq!(resolved.endpoint, "http://127.0.0.1:9999/v1");
+                assert_eq!(resolved.model, "claude-3-5-haiku-20241022");
+                assert_eq!(resolved.api_key.as_deref(), Some("sk-test-123"));
+                assert_eq!(resolved.timeout_ms, 1500);
+            },
+        );
+    }
+
+    #[test]
+    fn test_heal_config_toml_deserialization() {
+        let toml_str = r#"
+[heal]
+enabled = true
+endpoint = "http://localhost:8080/v1"
+model = "llama3.2:3b"
+timeout_ms = 2500
+"#;
+        let cfg: Config = toml::from_str(toml_str).expect("valid config toml");
+        assert!(cfg.heal.enabled);
+        assert_eq!(cfg.heal.endpoint, "http://localhost:8080/v1");
+        assert_eq!(cfg.heal.model, "llama3.2:3b");
+        assert_eq!(cfg.heal.timeout_ms, 2500);
     }
 }
