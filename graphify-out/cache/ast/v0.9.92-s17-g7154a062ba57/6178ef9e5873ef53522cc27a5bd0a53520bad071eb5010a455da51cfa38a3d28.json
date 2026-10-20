@@ -1,0 +1,1 @@
+{"nodes": [{"id": "pkg_com_example_rtk_child_a", "label": "com.example.rtk:child-a", "file_type": "code", "type": "package", "ecosystem": "maven", "source_file": "tests/fixtures/multi-module-skeleton/child-a/pom.xml", "source_location": "L1", "version": "1.0.0-SNAPSHOT"}], "edges": []}

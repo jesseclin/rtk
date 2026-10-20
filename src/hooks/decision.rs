@@ -143,7 +143,8 @@ impl ApprovalOwner {
 /// normal rewrite. Callers that want it suppressed apply [`suppress_identity`].
 pub(crate) fn decide(cmd: &str, verdict: PermissionVerdict) -> HookDecision {
     let (excluded, transparent_prefixes) = crate::core::config::hook_rewrite_params();
-    decide_with_params(cmd, verdict, &excluded, &transparent_prefixes)
+    let heal = crate::core::config::heal_enabled();
+    decide_with_heal(cmd, verdict, &excluded, &transparent_prefixes, heal)
 }
 
 /// [`decide`] with the rewrite parameters supplied by the caller, mirroring
@@ -160,6 +161,17 @@ pub(crate) fn decide_with_params(
     excluded: &[String],
     transparent_prefixes: &[String],
 ) -> HookDecision {
+    decide_with_heal(cmd, verdict, excluded, transparent_prefixes, false)
+}
+
+/// Core decision engine taking explicit `heal` switch.
+pub(crate) fn decide_with_heal(
+    cmd: &str,
+    verdict: PermissionVerdict,
+    excluded: &[String],
+    transparent_prefixes: &[String],
+    heal: bool,
+) -> HookDecision {
     if verdict == PermissionVerdict::Deny {
         return HookDecision::Deny;
     }
@@ -170,6 +182,25 @@ pub(crate) fn decide_with_params(
 
     if crate::discover::lexer::contains_unattestable_construct(cmd) {
         return HookDecision::Defer;
+    }
+
+    let trimmed = cmd.trim();
+    if trimmed.starts_with("rtk heal ") || trimmed == "rtk heal" {
+        return match verdict {
+            PermissionVerdict::Allow => HookDecision::AllowRewrite(cmd.to_string()),
+            _ => HookDecision::AskRewrite(cmd.to_string()),
+        };
+    }
+
+    if heal && crate::cmds::system::heal_cmd::safety::is_eligible_command(cmd) {
+        let is_excluded = excluded.iter().any(|ex| cmd.contains(ex));
+        if !is_excluded {
+            let rewritten = format!("rtk heal -- {trimmed}");
+            return match verdict {
+                PermissionVerdict::Allow => HookDecision::AllowRewrite(rewritten),
+                _ => HookDecision::AskRewrite(rewritten),
+            };
+        }
     }
 
     match rewrite_command(cmd, excluded, transparent_prefixes) {
@@ -212,9 +243,10 @@ pub(crate) fn decide_for_agent_at(
     if cwd.is_some_and(in_claude_worktree) {
         excluded.push("git".to_string());
     }
+    let heal = crate::core::config::heal_enabled();
     suppress_identity(
         cmd,
-        decide_with_params(cmd, verdict, &excluded, &transparent_prefixes),
+        decide_with_heal(cmd, verdict, &excluded, &transparent_prefixes, heal),
     )
 }
 
@@ -816,5 +848,41 @@ mod tests {
         user_env::with_vars(&[(REWRITE_HOST_ENV, None)], || {
             assert_eq!(ApprovalOwner::from_env(), ApprovalOwner::Rtk);
         });
+    }
+
+    #[test]
+    fn test_decide_with_heal_wraps_eligible_commands_when_enabled() {
+        assert_eq!(
+            decide_with_heal("cargo test test_foo", PermissionVerdict::Allow, &[], &[], true),
+            HookDecision::AllowRewrite("rtk heal -- cargo test test_foo".to_string())
+        );
+        assert_eq!(
+            decide_with_heal("grep -rn pattern src/", PermissionVerdict::Default, &[], &[], true),
+            HookDecision::AskRewrite("rtk heal -- grep -rn pattern src/".to_string())
+        );
+    }
+
+    #[test]
+    fn test_decide_with_heal_skips_ineligible_denied_or_already_wrapped() {
+        // Denied command stays Deny
+        assert_eq!(
+            decide_with_heal("cargo test", PermissionVerdict::Deny, &[], &[], true),
+            HookDecision::Deny
+        );
+        // Destructive command is not wrapped with heal
+        assert_eq!(
+            decide_with_heal("rm -rf target", PermissionVerdict::Allow, &[], &[], true),
+            HookDecision::Defer
+        );
+        // Already wrapped with rtk heal is not double-wrapped
+        assert_eq!(
+            decide_with_heal("rtk heal -- cargo test", PermissionVerdict::Allow, &[], &[], true),
+            HookDecision::AllowRewrite("rtk heal -- cargo test".to_string())
+        );
+        // When heal = false, standard rtk rewrite behavior is preserved
+        assert_eq!(
+            decide_with_heal("cargo test", PermissionVerdict::Allow, &[], &[], false),
+            HookDecision::AllowRewrite("rtk cargo test".to_string())
+        );
     }
 }
