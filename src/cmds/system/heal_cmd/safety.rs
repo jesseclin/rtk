@@ -1,6 +1,6 @@
 //! Command eligibility and safety validation for auto-healing.
 
-use crate::discover::lexer::{TokenKind, contains_unattestable_construct, strip_quotes, tokenize};
+use crate::discover::lexer::{TokenKind, contains_unattestable_construct, shell_split, tokenize};
 use std::path::Path;
 
 #[derive(Debug, PartialEq, Eq)]
@@ -20,7 +20,7 @@ const SAFE_STANDALONE_BINARIES: &[&str] = &[
 
 /// Tokens, flags, or subcommands that are strictly forbidden anywhere in argv.
 const FORBIDDEN_TOKENS: &[&str] = &[
-    "--delete", "-delete", "--hard", "-exec", "-execdir", "-ok", "-okdir",
+    "--delete", "-delete", "--hard", "--force", "-exec", "-execdir", "-ok", "-okdir",
     "-fls", "-fprint", "-fprint0", "-fprintf",
 ];
 
@@ -49,16 +49,13 @@ pub fn split_simple_argv(cmd: &str) -> Option<Vec<String>> {
     }
 
     let tokens = tokenize(trimmed);
-    if tokens.is_empty() {
+    if tokens.is_empty() || !tokens.iter().all(|t| t.kind == TokenKind::Arg) {
         return None;
     }
 
-    let mut argv = Vec::with_capacity(tokens.len());
-    for t in tokens {
-        if t.kind != TokenKind::Arg {
-            return None;
-        }
-        argv.push(strip_quotes(&t.value));
+    let argv = shell_split(trimmed);
+    if argv.is_empty() {
+        return None;
     }
 
     Some(argv)
@@ -111,8 +108,22 @@ pub fn is_eligible_argv(argv: &[String]) -> bool {
             match subcmd.as_str() {
                 "status" | "diff" | "log" | "show" => true,
                 "branch" => {
-                    // git branch is safe only without delete flags
-                    !argv.iter().any(|a| a == "-d" || a == "-D" || a == "--delete")
+                    // git branch is safe only without delete/move/copy/force flags
+                    !argv.iter().any(|a| {
+                        matches!(
+                            a.as_str(),
+                            "-d" | "-D"
+                                | "--delete"
+                                | "-f"
+                                | "--force"
+                                | "-m"
+                                | "-M"
+                                | "--move"
+                                | "-c"
+                                | "-C"
+                                | "--copy"
+                        )
+                    })
                 }
                 _ => false,
             }
@@ -136,7 +147,16 @@ pub fn is_eligible_argv(argv: &[String]) -> bool {
             };
             subcmd == "test"
         }
-        "make" => argv.iter().skip(1).any(|a| a == "test" || a == "check"),
+        "make" => {
+            let Some(subcmd) = argv.get(1) else {
+                return false;
+            };
+            matches!(subcmd.as_str(), "test" | "check")
+                && argv
+                    .iter()
+                    .skip(2)
+                    .all(|a| a.starts_with('-') || a == "test" || a == "check")
+        }
         _ => false,
     }
 }
@@ -181,7 +201,7 @@ pub fn validate_healed_command(
         .unwrap_or(orig_raw_bin);
 
     match bin {
-        "git" | "cargo" | "npm" | "go" => {
+        "git" | "cargo" | "npm" | "go" | "make" => {
             if original_argv.get(1) != healed_argv.get(1) {
                 return Err(SafetyViolation::ForbiddenFlagOrToken(
                     "Subcommand drift not allowed".to_string(),
@@ -328,5 +348,34 @@ mod tests {
             validate_healed_command(&orig_status, "git diff"),
             Err(SafetyViolation::ForbiddenFlagOrToken(_))
         ));
+    }
+
+    #[test]
+    fn test_make_and_git_branch_tight_safety() {
+        assert!(is_eligible_command("make test"));
+        assert!(is_eligible_command("make check -j4"));
+        assert!(!is_eligible_command("make clean test"));
+        assert!(!is_eligible_command("make test deploy"));
+
+        let orig_make = vec!["make".to_string(), "test".to_string()];
+        assert!(validate_healed_command(&orig_make, "make check").is_err());
+        assert!(validate_healed_command(&orig_make, "make test deploy").is_err());
+
+        assert!(is_eligible_command("git branch -a"));
+        assert!(!is_eligible_command("git branch -D foo"));
+        assert!(!is_eligible_command("git branch -f main HEAD~1"));
+        assert!(!is_eligible_command("git branch -m old new"));
+        assert!(!is_eligible_command("git branch -M old new"));
+        assert!(!is_eligible_command("git branch --force main"));
+
+        // Adjacent quoted segments coalesce via shell_split
+        assert_eq!(
+            split_simple_argv(r#"rg --type="rust" foo"#),
+            Some(vec![
+                "rg".to_string(),
+                "--type=rust".to_string(),
+                "foo".to_string()
+            ])
+        );
     }
 }

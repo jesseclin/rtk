@@ -333,7 +333,6 @@ pub fn hook_rewrite_params() -> (Vec<String>, Vec<String>) {
 }
 
 /// Check if auto-healing of failed tool calls is enabled.
-#[allow(dead_code)]
 pub fn heal_enabled() -> bool {
     cached_config().heal.enabled
 }

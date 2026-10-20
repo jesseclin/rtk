@@ -2,7 +2,7 @@ pub mod client;
 pub mod safety;
 
 use crate::core::config::{Config, ResolvedHealConfig};
-use crate::core::shell::{Launch, command_from_args, display_command};
+use crate::core::shell::{Launch, command_from_args, display_command, program_name, spawn_failure};
 use crate::core::user_dirs;
 use anyhow::{Context, Result};
 use std::io::{self, Write};
@@ -18,7 +18,15 @@ pub struct HealOutcome {
 fn run_command_raw(command: &[String]) -> Result<(String, String, i32, bool)> {
     match command_from_args(command, None).context("Failed to prepare command")? {
         Launch::Ready(mut cmd) => {
-            let output = cmd.output().context("Failed to execute command")?;
+            let output = match cmd.output().context("Failed to execute command") {
+                Ok(out) => out,
+                Err(error) => {
+                    if let Some(outcome) = spawn_failure(program_name(command, None), &error) {
+                        return Ok((String::new(), outcome.message, outcome.code, false));
+                    }
+                    return Err(error);
+                }
+            };
             let stdout = String::from_utf8_lossy(&output.stdout).to_string();
             let stderr = String::from_utf8_lossy(&output.stderr).to_string();
             let is_signal = output.status.code().is_none();

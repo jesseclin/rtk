@@ -155,6 +155,7 @@ pub(crate) fn decide(cmd: &str, verdict: PermissionVerdict) -> HookDecision {
 /// `exclude_commands` and `transparent_prefixes` it means instead of writing a
 /// file for them, the same way the verdict is passed in rather than looked up
 /// (#3146).
+#[cfg(test)]
 pub(crate) fn decide_with_params(
     cmd: &str,
     verdict: PermissionVerdict,

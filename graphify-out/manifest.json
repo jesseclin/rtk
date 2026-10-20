@@ -1422,9 +1422,9 @@
     "semantic_hash": "315dd9d40d008dfad3e3e665ec561423"
   },
   "src/core/config.rs": {
-    "mtime": 1792477388.8498814,
-    "seen": 1792486545.2702658,
-    "ast_hash": "2e09fcea5827bc8724ae70f01db0ba59",
+    "mtime": 1792491863.4279823,
+    "seen": 1792492709.7861488,
+    "ast_hash": "566ee0b53c8b2a5b30c89625f9ce04da",
     "semantic_hash": ""
   },
   "src/core/constants.rs": {
@@ -1656,9 +1656,9 @@
     "semantic_hash": "957c2bd8b42590f705b7cc5ff87cf3ae"
   },
   "src/hooks/decision.rs": {
-    "mtime": 1792487718.1015697,
-    "seen": 1792488128.7611184,
-    "ast_hash": "6f72ce752d784470cda778b2647f867d",
+    "mtime": 1792492619.8567376,
+    "seen": 1792492709.786254,
+    "ast_hash": "80e474ec981696b48fb3f6fd4a731625",
     "semantic_hash": ""
   },
   "src/hooks/hook_audit_cmd.rs": {
@@ -2442,15 +2442,15 @@
     "semantic_hash": ""
   },
   "src/cmds/system/heal_cmd/mod.rs": {
-    "mtime": 1792488060.6064696,
-    "seen": 1792488128.7608771,
-    "ast_hash": "5ddefc755e8d81078716e4dbdca41905",
+    "mtime": 1792491855.3051543,
+    "seen": 1792492709.7860956,
+    "ast_hash": "cae3274454a569bdba9fa0d424530f1c",
     "semantic_hash": ""
   },
   "src/cmds/system/heal_cmd/safety.rs": {
-    "mtime": 1792487433.2019577,
-    "seen": 1792488128.7608829,
-    "ast_hash": "c980325d52ab5cba04a0cd706c78614e",
+    "mtime": 1792491849.9202685,
+    "seen": 1792492709.7860992,
+    "ast_hash": "6c558ef8aadec6494d2d77314c8d169e",
     "semantic_hash": ""
   },
   ".claude/agents/code-reviewer.md": {
