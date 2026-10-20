@@ -1698,7 +1698,7 @@ fn rewrite_shell_wrapper(
     wrapper.replace_script(command, &rewritten)
 }
 
-fn is_excluded(cmd: &str, excluded: &[ExcludePattern]) -> bool {
+pub(crate) fn is_excluded(cmd: &str, excluded: &[ExcludePattern]) -> bool {
     excluded.iter().any(|pat| match pat {
         ExcludePattern::Regex(re) => re.is_match(cmd),
         ExcludePattern::Prefix(prefix) => cmd.starts_with(prefix.as_str()),

@@ -1,16 +1,23 @@
 # Graph Report - rtk  (2026-10-20)
 
 ## Corpus Check
-- Large corpus: 717 files · ~890,224 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder.
+- 547 files · ~896,299 words
+- Verdict: corpus is large enough that graph structure adds value.
+- Unclassified: 90 file(s) not represented in the graph (top: .toml 80, (none) 6, .gz 2)
 
 ## Summary
-- 12705 nodes · 27118 edges · 446 communities (393 shown, 53 thin omitted)
-- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 963 edges (avg confidence: 0.85)
+- 14754 nodes · 29337 edges · 672 communities (574 shown, 98 thin omitted)
+- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 982 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
+
+## Graph Freshness
+- Built from commit: `64421b65`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - Registry Rewrite Classify Wrapper
-- Git Cmd Diff Output
+- git_cmd.rs
 - Search Extract Flag Line
 - Lexer Split Redirect Shell
 - Mod Write Awareness Atomic
@@ -31,17 +38,17 @@
 - Validate Method Proxy Route
 - Posthook Bash Output Pipeline
 - Git Cmd Diff Raw
-- Droid Mode Hook Run
+- droid.rs
 - Retriever Stats Recall Stat
 - Diff Cmd Raw Back
 - Registry Info Method Names
 - Trust Hash Store Verify
-- Pint Cmd Filter Run
+- mypy_cmd.rs
 - Claude Hook Dir Json
 - Utils Format Decode Quote
 - Runner Bun Coverage Not
 - Mod Pin Compressed Session
-- Functional Stdin Upstream Grep
+- functional.rs
 - Permissions Opencode Rules Rule
 - Pipeline Cmd Run Card
 - Gh Cmd View Passthrough
@@ -56,7 +63,7 @@
 - Detector Error Command Corrections
 - Schema Parse Keys Rule
 - Task Cmd Command Call
-- Hook Check Other Integration
+- hooks/constants.rs
 - Tracking Program Label Word
 - Diff Cmd Names Are
 - Hook Decision Protocol Test
@@ -64,10 +71,10 @@
 - Sqlfluff Cmd Filter Json
 - Rspec Cmd Filter Text
 - Pipeline Remote Repo Merge
-- Antigravity Hook Test Stdin
+- antigravity_hook_test.rs
 - Go Cmd Filter Build
 - Gradlew Cmd Detect Filter
-- Calctest.Java Pass Java Adds
+- org.junit.jupiter.api.Test
 - Decision Agent Only Rewrite
 - Hook Cmd Payload Claude
 - Resolve Override Rule Name
@@ -86,7 +93,7 @@
 - Memory Recall Ccr Openai
 - Cc Economics Compute Merge
 - Ingest Filter Dedup Only
-- Glab Cmd Release Filter
+- glab_cmd.rs
 - Vibe Entry Hook Hooks
 - Engine Methods Are Request
 - Mod Chain Json Run
@@ -113,7 +120,7 @@
 - Extract Usage Rtk Count
 - Deps Var Summarize Json
 - Call Context Chars Text
-- Tracking Hook Attribution Decisions
+- .record_hook_decision
 - Git Log Cap Notice
 - Image Opt Optimize Png
 - Task Instructions Assemble Question
@@ -133,23 +140,23 @@
 - Diff Cmd Compute Line
 - Runner Run Unrunnable Exit
 - Cursor Hook Remove Present
-- Rle Filtered Apply Shape
+- MethodInfo
 - Bun Cmd Filter Json
 - Pytest Cmd Filter Summary
-- Stream Line Handler Format
-- Rubocop Cmd Filter Text
+- StreamFilter
+- rubocop_cmd.rs
 - Dotnet Trx Parse Dir
 - Mod Pipeline Request Stream
 - Metrics Info Exposition Tokens
 - Phpstan Cmd Filter Json
 - Find Cmd Native Glob
-- Pipe Cmd Filter Resolve
+- pipe_cmd.rs
 - Tee Hint Posthook Mode
 - Copilot Selfheal Test Configs
 - Provider Extract Project Encode
-- Registry Strip Prefix Disabled
+- strip_disabled_prefix_for_analytics
 - Psql Cmd Filter Table
-- Dotnet Cmd Build Summary
+- TECHNICAL.md
 - Label Scan Len Comment
 - Toml Filter Match Output
 - Llm Proxy Bind Binary
@@ -157,18 +164,18 @@
 - Run Shell Test Exit
 - Task Handle Kind Default
 - Wc Cmd Mode Detect
-- Golangci Cmd Classify Invocation
+- golangci_cmd.rs
 - Rtk Hook Rewrite Opencode
 - Dotnet Cmd Trx Mode
 - Diff Cmd Render Not
 - Lint Cmd Linter Strip
-- Rake Cmd Minitest Filter
+- README_fr.md
 - Agents Md Block Rtk
-- Pipeline Log Path Dir
+- pipeline_log.rs
 - Strategy Lines Chars Render
 - Display Helpers Tokens Period
 - Process Gate Names Extension
-- Position Parse Event Tool
+- Changelog
 - Scratch Isolate Git Kept
 - Openai Tool Retrieve Compress
 - Artisan Cmd Php Filter
@@ -181,7 +188,7 @@
 - Model Route Request Routed
 - Ccusage Parse Daily Monthly
 - Diff Cmd Hunks Modified
-- Gh Cmd Run Passthrough
+- index.md
 - Glab Cmd Format List
 - Prisma Cmd Filter Migrate
 - Phpunit Cmd Failure Summary
@@ -204,18 +211,18 @@
 - Profile Capability Field Role
 - Wget Cmd Url Size
 - Find Cmd Parse Native
-- Hook Cmd Droid Command
+- RTK Installation Guide - For AI Coding Assistants
 - Search Compress Test Matches
 - Strategy Applies Name Shape
 - Curl Cmd Filter Binary
 - Mod Command Rtk Stdin
 - Models Default Cache Mult
-- Aws Cmd Filter Lambda
+- filter_s3_ls
 - Binlog Read String Event
-- Glab Cmd Run List
+- RTK Token Savings Audit Guide
 - Mvn Cmd Quiet Surefire
 - Toml Filter Match Find
-- Rules Supported Rtk Final
+- compact_diff
 - Redact Scrubs Key Request
 - Error Response Status Internal
 - Cache Align Control Flag
@@ -225,8 +232,8 @@
 - Context Analysis Tool Result
 - Aws Cmd Filter Cfn
 - Diff Cmd Invisible Difference
-- Playwright Cmd Parser Json
-- Format Cmd Filter Detect
+- Ship Release
+- display_args
 - Lib Truncate Smart Exact
 - Pipeline Config Oss Decision
 - Diff Byte Accuracy Test
@@ -234,10 +241,10 @@
 - Ingest Filter Guard Context
 - Ctest Cmd Failure Caps
 - Find Cmd Rtk Flags
-- Pipe Cmd Auto Detect
-- Summary Output Summarize List
-- Permissions Command Check Split
-- Opencode Plugin Version Dir
+- technical-writer.md
+- Performance Optimization Skill
+- check_command_with_rules_and_prefixes
+- debugger.md
 - Lib Commands Pipeline Log
 - Help Passthrough Fuzz Test
 - Builtins Builtin Names Default
@@ -253,29 +260,29 @@
 - Md Slim Badge Blank
 - Web Md Html Markdown
 - Mod Loopback Binds Config
-- Lib Args Pnpm Run
-- Mod Parse Result Tier
+- Rust Expert for RTK
+- extract_test_summary
 - Glab Argv Test Flag
 - Stderr Only Failure Test
 - Toon Uniform Flat Array
-- Store Summary Decision Row
+- Installation by agent
 - Git Cmd Help Passthrough
-- Glab Cmd Identifier Split
+- run_show
 - Mvn Cmd Compile Lane
-- Log Cmd Analyze Logs
+- Regex
 - Marker Stamp Round Parse
 - Grep Group Content Apply
 - Rewrite Exit Code Test
 - Diff Cmd Script Myers
 - Ctest Cmd Format Failed
 - Ls Value Long Flavor
-- Mod Json Extract Object
+- Command Filter Modules
 - Utils File Dir Private
 - Stream Block Handler Continuation
 - Retriever Record Tee Open
-- Runner Stderr Whole Forwarded
+- PayloadAction
 - Hook Cmd Claude Input
-- Antigravity Mode Run Plugin
+- user_dirs.rs
 - Permissions Settings Rules File
 - Lib Rtk Wrapper Commands
 - Lib Git Commands Add
@@ -292,19 +299,19 @@
 - Dotnet Format Report Parse
 - Package.Json Package Json Description
 - Lib Client Secs Ccr
-- Gh Cmd Filter Markdown
-- Gh Cmd Format View
-- Golangci Cmd Filter Source
+- RTK Technical Documentation
+- RTK - Complete Feature Reference
+- search_faithful_test.rs
 - Arg Tokenizer Not Flag
 - Plugins Cmd Run Crate
 - Runner Help Asks Usage
 - Utils Child Arg Args
-- Hook Cmd Cli Copilot
+- Engine
 - Lib Bun Commands Other
 - Llm Proxy Forward Run
 - Llm Proxy Pipeline Savings
 - Install.Sh Install Detect Arch
-- Npm Cmd Filter Output
+- Parser Infrastructure
 - User Env Not Var
 - Forward Sse Feed Tally
 - Aws Cmd Dynamodb Filter
@@ -316,7 +323,7 @@
 - Init Opencode Test Plugin
 - Tracking Project Filter Params
 - Find Cmd Entry Filtered
-- Block Content Format Json
+- ContentFormat
 - Strategy Apply Range Key
 - Aws Cmd Filter Ecs
 - Gh Cmd Value Takes
@@ -330,21 +337,21 @@
 - Lib Compose Commands Logs
 - Search Error Test Surfaces
 - Tokenizer Bpe Byte Token
-- Mod Store Ccr Transform
+- /diagnose
 - Diff Cmd Classic Format
-- Glab Cmd Value Takes
+- README_es.md
 - Constants Toml Days Dir
-- Runner Hint Terminated Body
-- Toml Filter Rule Def
+- README_ja.md
+- README_pt.md
 - Utils Decode Mixed Output
 - Mod Coverage Estimated Covered
-- Permissions Host Antigravity Claude
-- Gh Pr Checks Failure
+- Common Search Patterns
+- fs
 - Isolate Rtk Test Inherits
 - Test-All.Sh All Contains Exit
 - Aws Cmd Filter Events
 - Dotnet Cmd Trx Merge
-- Glab Cmd Filter Markdown
+- Security Guardian
 - Utils Binary Resolve Composer
 - Ctest Cmd Failed Section
 - Ctest Cmd Line Result
@@ -353,34 +360,34 @@
 - Lib Deno Commands Check
 - Llm Proxy Bind Launch
 - Grep Context Test Separator
-- Native Test Expression Test
+- Security Policy
 - Test-Rtk-Rewrite.Sh Rewrite Input Rtk
 - Test-Ruby.Sh Ruby Contains Exit
 - Dotnet Cmd Format Report
 - Diff Cmd Pairing Similarity
-- Gh Cmd Confirmation Create
-- Golangci Cmd Run Invocation
-- Pipe Cmd Filter Resolve
+- /test-routing
+- Issue Triage
+- What is collected
 - Filter Str Level Aggressive
 - Toml Filter Run Filters
-- Toml Filter Filters Compile
+- CompiledFilter
 - Provider Discover Sessions Project
 - Lib Cargo Commands Build
 - Lib Commands Branch Create
 - Lib Pnpm Typecheck Validate
 - Lib Prisma Commands Migrate
 - Llm Proxy Subcommand Config
-- Init Agent Cursor Test
+- .new
 - Rewrite Shell Wrapper Test
-- Rtk Bash Tool Call
+- JSON Formats by Agent
 - Test-Aristote.Sh Aristote Contains Output
 - Dotnet Cmd Mtp Mode
-- Cargo Cmd Command Build
-- Stream Stdin Filter Feed
+- CargoCommand
+- run_stash
 - Utils Detect Package Manager
 - Permissions Droid Deny Rules
-- Aws Cmd Ec2 Filter
-- Golangci Cmd Filtered Major
+- count_tokens
+- safety.rs
 - Find Cmd Run Args
 - Retriever Stored Store Empty
 - Utils Wrapper Cmd Finds
@@ -388,23 +395,23 @@
 - Lib Kubectl Commands Logs
 - Lib Commands Logs Other
 - Llm Proxy Name Hint
-- Build Check Cmds Modules
-- Strategy Json Skeleton Applies
+- pipeline_from
+- PR Triage
 - Cargo.Toml Rtk Engine Plugin
 - Test-Install.Sh Install Check Archive
 - Aws Cmd Lambda List
 - Aws Cmd Security Groups
-- Phpstan Cmd Error Format
-- Pytest Cmd Parse State
-- Rake Cmd Parse State
-- Pipe Cmd Wrapper Find
+- Steps
+- README.md
+- Phase 3 — Analyse croisée (cœur de ce skill)
+- TaskOutcome
 - Lib Commands Build Other
 - Lib Sbt Commands Compile
 - Agent Coverage Doc Test
 - Windows Stack Reserve Test
-- Rtk.Rb Rtk Formula Install
+- .install
 - Test-Rtk-Rewrite.Sh Rewrite Rtk Script
-- Golangci Cmd Value Takes
+- run
 - Arg Tokenizer Dash Ends
 - Arg Tokenizer Atomic Single
 - Utils Days Ago Cutoff
@@ -413,7 +420,7 @@
 - Check-Installation.Sh Check Installation Command
 - Rtk-Economics.Sh Rtk Economics Format
 - Test-Tracking.Sh Tracking Check Script
-- Golangci Cmd Output Issue
+- CLAUDE.md
 - Arg Tokenizer Equals Attach
 - Arg Tokenizer Name Case
 - Pre-Commit-Format.Sh Pre Commit Format
@@ -426,7 +433,7 @@
 - Update-Readme-Metrics.Sh Update Readme Metrics
 - Validate-Docs.Sh Validate Docs Script
 - Ls Lazy Lock
-- Pipe Cmd Git Diff
+- Rules
 - Arg Tokenizer Dash Claiming
 - Empty.Java Empty Java
 - Empty.Java Empty Java
@@ -437,18 +444,242 @@
 - Pom.Xml Com Example Rtk
 - Pom.Xml Com Example Rtk
 - Pom.Xml Com Example Rtk
+- Contributing to the RTK engine and proxy
+- pint_cmd.rs
+- RTK Testing Specialist
+- Rust Patterns — RTK Development Rules
+- Phase 2 — Pour chaque PR (une par une, dans l'ordre)
+- RTK TDD Workflow
+- Token Savings Analytics
+- .add
+- super
+- Core Infrastructure
+- code-reviewer.md
+- Audit Codebase — Santé du Projet RTK
+- RTK Code Review
+- Installation
+- Troubleshooting
+- What RTK Optimizes
+- Git commands
+- RTK Plugin for OpenClaw
+- .on_request
+- build_dotnet_args_for_test
+- filter_log_output
+- RTK System Architect
+- Pipeline Commands
+- Telemetry
+- Simplification Patterns
+- Build and lint commands
+- RTK Tracking
+- parse_match_line
+- RTK Test Patterns
+- RTK Coding Practices v1.0
+- RTK Proxy
+- Tool-Call Auto-Healing with Local/Fast Models
+- write
+- smoke_binary.rs
+- RTK Rust Design Patterns
+- Python & Go Module Architecture
+- Configuration
+- What is collected
+- client.rs
+- minify_json.rs
+- answer_with
+- Config
+- blob_truncation
+- TimedExecution
+- format_status_output
+- run_posthook
+- Hook System
+- Git Worktree Setup
+- Git Worktree Setup
+- Pull Request Process
+- Contributing to rtk
+- rtk Architecture Documentation
+- File commands
+- assertequals
+- Worktree Status Check
+- Rust TDD Workflow
+- RTK — Rust Token Killer
+- How to apply guide
+- Review Focus
+- Test commands
+- ansi.rs
+- filter_test
+- TestEcosystem
+- Built-in Filters
+- Output Examples
+- CLI Testing Strategy
+- Quick Start
+- Hook system
+- Data and network
+- classify_commit_outcome
+- LineHandler
+- AttributionRow
+- Discover — History Analysis & Command Rewrite
+- [0.47.0](https://github.com/rtk-ai/rtk/compare/v0.46.0...v0.47.0) (2026-09-01)
+- Clean Worktrees (Automatic)
+- Issue Comment Templates
+- Conditions and Judges
+- Methods
+- The RTK pipeline
+- Reference Pipelines
+- How RTK Savings Work
+- Analytics and tracking
+- Package managers
+- Commandes
+- 命令
+- TokenKind
+- run_push_filter
+- filter_lint
+- from_json_str
+- read_window_bytes_test.rs
+- Clean Worktree (Interactive)
+- Clean Worktree (Interactive)
+- Clean Worktrees (Automatic)
+- Remove Worktree
+- Design Philosophy
+- Plugins — your own methods and task kinds
+- Agent Coverage
+- CI/CD Flows
+- RTK — Copilot Integration (VS Code Copilot Chat + Copilot CLI)
+- RTK Plugin for Hermes
+- detected
+- exec_capture_unguarded
+- rules_from_files
+- Learn — CLI Correction Detection
+- search_stdin_test.rs
+- [0.44.0](https://github.com/rtk-ai/rtk/compare/v0.43.0...v0.44.0) (2026-07-26)
+- [Unreleased]
+- Unit Testing (🔴 Critical)
+- Testing Checklist
+- Performance Testing (🟡 Important)
+- Common Testing Patterns
+- Integration Tests (🟡 Important)
+- What Belongs in RTK?
+- Architecture Decision Records
+- Directives
+- What the Proxy Compresses
+- Proxy Configuration
+- Editions and Licensing
+- Serde &emsp; [![Build Status]][actions] [![Latest Version]][crates.io] [![serde msrv]][Rust 1.56] [![serde_derive msrv]][Rust 1.71]
+- Copilot Instructions for rtk
+- RTK Documentation — Interface Contract
+- Analytics
+- filter_connected
+- Serde &emsp; [![Build Status]][actions] [![Latest Version]][crates.io] [![serde msrv]][Rust 1.56] [![serde_derive msrv]][Rust 1.71]
+- PassGammaTest.java
+- [0.49.0](https://github.com/rtk-ai/rtk/compare/v0.48.0...v0.49.0) (2026-09-11)
+- [0.7.1](https://github.com/pszymkowiak/rtk/compare/v0.7.0...v0.7.1) (2026-02-02)
+- [Unreleased]
+- Token Accuracy Testing (🔴 Critical)
+- Review Comment Template
+- Testing
+- Shared Infrastructure
+- Module Organization
+- Tasks and Upstreams
+- Configuration
+- rtk-engine
+- rtk-awareness-full.md
+- Git and VCS
+- is_safe_pipe_consumer
+- PassOneTest
+- PassTwoTest
+- [0.14.0](https://github.com/rtk-ai/rtk/compare/v0.13.1...v0.14.0) (2026-02-12)
+- [0.23.0](https://github.com/rtk-ai/rtk/compare/v0.22.2...v0.23.0) (2026-02-28)
+- [0.24.0](https://github.com/rtk-ai/rtk/compare/v0.23.0...v0.24.0) (2026-03-04)
+- [0.25.0](https://github.com/rtk-ai/rtk/compare/v0.24.0...v0.25.0) (2026-03-05)
+- [0.26.0](https://github.com/rtk-ai/rtk/compare/v0.25.0...v0.26.0) (2026-03-05)
+- [0.27.0](https://github.com/rtk-ai/rtk/compare/v0.26.0...v0.27.0) (2026-03-05)
+- [0.30.0](https://github.com/rtk-ai/rtk/compare/v0.29.0...v0.30.0) (2026-03-16)
+- [0.33.0-rc.54](https://github.com/rtk-ai/rtk/compare/v0.32.0-rc.54...v0.33.0-rc.54) (2026-03-24)
+- [0.34.0](https://github.com/rtk-ai/rtk/compare/v0.33.1...v0.34.0) (2026-03-26)
+- [0.35.0](https://github.com/rtk-ai/rtk/compare/v0.34.3...v0.35.0) (2026-04-06)
+- [0.35.0](https://github.com/rtk-ai/rtk/compare/v0.34.3...v0.35.0) (2026-04-06)
+- [0.36.0](https://github.com/rtk-ai/rtk/compare/v0.35.0...v0.36.0) (2026-04-13)
+- [0.37.0](https://github.com/rtk-ai/rtk/compare/v0.36.0...v0.37.0) (2026-04-17)
+- [0.38.0](https://github.com/rtk-ai/rtk/compare/v0.37.2...v0.38.0) (2026-04-29)
+- [0.39.0](https://github.com/rtk-ai/rtk/compare/v0.38.0...v0.39.0) (2026-05-06)
+- [0.3.0](https://github.com/pszymkowiak/rtk/compare/v0.2.1...v0.3.0) (2026-01-29)
+- [0.40.0](https://github.com/rtk-ai/rtk/compare/v0.39.0...v0.40.0) (2026-05-13)
+- [0.41.0](https://github.com/rtk-ai/rtk/compare/v0.40.0...v0.41.0) (2026-05-22)
+- [0.42.0](https://github.com/rtk-ai/rtk/compare/v0.41.0...v0.42.0) (2026-05-24)
+- [0.43.0](https://github.com/rtk-ai/rtk/compare/v0.42.4...v0.43.0) (2026-06-28)
+- [0.45.0](https://github.com/rtk-ai/rtk/compare/v0.44.2...v0.45.0) (2026-08-07)
+- [0.46.0](https://github.com/rtk-ai/rtk/compare/v0.45.0...v0.46.0) (2026-08-26)
+- [0.48.0](https://github.com/rtk-ai/rtk/compare/v0.47.0...v0.48.0) (2026-09-04)
+- [0.5.0](https://github.com/pszymkowiak/rtk/compare/v0.4.0...v0.5.0) (2026-01-30)
+- [0.7.0](https://github.com/pszymkowiak/rtk/compare/v0.6.0...v0.7.0) (2026-02-01)
+- [0.9.0](https://github.com/rtk-ai/rtk/compare/v0.8.1...v0.9.0) (2026-02-03)
+- [Unreleased]
+- [Unreleased]
+- [Unreleased]
+- Common Patterns
+- Error Handling
+- Build Optimizations
+- Command Lifecycle
+- Configuration System
+- System Overview
+- Token Tracking System
+- PULL_REQUEST_TEMPLATE.md
+- Command output
+- filter_logs_query_results
+- BuildLineFilter
+- filter_dependencies
+- [0.10.0](https://github.com/rtk-ai/rtk/compare/v0.9.4...v0.10.0) (2026-02-07)
+- [0.11.0](https://github.com/rtk-ai/rtk/compare/v0.10.0...v0.11.0) (2026-02-07)
+- [0.12.0](https://github.com/rtk-ai/rtk/compare/v0.11.0...v0.12.0) (2026-02-09)
+- [0.13.0](https://github.com/rtk-ai/rtk/compare/v0.12.0...v0.13.0) (2026-02-12)
+- [0.13.1](https://github.com/rtk-ai/rtk/compare/v0.13.0...v0.13.1) (2026-02-12)
+- [0.15.1](https://github.com/rtk-ai/rtk/compare/v0.15.0...v0.15.1) (2026-02-12)
+- [0.15.2](https://github.com/rtk-ai/rtk/compare/v0.15.1...v0.15.2) (2026-02-13)
+- [0.15.3](https://github.com/rtk-ai/rtk/compare/v0.15.2...v0.15.3) (2026-02-13)
+- [0.16.0](https://github.com/rtk-ai/rtk/compare/v0.15.4...v0.16.0) (2026-02-14)
+- [0.17.0](https://github.com/rtk-ai/rtk/compare/v0.16.0...v0.17.0) (2026-02-15)
+- [0.18.0](https://github.com/rtk-ai/rtk/compare/v0.17.0...v0.18.0) (2026-02-15)
+- [0.19.0](https://github.com/rtk-ai/rtk/compare/v0.18.1...v0.19.0) (2026-02-16)
+- [0.20.0](https://github.com/rtk-ai/rtk/compare/v0.19.0...v0.20.0) (2026-02-16)
+- [0.20.1](https://github.com/rtk-ai/rtk/compare/v0.20.0...v0.20.1) (2026-02-17)
+- [0.21.0](https://github.com/rtk-ai/rtk/compare/v0.20.1...v0.21.0) (2026-02-17)
+- [0.22.2](https://github.com/rtk-ai/rtk/compare/v0.22.1...v0.22.2) (2026-02-20)
+- [0.27.2](https://github.com/rtk-ai/rtk/compare/v0.27.1...v0.27.2) (2026-03-06)
+- [0.28.0](https://github.com/rtk-ai/rtk/compare/v0.27.2...v0.28.0) (2026-03-10)
+- [0.28.2](https://github.com/rtk-ai/rtk/compare/v0.28.1...v0.28.2) (2026-03-10)
+- [0.29.0](https://github.com/rtk-ai/rtk/compare/v0.28.2...v0.29.0) (2026-03-12)
+- [0.30.1](https://github.com/rtk-ai/rtk/compare/v0.30.0...v0.30.1) (2026-03-18)
+- [0.31.0](https://github.com/rtk-ai/rtk/compare/v0.30.1...v0.31.0) (2026-03-19)
+- [0.33.1](https://github.com/rtk-ai/rtk/compare/v0.33.0...v0.33.1) (2026-03-25)
+- [0.34.3](https://github.com/rtk-ai/rtk/compare/v0.34.2...v0.34.3) (2026-04-02)
+- [0.37.2](https://github.com/rtk-ai/rtk/compare/v0.37.1...v0.37.2) (2026-04-20)
+- [0.3.1](https://github.com/pszymkowiak/rtk/compare/v0.3.0...v0.3.1) (2026-01-29)
+- [0.42.1](https://github.com/rtk-ai/rtk/compare/v0.42.0...v0.42.1) (2026-06-03)
+- [0.42.2](https://github.com/rtk-ai/rtk/compare/v0.42.1...v0.42.2) (2026-06-05)
+- [0.42.3](https://github.com/rtk-ai/rtk/compare/v0.42.2...v0.42.3) (2026-06-05)
+- [0.44.2](https://github.com/rtk-ai/rtk/compare/v0.44.1...v0.44.2) (2026-08-01)
+- [0.4.0](https://github.com/pszymkowiak/rtk/compare/v0.3.1...v0.4.0) (2026-01-30)
+- [0.5.1](https://github.com/pszymkowiak/rtk/compare/v0.5.0...v0.5.1) (2026-01-30)
+- [0.6.0](https://github.com/pszymkowiak/rtk/compare/v0.5.2...v0.6.0) (2026-02-01)
+- [0.9.1](https://github.com/rtk-ai/rtk/compare/v0.9.0...v0.9.1) (2026-02-04)
+- [0.9.2](https://github.com/rtk-ai/rtk/compare/v0.9.1...v0.9.2) (2026-02-05)
+- [Unreleased]
+- [Unreleased]
+- rtk-commit-message-style.md
+- rtk-no-history-rewrite.md
+- rtk-rust-safety-net.md
+- rtk-test-before-merge.md
+- hooks/rtk-awareness.md
 
 ## God Nodes (most connected - your core abstractions)
 1. `Regex` - 208 edges
 2. `resolved_command()` - 147 edges
-3. `Commands` - 119 edges
+3. `Commands` - 120 edges
 4. `Command` - 113 edges
 5. `display_args()` - 110 edges
 6. `InitContext` - 96 edges
 7. `Subject` - 95 edges
-8. `tokenize()` - 85 edges
-9. `Method` - 77 edges
-10. `Block` - 75 edges
+8. `Changelog` - 94 edges
+9. `tokenize()` - 85 edges
+10. `Method` - 77 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `cost_tokens()` --calls--> `estimate_tokens()`  [INFERRED]
@@ -472,25 +703,24 @@
 - 2-file cycle: `src/cmds/system/search.rs -> src/discover/registry.rs -> src/cmds/system/search.rs`
 - 2-file cycle: `src/hooks/init/mod.rs -> src/hooks/integrity.rs -> src/hooks/init/mod.rs`
 - 3-file cycle: `src/cmds/system/search.rs -> src/core/stream.rs -> src/discover/registry.rs -> src/cmds/system/search.rs`
-- 4-file cycle: `src/cmds/system/search.rs -> src/core/tracking.rs -> text/src/lib.rs -> src/discover/registry.rs -> src/cmds/system/search.rs`
 - 5-file cycle: `engine/src/pipeline/conditions.rs -> src/discover/registry.rs -> src/discover/report.rs -> src/hooks/constants.rs -> engine/src/pipeline/resolve.rs -> engine/src/pipeline/conditions.rs`
-- 5-file cycle: `proxy/src/main.rs -> proxy/src/server.rs -> src/analytics/gain_tui.rs -> src/hooks/init/mod.rs -> src/core/utils.rs -> proxy/src/main.rs`
 - 5-file cycle: `proxy/src/main.rs -> proxy/src/server.rs -> src/analytics/gain_tui.rs -> src/llm_proxy.rs -> src/core/utils.rs -> proxy/src/main.rs`
 - 5-file cycle: `proxy/src/main.rs -> proxy/src/server.rs -> src/analytics/gain_tui.rs -> src/core/tracking.rs -> src/core/shell.rs -> proxy/src/main.rs`
+- 5-file cycle: `proxy/src/main.rs -> proxy/src/server.rs -> src/analytics/gain_tui.rs -> src/hooks/init/mod.rs -> src/core/utils.rs -> proxy/src/main.rs`
 
-## Communities (446 total, 53 thin omitted)
+## Communities (672 total, 98 thin omitted)
 
 ### Community 0 - "Registry Rewrite Classify Wrapper"
 Cohesion: 0.00
 Nodes (9): assert_consumer_flag_blocks_rewrite(), BLOCK_KEYWORDS, GOLANGCI_GLOBAL_OPT_WITH_VALUE, MAX_PREFIX_DEPTH, MAX_SHELL_WRAPPER_DEPTH, PHP_TOOL_NAMES, ROUTABLE_WRAPPER_PREFIXES, SHELL_KEYWORD_PREFIXES (+1 more)
 
-### Community 1 - "Git Cmd Diff Output"
-Cohesion: 0.01
-Nodes (162): args_without_oneline(), blob_candidates(), blob_truncation(), branch_takes_value(), Budget, build_status_command(), checkout_takes_value(), classify_commit_outcome() (+154 more)
+### Community 1 - "git_cmd.rs"
+Cohesion: 0.02
+Nodes (42): build_commit_command(), build_status_command(), DEFAULT_LOG_LIMIT, DEFAULT_LOG_LIMIT_ARG, extract_detached_head(), filter_branch_output(), filter_status_with_args(), filter_worktree_list() (+34 more)
 
 ### Community 2 - "Search Extract Flag Line"
-Cohesion: 0.03
-Nodes (95): clean_line(), compact_path(), detected(), detected_for(), DetectedFlags, Engine, engine_capture(), engine_command() (+87 more)
+Cohesion: 0.04
+Nodes (43): extract_pattern_path(), grep_does_not_claim_ripgrep_only_line_number_negations(), test_context_detection_covers_greps_numeric_shorthand(), test_dash_capital_t_is_engine_aware(), test_dash_r_is_engine_aware(), test_detected_flags_ignore_a_value_taking_flags_own_value(), test_extract_cluster_ending_in_e(), test_extract_cluster_ending_in_value_flag() (+35 more)
 
 ### Community 3 - "Lexer Split Redirect Shell"
 Cohesion: 0.02
@@ -498,19 +728,19 @@ Nodes (86): advance_quote_state(), coalesce_words(), is_grammar_word(), QuoteSca
 
 ### Community 4 - "Mod Write Awareness Atomic"
 Cohesion: 0.02
-Nodes (66): AwarenessConfig, AwarenessLevel, Default, Full, High, AGENTS_MD, atomic_write(), awareness_content() (+58 more)
+Nodes (72): AwarenessConfig, AwarenessLevel, Default, Full, High, AGENTS_MD, atomic_write(), awareness_content() (+64 more)
 
 ### Community 5 - "Codex Rtk Uninstall Hook"
 Cohesion: 0.03
-Nodes (106): back_up_foreign_rtk_md(), BackupSlot, AlreadyPreserved, Free, SourceUnreadable, codex_hook_already_present(), codex_rtk_md_content(), codex_rtk_md_ref() (+98 more)
+Nodes (96): back_up_foreign_rtk_md(), BackupSlot, AlreadyPreserved, Free, SourceUnreadable, codex_rtk_md_content(), codex_rtk_md_ref(), codex_tracking_config() (+88 more)
 
 ### Community 6 - "Pi Uninstall Omp Run"
 Cohesion: 0.04
-Nodes (101): CLAUDE_PRE_MATCHER, CLAUDE_TOOL_ORDER, CODEX_HOOK_COMMAND, OMP_DIR, OMP_LOCAL_DIR, PI_AGENT_STATE_FILE, PI_CODING_AGENT_DIR_ENV, PI_DIR (+93 more)
+Nodes (97): resolve_gemini_dir(), run_gemini(), uninstall_gemini(), PatchMode, Ask, Auto, Skip, print_dry_run_footer() (+89 more)
 
 ### Community 7 - "Stream Filter Capture Streaming"
-Cohesion: 0.03
-Nodes (74): block_handler_normalize_line_feeds_matching_and_emission(), BlockStreamFilter, capture(), capture_raw(), CaptureBytes, CaptureResult, CHILD_PID, die_by_relayed_signal() (+66 more)
+Cohesion: 0.04
+Nodes (58): capture_raw(), CaptureBytes, CHILD_PID, die_by_relayed_signal(), escalate(), exec_capture_bytes(), EXIT_GRACE, FailingReader (+50 more)
 
 ### Community 8 - "Mvn Cmd Mvnd Phase"
 Cohesion: 0.03
@@ -518,99 +748,95 @@ Nodes (70): AGG, assert_ambiguous_raw_line_preserved(), assert_block_entry_retir
 
 ### Community 9 - "Harness Tools Tool Output"
 Cohesion: 0.03
-Nodes (91): HOOK_SUBJECTS, PROXY_PARTS, Subject, Any, Assistant, Cache, Edit, Mcp (+83 more)
+Nodes (99): Event, AfterTool, BeforeTool, Subject, Any, Assistant, Cache, Edit (+91 more)
 
 ### Community 10 - "Cargo Cmd Filter Json"
 Cohesion: 0.04
-Nodes (84): AggregatedTestResult, cargo_build_failure_summary(), cargo_build_success_line(), CargoDiagnostic, CargoJsonLine, CargoTestHandler, extract_json_diagnostics(), filter_cargo_build() (+76 more)
+Nodes (68): AggregatedTestResult, cargo_build_failure_summary(), cargo_build_success_line(), CargoDiagnostic, CargoJsonLine, CargoTestHandler, extract_json_diagnostics(), filter_cargo_build() (+60 more)
 
 ### Community 11 - "Hook Cmd Command Rewrite"
 Cohesion: 0.03
-Nodes (37): a_denied_command_is_left_for_opencode_to_deny(), a_uniform_policy_keeps_the_rewrite(), an_ask_rule_still_prompts_because_the_rewrite_is_skipped(), audit_log_under(), codex_input(), codex_input_with_permission_mode(), heal_legacy_copilot_configs(), heal_legacy_hook_file() (+29 more)
+Nodes (46): a_denied_command_is_left_for_opencode_to_deny(), a_uniform_policy_keeps_the_rewrite(), an_ask_rule_still_prompts_because_the_rewrite_is_skipped(), audit_log_under(), droid_input(), heal_legacy_copilot_configs(), heal_legacy_hook_file(), legacy_camelcase_entry() (+38 more)
 
 ### Community 12 - "Lib Parse Grep Try"
 Cohesion: 0.03
-Nodes (62): GainArgs, grep_dash_h_reaches_grep(), grep_extra_args(), parse_grep(), rtk_help_subcommand_still_reaches_wrapper_usage(), test_bun_build_parses_to_arg_vector(), test_bun_pm_ls_parses_to_typed_ls(), test_bun_pm_other_passes_through() (+54 more)
+Nodes (80): build_k8s_logs_args(), Cli, entry(), GainArgs, grep_dash_h_reaches_grep(), grep_extra_args(), is_native_test_expression(), is_operational_command() (+72 more)
 
 ### Community 13 - "Lib Commands Grep Config"
 Cohesion: 0.02
-Nodes (99): Commands, AstGrep, Aws, Bun, Bunx, Bypass, Cargo, CcEconomics (+91 more)
+Nodes (100): Commands, AstGrep, Aws, Bun, Bunx, Bypass, Cargo, CcEconomics (+92 more)
 
 ### Community 14 - "Binlog Parse Text Build"
-Cohesion: 0.04
-Nodes (89): BinlogIssue, build_minimal_binlog(), BUILD_SUMMARY_RE, count_projects(), DIAGNOSTIC_CODE_RE, DURATION_RE, ERROR_COUNT_RE, extract_binary_like_issues() (+81 more)
+Cohesion: 0.05
+Nodes (71): BinlogIssue, build_minimal_binlog(), count_projects(), extract_binary_like_issues(), extract_duration(), extract_printable_runs(), FLAG_ARGUMENTS, FLAG_BUILD_EVENT_CONTEXT (+63 more)
 
 ### Community 15 - "Chain Apply Name Info"
-Cohesion: 0.04
-Nodes (44): Block, Origin, Provenance, block_over(), chain_applies_methods_in_order_and_skip_is_neutral(), ctx(), Declines, Final (+36 more)
+Cohesion: 0.07
+Nodes (26): Block, Origin, Provenance, block_over(), chain_applies_methods_in_order_and_skip_is_neutral(), ctx(), Declines, Final (+18 more)
 
 ### Community 16 - "Pipeline Config File Load"
 Cohesion: 0.04
-Nodes (77): classifier_condition(), format_number(), interpolate(), route_message(), ResolvedDirective, DirectiveDef, ValidateCtx, a_blank_deny_message_falls_back_to_a_reason() (+69 more)
-
-### Community 17 - "Permissions Deny Allow Wrapper"
-Cohesion: 0.02
-Nodes (4): matching_readings(), MatchingReadings, MAX_MATCHING_PEELS, test_prefixes_past_the_peel_cap_ask_never_allow()
+Nodes (77): classifier_condition(), ResolvedDirective, DirectiveDef, ValidateCtx, test_heal_config_defaults_and_env_overrides(), example_pipelines_validate_without_errors(), a_blank_deny_message_falls_back_to_a_reason(), a_broken_file_drops_alone_and_the_other_files_keep_their_rules() (+69 more)
 
 ### Community 18 - "Container Run Format Compose"
-Cohesion: 0.05
-Nodes (78): run(), run_aws_json(), run_generic(), run_s3_ls(), run_s3_transfer(), compact_ports(), ContainerCmd, DockerImages (+70 more)
+Cohesion: 0.06
+Nodes (50): compact_ports(), ContainerCmd, DockerImages, DockerLogs, DockerPs, DockerPsAll, KubectlLogs, KubectlPods (+42 more)
 
 ### Community 19 - "Validate Method Proxy Route"
 Cohesion: 0.04
-Nodes (77): split_key(), PRO_METHODS, after_tool_extractable(), assert_code(), BASE, builtin_method_options_are_refused_not_discarded(), call_context_keys_work_at_every_hook_position(), chain_members() (+69 more)
+Nodes (76): split_key(), PRO_METHODS, after_tool_extractable(), assert_code(), BASE, builtin_method_options_are_refused_not_discarded(), call_context_keys_work_at_every_hook_position(), chain_members() (+68 more)
 
 ### Community 20 - "Posthook Bash Output Pipeline"
-Cohesion: 0.06
-Nodes (70): Resolved, evaluate(), Applied, applied_carries_the_resolved_pipeline_name_for_attribution(), attribute(), basename_of(), bash_fixture(), combine_streams() (+62 more)
+Cohesion: 0.08
+Nodes (38): evaluate(), Applied, attribute(), basename_of(), combine_streams(), combine_streams_is_symmetric_so_the_separator_is_not_counted_as_savings(), default_pipeline(), extension_of() (+30 more)
 
 ### Community 21 - "Git Cmd Diff Raw"
-Cohesion: 0.04
-Nodes (88): args_without_flags(), args_without_patch_shape(), asks_for_usage(), body_is_suppressed(), bounds_the_walk(), build_commit_command(), checkout_branch_arg(), checkout_new_branch_arg() (+80 more)
+Cohesion: 0.06
+Nodes (50): args_without_flags(), args_without_patch_shape(), asks_for_usage(), body_is_suppressed(), bounds_the_walk(), checkout_branch_arg(), checkout_new_branch_arg(), checkout_reset_branch_arg() (+42 more)
 
-### Community 22 - "Droid Mode Hook Run"
-Cohesion: 0.05
-Nodes (79): DROID_DIR, DROID_EXECUTE_MATCHER, DROID_HOME_ENV, DROID_HOOK_COMMAND, DROID_HOOKS_FILE, DROID_HOOKS_SUBDIR, DROID_SETTINGS_FILE, PRE_TOOL_USE_KEY (+71 more)
+### Community 22 - "droid.rs"
+Cohesion: 0.11
+Nodes (32): droid_events(), droid_has_pre_tool_use(), droid_hook_already_present(), droid_hook_file_candidates(), DroidHookFile, DroidLayout, Nested, Root (+24 more)
 
 ### Community 23 - "Retriever Stats Recall Stat"
-Cohesion: 0.06
-Nodes (76): bump_stat(), content_hash(), count_lines(), decode(), DEFAULT_MAX_ENTRIES, DEFAULT_MAX_ENTRY_BYTES, DEFAULT_RETENTION_DAYS, DEFAULT_TEE_MAX_FILE_SIZE (+68 more)
+Cohesion: 0.07
+Nodes (73): bump_stat(), content_hash(), count_lines(), decode(), DEFAULT_MAX_ENTRIES, DEFAULT_MAX_ENTRY_BYTES, DEFAULT_RETENTION_DAYS, DEFAULT_TEE_MAX_FILE_SIZE (+65 more)
 
 ### Community 24 - "Diff Cmd Raw Back"
 Cohesion: 0.04
 Nodes (51): a_leading_bom_does_not_hide_the_first_section(), ansi_inside_content_lines_survives_verbatim(), b_prefix_is_stripped_exactly_once(), backslash_line_away_from_a_hunk_is_prose(), binary_and_rename_only_files_are_reported(), combined_diff_hunks_parse_with_two_parents(), condense_stdin(), condense_unified_diff() (+43 more)
 
 ### Community 25 - "Registry Info Method Names"
-Cohesion: 0.03
-Nodes (69): Layer, AgentMessage, Cache, History, Inference, Read, SkillsMcp, ToolResult (+61 more)
+Cohesion: 0.05
+Nodes (45): ANSI, BASE64_ELIDE, CACHE_ALIGN, CAP, CCR, chain(), chain_info(), chain_info_aggregates_lossiness_and_cost() (+37 more)
 
 ### Community 26 - "Trust Hash Store Verify"
 Cohesion: 0.05
 Nodes (78): compute_hash(), compute_hash_bytes(), HASH_FILENAME, hash_path(), hash_path_for(), IntegrityStatus, NoBaseline, NotInstalled (+70 more)
 
-### Community 27 - "Pint Cmd Filter Run"
-Cohesion: 0.05
-Nodes (61): run(), extract_time(), filter_next_build(), run(), test_filter_next_build(), run(), filter_ecs_output(), run() (+53 more)
+### Community 27 - "mypy_cmd.rs"
+Cohesion: 0.09
+Nodes (25): extract_time(), filter_next_build(), run(), test_filter_next_build(), filter_mypy_output(), MYPY_CLEAN, MypyError, run() (+17 more)
 
 ### Community 28 - "Claude Hook Dir Json"
 Cohesion: 0.04
-Nodes (57): CLAUDE_HOOK_COMMAND, POST_TOOL_USE_KEY, SESSION_START_KEY, claude_events_of(), claude_hook_gaps(), global_hooks_ignore_the_cwd_project_pipeline_and_never_delete(), hook_already_present(), hook_gaps() (+49 more)
+Nodes (86): CLAUDE_HOOK_COMMAND, POST_TOOL_USE_KEY, SESSION_START_KEY, hook_installed_path(), parse_hook_version(), status(), write_rtk_block(), claude_events_of() (+78 more)
 
 ### Community 29 - "Utils Format Decode Quote"
 Cohesion: 0.03
-Nodes (5): sanitize_for_terminal(), sanitize_for_terminal_strips_escape_bytes_but_keeps_layout(), test_missing_tool_policy_controls_npx_no_install(), test_resolved_command_executes_known_command(), test_resolved_command_fallback_on_unknown_binary()
+Nodes (8): format_cpt(), format_usd(), human_bytes(), sanitize_for_terminal(), sanitize_for_terminal_strips_escape_bytes_but_keeps_layout(), test_resolved_command_executes_known_command(), test_resolved_command_fallback_on_unknown_binary(), truncate_iso_date()
 
 ### Community 30 - "Runner Bun Coverage Not"
 Cohesion: 0.04
-Nodes (46): BUN_BAILED_OUT, BUN_COVERAGE_HEADER, BUN_FAILURE_MARKER, BUN_RAN_FOOTER, BUN_SNAPSHOT_LINE, count_tokens(), coverage_row_has_gap(), coverage_table_lines() (+38 more)
+Nodes (48): a_cap_that_would_not_shrink_the_output_is_not_applied(), a_failing_run_forwards_stderr_whole(), a_non_ascii_stderr_is_sliced_without_panicking(), a_short_stderr_is_forwarded_whole(), a_stderr_under_the_recovery_floor_is_forwarded_whole(), a_successful_run_with_output_keeps_the_end_of_stderr(), already_terminated_hint_gains_nothing(), an_empty_filtered_stdout_forwards_stderr_whole() (+40 more)
 
 ### Community 31 - "Mod Pin Compressed Session"
 Cohesion: 0.05
-Nodes (54): DecisionMeta, Rendered, already_compressed(), apply_query(), apply_query_filters_to_matching_lines(), bulk_min_tokens(), cache_topic(), CCR_MARKER_TAG (+46 more)
+Nodes (51): already_compressed(), apply_query(), apply_query_filters_to_matching_lines(), bulk_min_tokens(), cache_topic(), CCR_MARKER_TAG, compress_min_tokens(), COMPRESS_MIN_TOKENS (+43 more)
 
-### Community 32 - "Functional Stdin Upstream Grep"
-Cohesion: 0.07
-Nodes (52): build_router(), an_openai_clients_key_never_reaches_the_anthropic_upstream(), big_tool_result_request(), body_json(), ccr_first_round_transport_failure_falls_back_to_the_relay(), ccr_leaves_fresh_streamed_requests_streaming(), ccr_shrinks_the_body_sent_upstream(), cfg() (+44 more)
+### Community 32 - "functional.rs"
+Cohesion: 0.15
+Nodes (25): build_router(), an_openai_clients_key_never_reaches_the_anthropic_upstream(), big_tool_result_request(), body_json(), ccr_first_round_transport_failure_falls_back_to_the_relay(), ccr_leaves_fresh_streamed_requests_streaming(), ccr_shrinks_the_body_sent_upstream(), cfg() (+17 more)
 
 ### Community 33 - "Permissions Opencode Rules Rule"
 Cohesion: 0.06
@@ -618,11 +844,11 @@ Nodes (59): a_bash_action_in_the_2x_list_is_not_a_shell_rule(), a_denied_segment
 
 ### Community 34 - "Pipeline Cmd Run Card"
 Cohesion: 0.05
-Nodes (54): builtin_text(), has_errors(), active_sources(), CardData, CardStats, choose_install_mode(), collect_card(), describe_rules() (+46 more)
+Nodes (55): builtin_text(), has_errors(), active_sources(), CardData, CardStats, choose_install_mode(), collect_card(), describe_rules() (+47 more)
 
 ### Community 35 - "Gh Cmd View Passthrough"
-Cohesion: 0.04
-Nodes (31): BADGE_LINE_RE, escapes_a_bare_positional(), format_run_view(), HORIZONTAL_RULE_RE, HTML_COMMENT_RE, IMAGE_ONLY_LINE_RE, MULTI_BLANK_RE, pr_status_json_fields() (+23 more)
+Cohesion: 0.03
+Nodes (85): BADGE_LINE_RE, escapes_a_bare_positional(), filter_markdown_body(), filter_markdown_segment(), format_issue_list(), format_issue_view(), format_pr_checks(), format_pr_list() (+77 more)
 
 ### Community 36 - "Frozen Dash Token Flag"
 Cohesion: 0.06
@@ -630,7 +856,7 @@ Nodes (48): ALPHABET, assert_identical(), for_each_vector(), frozen_spec(), LOOK
 
 ### Community 37 - "Hermes Config Enabled Patch"
 Cohesion: 0.07
-Nodes (66): HERMES_PLUGIN_INIT_FILE, append_hermes_plugins_block(), collapse_yaml_list_key_to_empty(), ensure_previous_yaml_line_ends_with_newline(), find_yaml_key_line(), hermes_enabled_list_end(), hermes_enabled_list_item_indent(), hermes_missing_enabled_indents() (+58 more)
+Nodes (64): append_hermes_plugins_block(), collapse_yaml_list_key_to_empty(), ensure_previous_yaml_line_ends_with_newline(), find_yaml_key_line(), hermes_enabled_list_end(), hermes_enabled_list_item_indent(), hermes_missing_enabled_indents(), hermes_plugin_dir() (+56 more)
 
 ### Community 38 - "Test Rtk Rewrite Plugin"
 Cohesion: 0.05
@@ -638,23 +864,23 @@ Nodes (15): _check_rtk(), _pre_tool_call(), register(), _warn(), FakeCompletedPr
 
 ### Community 39 - "Conditions Keys Check Key"
 Cohesion: 0.05
-Nodes (56): AFTER_COMMON, all_match(), CALL_CONTEXT_KEYS, check_hook_key(), check_key(), check_proxy_key(), cond(), Condition (+48 more)
+Nodes (55): AFTER_COMMON, all_match(), CALL_CONTEXT_KEYS, check_hook_key(), check_key(), check_proxy_key(), cond(), Condition (+47 more)
 
 ### Community 40 - "Diag Severity Render Code"
 Cohesion: 0.04
 Nodes (53): Code, E001, E002, E003, E004, E005, E006, E007 (+45 more)
 
 ### Community 41 - "Dotnet Cmd Output Format"
-Cohesion: 0.05
-Nodes (39): build_dotnet_args_for_test(), compose_failure_output(), DOTNET_CLI_UI_LANGUAGE, DOTNET_CLI_UI_LANGUAGE_VALUE, dotnet_takes_value(), format_build_output(), format_issue(), format_restore_output() (+31 more)
+Cohesion: 0.04
+Nodes (55): BuildSummary, RestoreSummary, build_binlog_path(), cleanup_temp_dir(), cleanup_temp_file(), compose_failure_output(), DOTNET_CLI_UI_LANGUAGE, DOTNET_CLI_UI_LANGUAGE_VALUE (+47 more)
 
 ### Community 42 - "Config Legacy Tee Mode"
-Cohesion: 0.06
-Nodes (35): apply_recall_mode(), cached_config(), Config, DisplayConfig, FilterConfig, get_config_path(), hook_rewrite_params(), hook_warning_suppressed() (+27 more)
+Cohesion: 0.05
+Nodes (40): apply_recall_mode(), cached_config(), Config, default_heal_endpoint(), default_heal_model(), default_heal_timeout_ms(), DisplayConfig, FilterConfig (+32 more)
 
 ### Community 43 - "Gain Tui Draw Kpi"
 Cohesion: 0.07
-Nodes (37): share_cta_available(), accent_block(), composition_bar(), CTX_IMAGE, CTX_OTHER, CTX_TOOL_RESULT, CTX_TOOL_USE, draw() (+29 more)
+Nodes (35): share_cta_available(), accent_block(), composition_bar(), CTX_IMAGE, CTX_OTHER, CTX_TOOL_RESULT, CTX_TOOL_USE, draw() (+27 more)
 
 ### Community 44 - "Detector Error Command Corrections"
 Cohesion: 0.06
@@ -662,15 +888,15 @@ Nodes (43): classify_error(), CMD_NOT_FOUND_RE, command_similarity(), CommandExe
 
 ### Community 45 - "Schema Parse Keys Rule"
 Cohesion: 0.09
-Nodes (52): did_you_mean(), a_mistyped_rule_field_warns_and_disables_only_that_rule(), CLASSIFIER_KEYS, ClassifierDef, DIRECTIVE_KEYS, directive_needs_exactly_one_source(), disabled_file_parses_with_enabled_false(), flatten_when() (+44 more)
+Nodes (51): did_you_mean(), a_mistyped_rule_field_warns_and_disables_only_that_rule(), CLASSIFIER_KEYS, ClassifierDef, DIRECTIVE_KEYS, directive_needs_exactly_one_source(), disabled_file_parses_with_enabled_false(), flatten_when() (+43 more)
 
 ### Community 46 - "Task Cmd Command Call"
-Cohesion: 0.08
-Nodes (49): UpstreamDef, a_double_dash_captures_the_rest_as_a_command(), a_provider_the_daemon_cannot_speak_goes_direct(), a_successful_command_reports_zero(), an_explicit_base_url_wins_over_the_daemon(), an_explicit_loopback_base_still_borrows(), answer_call(), answer_with() (+41 more)
+Cohesion: 0.09
+Nodes (40): UpstreamDef, a_double_dash_captures_the_rest_as_a_command(), a_provider_the_daemon_cannot_speak_goes_direct(), a_successful_command_reports_zero(), an_explicit_base_url_wins_over_the_daemon(), an_explicit_loopback_base_still_borrows(), api_key(), args() (+32 more)
 
-### Community 47 - "Hook Check Other Integration"
-Cohesion: 0.05
-Nodes (39): from_json_str(), read_composer_bin_dir(), test_from_json_str_borrowed_type(), test_from_json_str_no_bom(), test_from_json_str_strips_bom(), BEFORE_TOOL_KEY, CODEX_DIR, GEMINI_DIR (+31 more)
+### Community 47 - "hooks/constants.rs"
+Cohesion: 0.03
+Nodes (64): BEFORE_TOOL_KEY, CLAUDE_PRE_MATCHER, CLAUDE_TOOL_ORDER, CODEX_DIR, CODEX_HOOK_COMMAND, CONFIG_DIR, COPILOT_HOME_ENV, COPILOT_HOOK_FILE (+56 more)
 
 ### Community 48 - "Tracking Program Label Word"
 Cohesion: 0.05
@@ -686,7 +912,7 @@ Nodes (39): a_denied_command_records_no_recall_under_a_self_approving_host(), af
 
 ### Community 51 - "Gain Print Recall Watch"
 Cohesion: 0.06
-Nodes (37): print_period_table(), attribution_json(), colorize_pct_cell(), confirm_reset(), export_csv(), export_json(), hook_slices_for(), hook_slices_split_per_subject_and_ignore_other_pipelines() (+29 more)
+Nodes (35): attribution_json(), colorize_pct_cell(), confirm_reset(), export_csv(), export_json(), ExportData, ExportSummary, hook_slices_for() (+27 more)
 
 ### Community 52 - "Sqlfluff Cmd Filter Json"
 Cohesion: 0.06
@@ -694,47 +920,47 @@ Nodes (42): compact_path(), count_tokens(), filter_sqlfluff_lint_json(), Invocat
 
 ### Community 53 - "Rspec Cmd Filter Text"
 Cohesion: 0.07
-Nodes (48): all_pass_json(), build_rspec_summary(), compact_failure_block(), filter_rspec_output(), filter_rspec_text(), is_gem_backtrace(), is_numbered_failure(), large_suite_json() (+40 more)
+Nodes (47): all_pass_json(), build_rspec_summary(), compact_failure_block(), filter_rspec_output(), filter_rspec_text(), is_gem_backtrace(), is_numbered_failure(), large_suite_json() (+39 more)
 
 ### Community 54 - "Pipeline Remote Repo Merge"
 Cohesion: 0.08
 Nodes (43): deep_merge(), description(), description_carries_the_install_line_and_self_reported_label(), fetch_github_pipeline(), gh(), gh_args(), gh_login(), gh_put_file() (+35 more)
 
-### Community 55 - "Antigravity Hook Test Stdin"
-Cohesion: 0.07
-Nodes (36): exit_code_from_output(), antigravity_dry_runs_change_nothing(), antigravity_hook_defers_unattestable_shell_constructs(), antigravity_hook_fails_open_on_corrupt_payload(), antigravity_hook_ignores_non_command_tools(), antigravity_hook_records_successful_rewrite_in_audit_log(), antigravity_hook_rewrites_bom_prefixed_payloads(), antigravity_hook_rewrites_git_status() (+28 more)
+### Community 55 - "antigravity_hook_test.rs"
+Cohesion: 0.25
+Nodes (12): antigravity_dry_runs_change_nothing(), antigravity_hook_defers_unattestable_shell_constructs(), antigravity_hook_fails_open_on_corrupt_payload(), antigravity_hook_ignores_non_command_tools(), antigravity_hook_records_successful_rewrite_in_audit_log(), antigravity_hook_rewrites_bom_prefixed_payloads(), antigravity_hook_rewrites_git_status(), antigravity_init_reports_rules_and_restart() (+4 more)
 
 ### Community 56 - "Go Cmd Filter Build"
-Cohesion: 0.07
-Nodes (44): filter_go_build(), filter_go_build_with_exit(), filter_go_test_json(), filter_go_vet(), format_fuzz_summary(), format_go_build_failure(), forwarded_help(), GoTestEvent (+36 more)
+Cohesion: 0.06
+Nodes (47): detect_go_tool_golangci_version(), filter_go_build(), filter_go_build_with_exit(), filter_go_test_json(), filter_go_vet(), format_fuzz_summary(), format_go_build_failure(), forwarded_help() (+39 more)
 
 ### Community 57 - "Gradlew Cmd Detect Filter"
-Cohesion: 0.06
-Nodes (28): ACTIONABLE, BUILD_STATUS, filter_connected(), filter_dependencies(), filter_lint(), filter_test(), is_framework_frame(), TASK_LINE (+20 more)
-
-### Community 58 - "Calctest.Java Pass Java Adds"
 Cohesion: 0.08
-Nodes (13): ParallelFailTest, PassAlphaTest, PassBetaTest, PassGammaTest, Calc, BoomTest, CalcTest, PassFiveTest (+5 more)
+Nodes (4): ACTIONABLE, BUILD_STATUS, TASK_LINE, TRY_SECTION
+
+### Community 58 - "org.junit.jupiter.api.Test"
+Cohesion: 0.18
+Nodes (4): PassAlphaTest, PassBetaTest, BoomTest, CalcTest
 
 ### Community 59 - "Decision Agent Only Rewrite"
-Cohesion: 0.06
-Nodes (23): AgentPath, .AGENTS, InProcess, RulesOnly, ViaRewrite, ApprovalOwner, Delegate, Rtk (+15 more)
+Cohesion: 0.04
+Nodes (43): AgentPath, .AGENTS, InProcess, RulesOnly, ViaRewrite, ApprovalOwner, Delegate, Rtk (+35 more)
 
 ### Community 60 - "Hook Cmd Payload Claude"
 Cohesion: 0.06
-Nodes (51): claude_input_value(), claude_payload_with_ids(), copilot_cli_input(), copilot_ide_input(), copilot_ide_response_from_decision(), decide_hook_action(), detect_format(), handle_copilot_ide() (+43 more)
+Nodes (52): claude_payload_with_ids(), cli_args(), copilot_cli_input(), copilot_cli_response(), copilot_cli_response_from_decision(), copilot_ide_input(), copilot_ide_response_from_decision(), decide_hook_action() (+44 more)
 
 ### Community 61 - "Resolve Override Rule Name"
-Cohesion: 0.11
-Nodes (41): apply_guards(), apply_override(), cross_file_duplicate_explicit_names_are_e013(), delegate_reads_adoption_block_merges_task_fields_into_the_inherited_kinds(), derived_name_collision_is_w002(), disabled_file_is_skipped(), effective_directive_name(), effective_rule_name() (+33 more)
+Cohesion: 0.10
+Nodes (43): apply_guards(), apply_override(), compile_conditions(), cross_file_duplicate_explicit_names_are_e013(), delegate_reads_adoption_block_merges_task_fields_into_the_inherited_kinds(), derived_name_collision_is_w002(), disabled_file_is_skipped(), effective_directive_name() (+35 more)
 
 ### Community 62 - "Gt Cmd Filter Log"
-Cohesion: 0.07
-Nodes (40): BRANCH_NAME_RE, count_tokens(), EMAIL_RE, extract_branch_name(), filter_gt_create(), filter_gt_log_entries(), filter_gt_restack(), filter_gt_submit() (+32 more)
+Cohesion: 0.06
+Nodes (49): pr_create(), test_ok_confirmation_pr_comment(), test_ok_confirmation_pr_create(), test_ok_confirmation_pr_edit(), test_ok_confirmation_pr_merge(), test_ok_confirmation_mr_approve(), test_ok_confirmation_mr_create(), test_ok_confirmation_mr_merge() (+41 more)
 
 ### Community 63 - "Tsc Cmd Stream Error"
-Cohesion: 0.08
-Nodes (40): clean_line(), Diagnostic, filter_tsc_output(), MAX_UNPARSED_HEAD_LINES, MAX_UNPARSED_LINES, parse_diagnostic(), push_dump_line(), test_continuation_lines_preserved() (+32 more)
+Cohesion: 0.07
+Nodes (46): clean_line(), Diagnostic, filter_tsc_output(), MAX_UNPARSED_HEAD_LINES, MAX_UNPARSED_LINES, parse_diagnostic(), push_dump_line(), run() (+38 more)
 
 ### Community 64 - "Ls Compact Plan Octal"
 Cohesion: 0.06
@@ -745,8 +971,8 @@ Cohesion: 0.07
 Nodes (42): build_meta_usage(), build_recall_stats(), CACHED_SALT, count_custom_toml_filters(), count_exclude_commands(), detect_has_config(), detect_hook_type(), detect_install_method() (+34 more)
 
 ### Community 66 - "Trae Hook Command Patch"
-Cohesion: 0.06
-Nodes (32): TRAE_CN_DIR, TRAE_DIR, TRAE_HOOK_COMMAND, TRAE_RUN_COMMAND_MATCHER, test_patch_settings_json_dry_run_idempotency_and_backup(), PatchResult, AlreadyPresent, Declined (+24 more)
+Cohesion: 0.05
+Nodes (38): PRE_TOOL_USE_KEY, TRAE_CN_DIR, TRAE_DIR, TRAE_HOOK_COMMAND, TRAE_RUN_COMMAND_MATCHER, codex_hook_already_present(), print_codex_hook_status(), remove_codex_hook_from_json() (+30 more)
 
 ### Community 67 - "Shell Word Command Quote"
 Cohesion: 0.08
@@ -754,7 +980,7 @@ Nodes (26): a_single_shell_phrase_falls_back_to_the_platform_shell(), an_existin
 
 ### Community 68 - "Anthropic Tool Retrieve Result"
 Cohesion: 0.10
-Nodes (38): a_failed_write_keeps_its_body_out_of_a_pointer(), a_read_result_is_never_compressed_but_bash_output_is(), a_recency_window_leaves_the_newest_messages_verbatim(), a_window_larger_than_the_history_compresses_nothing(), a_written_file_body_is_replaced_by_a_pointer_to_the_file(), an_unknown_tool_gets_the_conservative_floor(), anchor_guard_holds_when_only_the_anchor_is_large(), big_text() (+30 more)
+Nodes (44): CcrMetrics, a_failed_write_keeps_its_body_out_of_a_pointer(), a_read_result_is_never_compressed_but_bash_output_is(), a_recency_window_leaves_the_newest_messages_verbatim(), a_window_larger_than_the_history_compresses_nothing(), a_written_file_body_is_replaced_by_a_pointer_to_the_file(), an_unknown_tool_gets_the_conservative_floor(), anchor_guard_holds_when_only_the_anchor_is_large() (+36 more)
 
 ### Community 69 - "Vitest Cmd Output Json"
 Cohesion: 0.09
@@ -781,28 +1007,28 @@ Cohesion: 0.10
 Nodes (20): execute(), finalize(), openai_ccr_body_drops_stream_options_with_streaming(), openai_non_streaming(), post_once(), resolve_one(), run_anthropic(), run_openai() (+12 more)
 
 ### Community 75 - "Cc Economics Compute Merge"
-Cohesion: 0.11
-Nodes (34): compute_totals(), convert_saturday_to_monday(), display_daily(), display_monthly(), display_summary(), display_text(), display_weekly(), export_csv() (+26 more)
+Cohesion: 0.08
+Nodes (39): compute_totals(), convert_saturday_to_monday(), display_daily(), display_monthly(), display_summary(), display_text(), display_weekly(), export_csv() (+31 more)
 
 ### Community 76 - "Ingest Filter Dedup Only"
 Cohesion: 0.15
 Nodes (36): ambiguity_fallback_keeps_colliding_block(), ambiguity_fallback_still_dedups_true_repeat(), array_text_content_form_is_truncated(), balanced_never_dedups_tool_use_value_into_a_marker(), big_block(), context_guard_disabled_is_noop_when_off(), context_guard_forces_compression_when_off_but_near_limit(), dedup_marker_distinguishes_different_blocks() (+28 more)
 
-### Community 77 - "Glab Cmd Release Filter"
-Cohesion: 0.06
-Nodes (24): BADGE_LINE_RE, BARE_ANSI_RE, extract_mr_number(), filter_ci_trace(), filter_release_view(), format_release_list(), HORIZONTAL_RULE_RE, HTML_COMMENT_RE (+16 more)
+### Community 77 - "glab_cmd.rs"
+Cohesion: 0.04
+Nodes (76): BADGE_LINE_RE, BARE_ANSI_RE, ci_list(), ci_status(), ci_trace(), escapes_a_bare_positional(), extract_mr_number(), filter_ci_trace() (+68 more)
 
 ### Community 78 - "Vibe Entry Hook Hooks"
 Cohesion: 0.07
-Nodes (40): VIBE_BASH_MATCH, VIBE_DIR, VIBE_HOOK_COMMAND, VIBE_HOOK_NAME, VIBE_HOOKS_FILE, VIBE_PROMPT_FILE, VIBE_PROMPTS_SUBDIR, insert_session_start_entry() (+32 more)
+Nodes (42): VIBE_BASH_MATCH, VIBE_DIR, VIBE_HOOK_COMMAND, VIBE_HOOK_NAME, VIBE_HOOKS_FILE, VIBE_PROMPT_FILE, VIBE_PROMPTS_SUBDIR, HookStatus (+34 more)
 
 ### Community 79 - "Engine Methods Are Request"
 Cohesion: 0.09
-Nodes (27): a_rule_naming_an_engine_method_runs_in_the_proxy(), EngineMethodsTransform, facts_for(), format_of(), hook_truncated_blocks_are_skipped(), html_page(), json_rows(), MEMO_CAPACITY (+19 more)
+Nodes (26): a_rule_naming_an_engine_method_runs_in_the_proxy(), EngineMethodsTransform, facts_for(), format_of(), hook_truncated_blocks_are_skipped(), html_page(), json_rows(), MEMO_CAPACITY (+18 more)
 
 ### Community 80 - "Mod Chain Json Run"
-Cohesion: 0.08
-Nodes (32): run_chain(), Method, MdSlim, blk(), ctx(), minify(), MinifyJson, test_invalid_json_passes_through() (+24 more)
+Cohesion: 0.12
+Nodes (23): run_chain(), Method, ANSI, CAP, chain_for(), DEDUP, JSON_CHAIN, LOCKFILE (+15 more)
 
 ### Community 81 - "Read Window Head Line"
 Cohesion: 0.07
@@ -817,20 +1043,20 @@ Cohesion: 0.13
 Nodes (42): attached_only_bars_a_separate_value_in_both_kinds(), commons_cli_dashdash_ends_option_parsing(), commons_cli_flag_names_are_case_sensitive_unlike_msbuild(), commons_cli_java_property_is_one_flag_name_not_a_d_with_a_value(), commons_cli_short_options_are_atomic_words_not_clusters(), commons_cli_slash_prefixed_path_is_never_a_flag(), double_dash_flag_rejects_single_dash_and_slash_spellings(), double_dash_flag_value_is_case_insensitive_but_prefix_strict() (+34 more)
 
 ### Community 84 - "Copilot Global Uninstall Install"
-Cohesion: 0.09
-Nodes (41): COPILOT_HOME_ENV, COPILOT_HOOK_FILE, COPILOT_INSTRUCTIONS_FILE, COPILOT_USER_DIR, GITHUB_DIR, COPILOT_HOOK_JSON, COPILOT_INSTRUCTIONS, copilot_user_dir() (+33 more)
+Cohesion: 0.11
+Nodes (36): COPILOT_HOOK_JSON, COPILOT_INSTRUCTIONS, copilot_user_dir(), run_copilot(), run_copilot_at(), run_copilot_global(), run_copilot_global_at(), test_copilot_global_install_does_not_touch_other_hooks() (+28 more)
 
 ### Community 85 - "Uv Cmd Filter Run"
 Cohesion: 0.08
-Nodes (34): collect_error_block(), collect_traceback_block(), dedupe_preserving_order(), ERROR_START_PATTERNS, extract_diagnostics(), filter_successful_run(), filter_uv_run_output(), is_error_continuation() (+26 more)
+Nodes (35): collect_error_block(), collect_traceback_block(), dedupe_preserving_order(), ERROR_START_PATTERNS, extract_diagnostics(), filter_successful_run(), filter_uv_run_output(), is_error_continuation() (+27 more)
 
 ### Community 86 - "Mod Rtk Read Entered"
 Cohesion: 0.08
 Nodes (32): no_tracked_label_is_a_space_join(), ACCESSOR_READ, call_text(), CONSTRUCTORS, CURRENT_DIR_READ, data_dir(), db_path(), DIRECT_READS (+24 more)
 
 ### Community 87 - "Pixel Compress Content Result"
-Cohesion: 0.11
-Nodes (28): PixelCompressConfig, below_min_tokens_is_a_noop(), BG, build_replacement(), CAPTION, cfg(), compress_content_array(), compress_tool_result_block() (+20 more)
+Cohesion: 0.13
+Nodes (19): PixelCompressConfig, BG, build_replacement(), CAPTION, compress_content_array(), compress_tool_result_block(), draw_glyph(), eligible() (+11 more)
 
 ### Community 88 - "Mvn Cmd Cap Surefire"
 Cohesion: 0.08
@@ -842,35 +1068,35 @@ Nodes (32): cleanup_old_files(), create_tee_dir(), display_path(), display_shell
 
 ### Community 90 - "Tracking Passthrough Top Record"
 Cohesion: 0.11
-Nodes (27): a_balanced_quote_in_an_old_row_leaks_no_argument(), an_unbalanced_quote_in_an_old_row_leaks_no_argument(), key_word(), oversized_rows_leave_the_headline_but_stay_diagnosable(), record_parse_failure_silent(), rows_without_a_tool_name_are_left_out(), test_avg_savings_per_command_inner_rate_is_weighted(), test_avg_savings_per_command_reflects_negative() (+19 more)
+Nodes (28): a_balanced_quote_in_an_old_row_leaks_no_argument(), an_unbalanced_quote_in_an_old_row_leaks_no_argument(), key_word(), oversized_rows_leave_the_headline_but_stay_diagnosable(), ParseFailureRecord, ParseFailureSummary, record_parse_failure_silent(), rows_without_a_tool_name_are_left_out() (+20 more)
 
 ### Community 91 - "Lexer Contains Arg Pipe"
-Cohesion: 0.06
-Nodes (42): contains_fish_only_construct(), contains_substitution(), contains_unattestable_construct(), contains_unattestable_construct_in(), disown_pair(), flush_arg(), is_crlf_at(), is_word_boundary_whitespace() (+34 more)
+Cohesion: 0.07
+Nodes (38): ansi_c_quote_defeats_lexer(), contains_fish_only_construct(), contains_substitution(), contains_unattestable_construct_in(), disown_pair(), flush_arg(), is_crlf_at(), is_word_boundary_whitespace() (+30 more)
 
 ### Community 92 - "Linux Install Installed Logs"
 Cohesion: 0.07
-Nodes (25): install(), is_installed(), MECHANISM, run_systemctl(), uninstall(), UNIT_NAME, unit_path(), unit_path_is_under_systemd_user() (+17 more)
+Nodes (21): install(), is_installed(), MECHANISM, run_systemctl(), uninstall(), UNIT_NAME, unit_path(), unit_path_is_under_systemd_user() (+13 more)
 
 ### Community 93 - "Mod Coverage Hook Estimate"
 Cohesion: 0.08
-Nodes (25): CoverageContext, DisabledSegment, Bypass, Unbypassed, Unhandled, empty_rules(), estimate_hook_coverage(), estimate_hook_coverage_with_verdict() (+17 more)
+Nodes (26): HookDecisionRecord, CoverageContext, DisabledSegment, Bypass, Unbypassed, Unhandled, empty_rules(), estimate_hook_coverage() (+18 more)
 
 ### Community 94 - "Display Helpers Stats Time"
-Cohesion: 0.07
-Nodes (15): ExportData, ExportSummary, format_duration(), MonthStats, print_period_table(), test_print_period_table_empty(), test_print_period_table_with_data(), total_avg_time_ms() (+7 more)
+Cohesion: 0.10
+Nodes (6): format_duration(), MonthStats, print_period_table(), test_print_period_table_empty(), test_print_period_table_with_data(), total_avg_time_ms()
 
 ### Community 95 - "Ast Grep Cmd Run"
 Cohesion: 0.07
-Nodes (21): count_tokens(), DEFAULT_MAX_PER_FILE, DEFAULT_MAX_TOTAL, filter_ast_grep(), Filtered, filtered(), filters_this_invocation(), global_takes_value() (+13 more)
+Nodes (20): count_tokens(), DEFAULT_MAX_PER_FILE, DEFAULT_MAX_TOTAL, filter_ast_grep(), Filtered, filtered(), filters_this_invocation(), global_takes_value() (+12 more)
 
 ### Community 96 - "Eval Rule Route Decision"
 Cohesion: 0.11
-Nodes (31): Action, Deny, Passthrough, Rewrite, Route, any_list_is_evaluated_only_when_the_specific_subject_matched_nothing(), control_without_effect(), decide_rule() (+23 more)
+Nodes (32): Action, Deny, Passthrough, Rewrite, Route, any_list_is_evaluated_only_when_the_specific_subject_matched_nothing(), control_without_effect(), decide_rule() (+24 more)
 
 ### Community 97 - "Pnpm Cmd List Run"
-Cohesion: 0.10
-Nodes (34): run(), collect_dependencies(), extract_list_text(), extract_outdated_text(), filter_pnpm_install(), format_dependency_listing(), make_state(), MAX_LISTING (+26 more)
+Cohesion: 0.06
+Nodes (56): collect_dependencies(), extract_list_text(), extract_outdated_text(), filter_pnpm_install(), format_dependency_listing(), make_state(), MAX_LISTING, PackageJsonListItem (+48 more)
 
 ### Community 98 - "Report Format Text Agent"
 Cohesion: 0.11
@@ -889,16 +1115,16 @@ Cohesion: 0.08
 Nodes (24): count_rtk_rewrites(), has_rtk_marker(), hash_api_key(), hash_api_key_is_deterministic_and_short(), hex_short(), image_count(), keywords(), keywords_extracts_distinctive_terms() (+16 more)
 
 ### Community 102 - "Deps Var Summarize Json"
-Cohesion: 0.07
-Nodes (24): MAX_DEPS, MAX_DEV_DEPS, PACKAGE_JSON, run(), summarize(), summarize_cargo_str(), summarize_gomod_str(), summarize_package_json_str() (+16 more)
+Cohesion: 0.05
+Nodes (43): MAX_DEPS, MAX_DEV_DEPS, PACKAGE_JSON, run(), summarize(), summarize_cargo_str(), summarize_gomod_str(), summarize_package_json_str() (+35 more)
 
 ### Community 103 - "Call Context Chars Text"
 Cohesion: 0.11
 Nodes (33): agent_message_wins_and_description_is_the_fallback(), assemble(), block_type(), CALL_CHARS, CallContext, claude_transcript_gives_goal_intent_and_recent_calls(), codex_call(), codex_rollout_gives_the_same_facts() (+25 more)
 
-### Community 104 - "Tracking Hook Attribution Decisions"
-Cohesion: 0.08
-Nodes (13): AttributionRow, CommandRecord, HookDecisionRecord, should_sample_cleanup(), test_attribution_upserts_and_aggregates(), test_cleanup_hook_decisions_deletes_only_stale_rows(), test_earliest_hook_decision_timestamp(), test_hook_decisions_since_excludes_older_rows() (+5 more)
+### Community 104 - ".record_hook_decision"
+Cohesion: 0.19
+Nodes (5): CommandRecord, test_cleanup_hook_decisions_deletes_only_stale_rows(), test_earliest_hook_decision_timestamp(), test_hook_decisions_since_excludes_older_rows(), test_record_and_lookup_hook_decision_by_tool_use_id()
 
 ### Community 105 - "Git Log Cap Notice"
 Cohesion: 0.15
@@ -906,11 +1132,11 @@ Nodes (37): a_check_run_still_announces_the_cap(), a_coloured_decorated_walk_ann
 
 ### Community 106 - "Image Opt Optimize Png"
 Cohesion: 0.10
-Nodes (21): balanced_resizes_png_and_records_savings(), claude_visual_tokens(), decode_image_limited(), dims_at(), encode(), image_block(), ImageOptimizeTransform, ImgFormat (+13 more)
+Nodes (22): balanced_resizes_png_and_records_savings(), cap_for(), claude_visual_tokens(), decode_image_limited(), dims_at(), encode(), image_block(), ImageOptimizeTransform (+14 more)
 
 ### Community 107 - "Task Instructions Assemble Question"
-Cohesion: 0.10
-Nodes (24): corpus(), CorpusFile, custom_instructions_and_prompt_override_the_defaults(), digest_assembles_question_and_output(), DIGEST_DEFAULT_QUESTION, digest_falls_back_to_a_default_question(), DIGEST_INSTRUCTIONS, DIGEST_TEMPLATE (+16 more)
+Cohesion: 0.12
+Nodes (22): corpus(), CorpusFile, custom_instructions_and_prompt_override_the_defaults(), digest_assembles_question_and_output(), DIGEST_DEFAULT_QUESTION, digest_falls_back_to_a_default_question(), DIGEST_INSTRUCTIONS, DIGEST_TEMPLATE (+14 more)
 
 ### Community 108 - "Mvn Cmd Mvnd Does"
 Cohesion: 0.06
@@ -922,7 +1148,7 @@ Nodes (10): advance_triple_quote(), AggressiveFilter, CommentPatterns, filter_py
 
 ### Community 110 - "Toml Filter Command Match"
 Cohesion: 0.07
-Nodes (12): build_match_set(), BUILTIN_TOML, collect_match_patterns(), is_fully_anchored(), LEADING_WORD, LEADING_WORDS, match_patterns_in(), MATCH_SET (+4 more)
+Nodes (17): build_match_set(), BUILTIN_TOML, collect_match_patterns(), is_fully_anchored(), LEADING_WORD, LEADING_WORDS, match_patterns_in(), MATCH_SET (+9 more)
 
 ### Community 111 - "Guard Integration Test Git"
 Cohesion: 0.15
@@ -933,24 +1159,24 @@ Cohesion: 0.06
 Nodes (7): CONTEXT, declared_builtin(), every_valid_toml_block_in_the_guide_validates(), GUIDE, summarize(), toml_blocks(), validate_block()
 
 ### Community 113 - "Config File Default Cli"
-Cohesion: 0.08
-Nodes (28): adopt_from(), adopt_stray_db(), an_unreadable_explicit_config_fails_loudly(), bind_is_loopback(), ccr_can_be_turned_off_by_file_and_by_cli(), Config, CONFIG_PATHS, DB_FILE_NAME (+20 more)
+Cohesion: 0.10
+Nodes (22): adopt_from(), adopt_stray_db(), ccr_can_be_turned_off_by_file_and_by_cli(), CONFIG_PATHS, DB_FILE_NAME, DEFAULT_ANTHROPIC_UPSTREAM, DEFAULT_BIND, default_data_dir() (+14 more)
 
 ### Community 114 - "Aws Cmd Filter Json"
-Cohesion: 0.07
-Nodes (19): days_to_ymd(), filter_logs_events(), filter_sts_identity(), is_structured_operation(), JSON_COMPRESS_DEPTH, MAX_ITEMS, MAX_LOG_EVENTS, S3_TRANSFER_RE (+11 more)
+Cohesion: 0.08
+Nodes (16): filter_lambda_get(), filter_secrets_get(), filter_sts_identity(), JSON_COMPRESS_DEPTH, MAX_ITEMS, MAX_LOG_EVENTS, S3_TRANSFER_RE, test_filter_lambda_get() (+8 more)
 
 ### Community 115 - "Forward Body Relay Apply"
-Cohesion: 0.12
-Nodes (23): Applied, apply(), apply_detects_streaming_request(), backoff(), big_anthropic_body(), buffered_relay(), ccr_off_is_passthrough(), ccr_on_compresses_and_attributes_the_saving() (+15 more)
+Cohesion: 0.10
+Nodes (26): Request, Applied, apply(), apply_detects_streaming_request(), backoff(), big_anthropic_body(), buffered_relay(), ccr_off_is_passthrough() (+18 more)
 
 ### Community 116 - "Mvn Cmd Surefire Line"
 Cohesion: 0.06
 Nodes (36): app_log_error_dropped_with_green_close_block(), app_log_error_stays_in_order_inside_failing_block(), app_log_line_survives_inside_failing_block(), app_log_running_line_rides_raw_owner_inside_failing_block(), app_log_running_lines_dropped_in_green_daemon_run(), daemon_building_applog_dropped_with_no_block_open(), daemon_mode_building_keeper_drops_app_log_spam_on_tagged_lane(), filter_surefire() (+28 more)
 
 ### Community 117 - "Registry Rewrite Pipeline Analyze"
-Cohesion: 0.08
-Nodes (34): ansi_c_quote_defeats_lexer(), QuoteScan<'a>, analyze_test_pipeline(), collapse_line_continuations(), compile_exclude_patterns(), ExcludePattern, Prefix, has_heredoc() (+26 more)
+Cohesion: 0.05
+Nodes (57): Shared Lexer Toolkit, analyze_pipeline(), analyze_test_pipeline(), builtin_transparent_prefixes(), collapse_line_continuations(), collect_shell_wrapper_positions(), compile_exclude_patterns(), ExcludePattern (+49 more)
 
 ### Community 118 - "Server Settings Json State"
 Cohesion: 0.17
@@ -962,63 +1188,63 @@ Nodes (27): Answer, Choice, answer_from_json(), Noul, Score, answer_to_json(), a
 
 ### Community 120 - "Shape Classifies Milli Code"
 Cohesion: 0.12
-Nodes (33): ALL_SEPS, ansi_is_stripped_for_measurement(), base64_blob_classifies_monolithic(), classify(), code_block(), code_classifies_nested(), crlf_is_normalised(), empty_and_blank_are_degenerate_not_panicking() (+25 more)
+Nodes (32): ALL_SEPS, ansi_is_stripped_for_measurement(), base64_blob_classifies_monolithic(), classify(), code_block(), code_classifies_nested(), crlf_is_normalised(), empty_and_blank_are_degenerate_not_panicking() (+24 more)
 
 ### Community 121 - "Diff Cmd Compute Line"
 Cohesion: 0.07
 Nodes (33): compute_diff(), format_diff_changes(), test_compute_diff_added_line_numbers_come_from_file2(), test_compute_diff_added_lines(), test_compute_diff_adjacent_replacement_pairs_by_similarity(), test_compute_diff_aligned_script_past_the_byte_cap_refuses(), test_compute_diff_aligned_script_past_the_count_cap_refuses(), test_compute_diff_completely_different_line() (+25 more)
 
 ### Community 122 - "Runner Run Unrunnable Exit"
-Cohesion: 0.09
-Nodes (20): run_err(), run_test(), ErrorStreamFilter, report_unrunnable(), run_err_cmd(), run_err_unrunnable(), run_test_cmd(), run_test_unrunnable() (+12 more)
+Cohesion: 0.10
+Nodes (20): run_err(), run_test(), execute_with_config(), HealOutcome, run(), run_command_raw(), test_heal_fail_open_returns_original_stderr_and_code(), test_heal_success_prepends_banner_and_exits_zero() (+12 more)
 
 ### Community 123 - "Cursor Hook Remove Present"
-Cohesion: 0.09
-Nodes (26): CURSOR_DIR, CURSOR_HOOK_COMMAND, HOOKS_JSON, REWRITE_HOOK_FILE, cursor_hook_already_present(), insert_cursor_hook_entry(), is_cursor_hook_entry(), remove_cursor_hook_from_json() (+18 more)
+Cohesion: 0.06
+Nodes (40): CURSOR_DIR, CURSOR_HOOK_COMMAND, HOOKS_JSON, REWRITE_HOOK_FILE, hook_already_present(), hook_gaps(), refresh_hook_matcher(), remove_hook_from_json() (+32 more)
 
-### Community 124 - "Rle Filtered Apply Shape"
-Cohesion: 0.07
-Nodes (13): SHAPE, apply(), collapse_is_idempotent(), collapses_adjacent_repeats_and_skips_unique_content(), Rle, apply(), renders_a_smaller_body_for_large_flat_output(), ShapeMethod (+5 more)
+### Community 124 - "MethodInfo"
+Cohesion: 0.04
+Nodes (38): Layer, AgentMessage, Cache, History, Inference, Read, SkillsMcp, ToolResult (+30 more)
 
 ### Community 125 - "Bun Cmd Filter Json"
 Cohesion: 0.11
 Nodes (32): BunPmPackage, count_tokens(), filter_bun_pkg(), filter_bun_pm_ls(), filter_bun_pm_ls_json(), filter_bun_pm_ls_text(), filter_bun_pm_ls_tree(), pkg_argv() (+24 more)
 
 ### Community 126 - "Pytest Cmd Filter Summary"
-Cohesion: 0.10
-Nodes (26): build_pytest_summary(), filter_pytest_output(), MAX_PYTEST_FAILURES, MAX_XFAIL, parse_duration(), parse_summary_line(), PYTEST_EXIT_NO_TESTS, PYTEST_NO_TESTS (+18 more)
+Cohesion: 0.08
+Nodes (32): build_pytest_summary(), filter_pytest_output(), MAX_PYTEST_FAILURES, MAX_XFAIL, parse_duration(), parse_summary_line(), ParseState, Failures (+24 more)
 
-### Community 127 - "Stream Line Handler Format"
-Cohesion: 0.07
-Nodes (8): GitPushLineHandler, SearchStreamFilter, BlockStreamFilter<H>, CountingLineHandler, LineHandler, LineStreamFilter<H>, StreamFilter, TestHandler
+### Community 127 - "StreamFilter"
+Cohesion: 0.13
+Nodes (9): CountingLineHandler, LineFilter<F>, LineStreamFilter<H>, run_line_filter(), StreamFilter, test_line_filter_defaults_keep_all(), test_line_filter_observe_only_called_for_kept_lines(), test_line_filter_skip_drops_matching_lines() (+1 more)
 
-### Community 128 - "Rubocop Cmd Filter Text"
-Cohesion: 0.12
-Nodes (30): compact_ruby_path(), extract_autocorrect_count(), extract_leading_number(), filter_rubocop_json(), filter_rubocop_text(), no_offenses_json(), RubocopFile, RubocopLocation (+22 more)
+### Community 128 - "rubocop_cmd.rs"
+Cohesion: 0.06
+Nodes (62): args(), build_minitest_summary(), filter_minitest_output(), is_failure_header(), looks_like_test_path(), MAX_RAKE_FAILURES, parse_minitest_summary(), ParseState (+54 more)
 
 ### Community 129 - "Dotnet Trx Parse Dir"
 Cohesion: 0.15
 Nodes (26): FailedTest, TestSummary, extract_attr_value(), find_recent_trx_in_dir(), find_recent_trx_in_testresults(), format_duration_between(), local_name(), parse_trx_content() (+18 more)
 
 ### Community 130 - "Mod Pipeline Request Stream"
-Cohesion: 0.11
-Nodes (9): interrupted_stream_is_not_recorded_as_success(), stream_outcome(), for_pipeline_with_headers_detects_the_client(), InterceptedRequest, ToolCall, UsageOutcome, UsageRecord, Pipeline (+1 more)
+Cohesion: 0.08
+Nodes (10): for_pipeline_with_headers_detects_the_client(), InterceptedRequest, ToolCall, UsageOutcome, UsageRecord, CcrTransform, session_of(), store_entries() (+2 more)
 
 ### Community 131 - "Metrics Info Exposition Tokens"
 Cohesion: 0.10
 Nodes (18): AVG_LATENCY_MS, BUILD_INFO, builds_valid_exposition(), CACHE_CREATION_TOKENS, CACHE_FRACTURE_SESSIONS, CACHE_FRACTURES, CACHE_HIT_RATIO, CACHE_READ_TOKENS (+10 more)
 
 ### Community 132 - "Phpstan Cmd Filter Json"
-Cohesion: 0.11
-Nodes (25): compact_php_path(), filter_phpstan_json(), filter_phpstan_text(), is_analyse_command(), large_json_for_truncation(), no_errors_json(), PhpstanFile, PhpstanMessage (+17 more)
+Cohesion: 0.09
+Nodes (30): compact_php_path(), detect_error_format(), ErrorFormat, Custom, Json, Unspecified, filter_phpstan_json(), filter_phpstan_text() (+22 more)
 
 ### Community 133 - "Find Cmd Native Glob"
 Cohesion: 0.08
-Nodes (16): capped_listing_no_truncation(), capped_listing_truncates_with_marker(), DISCLOSURE_ENTRY_CAP, FILTERED_CAP, find_dot_pattern_works(), find_dotfile_pattern_includes_hidden(), find_gitignored_excluded(), find_no_matches() (+8 more)
+Nodes (16): capped_listing_at_exact_max_has_no_marker(), DISCLOSURE_ENTRY_CAP, FILTERED_CAP, find_dot_pattern_works(), find_dotfile_pattern_includes_hidden(), find_gitignored_excluded(), find_no_matches(), find_regular_pattern_skips_hidden() (+8 more)
 
-### Community 134 - "Pipe Cmd Filter Resolve"
-Cohesion: 0.06
-Nodes (5): git_log_wrapper(), MAX_PIPE_DIRS, MAX_PIPE_FILES, MAX_PIPE_MATCHES, test_git_log_wrapper()
+### Community 134 - "pipe_cmd.rs"
+Cohesion: 0.04
+Nodes (41): apply_filter(), auto_detect_filter(), count_tokens(), find_wrapper(), git_diff_wrapper(), git_log_wrapper(), grep_wrapper(), MAX_PIPE_DIRS (+33 more)
 
 ### Community 135 - "Tee Hint Posthook Mode"
 Cohesion: 0.10
@@ -1032,17 +1258,17 @@ Nodes (24): assert_hook_ok(), concurrent_legacy_invocations_leave_valid_healed_c
 Cohesion: 0.11
 Nodes (15): dir_matches_filter(), dir_matches_filter_impl(), make_jsonl(), test_discover_sessions_applies_project_filter(), test_discover_sessions_existing_non_directory_returns_error(), test_discover_sessions_missing_projects_dir_returns_empty(), test_discover_sessions_project_filter_case_follows_platform(), test_extract_assistant_bash() (+7 more)
 
-### Community 138 - "Registry Strip Prefix Disabled"
-Cohesion: 0.08
-Nodes (29): check_rtk_disabled_bypass(), builtin_transparent_prefixes(), cmd_has_rtk_disabled_prefix(), collect_shell_wrapper_positions(), is_analytics_env_wrapper_token(), is_single_file_operand(), join_redirect_suffix(), PeelStep (+21 more)
+### Community 138 - "strip_disabled_prefix_for_analytics"
+Cohesion: 0.29
+Nodes (7): check_rtk_disabled_bypass(), cmd_has_rtk_disabled_prefix(), is_analytics_env_wrapper_token(), prefix_contains_rtk_disabled(), strip_disabled_prefix(), strip_disabled_prefix_for_analytics(), test_strip_disabled_prefix_for_analytics()
 
 ### Community 139 - "Psql Cmd Filter Table"
 Cohesion: 0.11
 Nodes (25): EXPANDED_RECORD, filter_expanded(), filter_psql_output(), filter_table(), is_expanded_format(), is_table_format(), MAX_EXPANDED_RECORDS, MAX_TABLE_ROWS (+17 more)
 
-### Community 140 - "Dotnet Cmd Build Summary"
-Cohesion: 0.07
-Nodes (31): BuildSummary, RestoreSummary, build_binlog_path(), cleanup_temp_dir(), cleanup_temp_file(), dotnet_routes_a_usage_request_to_the_unfiltered_path(), forwarded_dotnet_args(), forwarded_dotnet_args_keeps_the_subcommand_rtk_routed_on() (+23 more)
+### Community 140 - "TECHNICAL.md"
+Cohesion: 0.04
+Nodes (48): Google Antigravity Hooks, Permission Evaluation Note, Specifics, Claude Code Hooks, Specifics, Cline / Roo Code Hooks, Specifics, Codex CLI Hooks (+40 more)
 
 ### Community 141 - "Label Scan Len Comment"
 Cohesion: 0.14
@@ -1057,20 +1283,24 @@ Cohesion: 0.08
 Nodes (14): binary_available(), binary_candidates(), binary_search_prefers_the_sibling_of_the_running_exe(), DEFAULT_BIND, FRACTURE_SCAN_ROWS, health_check(), health_check_with_timeout(), is_rtk_proxy_at() (+6 more)
 
 ### Community 144 - "Formatter Format Compact Ultra"
-Cohesion: 0.10
-Nodes (17): DependencyState, FormatMode, Compact, Ultra, Verbose, make_failure(), make_result(), MAX_DEPS_LISTING (+9 more)
+Cohesion: 0.07
+Nodes (34): collect_test_results(), extract_failures_regex(), extract_playwright_regex(), PlaywrightAttempt, PlaywrightError, PlaywrightExecution, PlaywrightJsonOutput, PlaywrightParser (+26 more)
 
 ### Community 145 - "Run Shell Test Exit"
 Cohesion: 0.13
 Nodes (30): a_directory_reports_exit_126(), a_group_that_closes_early_is_not_peeled(), a_missing_shell_value_reports_a_flag_error(), a_passthrough_keeps_its_own_shell_flag(), a_single_bare_word_still_answers_127_without_the_shell(), a_single_shell_phrase_falls_back_to_the_platform_shell(), an_unexecutable_path_reports_exit_126(), an_unresolvable_shell_reports_the_shell_contract() (+22 more)
 
 ### Community 146 - "Task Handle Kind Default"
-Cohesion: 0.09
-Nodes (15): Digest, DIGEST, find_kind(), generate_strips_code_fences_from_output(), kinds(), register_kind(), registered_kinds(), TASK_KINDS (+7 more)
+Cohesion: 0.16
+Nodes (10): Digest, DIGEST, find_kind(), kinds(), register_kind(), registered_kinds(), TASK_KINDS, TaskKind (+2 more)
 
 ### Community 147 - "Wc Cmd Mode Detect"
 Cohesion: 0.11
 Nodes (22): detect_mode(), filter_wc_output(), find_common_prefix(), format_multi_line(), format_single_line(), run(), strip_prefix(), test_empty() (+14 more)
+
+### Community 148 - "golangci_cmd.rs"
+Cohesion: 0.05
+Nodes (33): build_filtered_args(), classify_invocation(), compact_path(), detect_major_version(), filter_golangci_json(), find_subcommand_index(), global_takes_value(), GolangciOutput (+25 more)
 
 ### Community 149 - "Rtk Hook Rewrite Opencode"
 Cohesion: 0.11
@@ -1085,48 +1315,48 @@ Cohesion: 0.07
 Nodes (29): render_file_diff(), test_crlf_line_numbers_ignores_an_unterminated_tail(), test_describe_invisible_difference_never_prints_equal_byte_counts(), test_render_added_only_needs_no_frame_legend(), test_render_added_removed_exit_one(), test_render_byte_identical_is_identical(), test_render_byte_refusal_names_the_size_not_a_count(), test_render_counts_line_appears_once_the_listing_is_long() (+21 more)
 
 ### Community 152 - "Lint Cmd Linter Strip"
-Cohesion: 0.12
-Nodes (21): compact_path(), detect_linter(), EslintMessage, EslintResult, filter_eslint_json(), filter_generic_lint(), filter_pylint_json(), is_python_linter() (+13 more)
+Cohesion: 0.11
+Nodes (23): compact_path(), detect_linter(), EslintMessage, EslintResult, filter_eslint_json(), filter_generic_lint(), filter_pylint_json(), is_python_linter() (+15 more)
 
-### Community 153 - "Rake Cmd Minitest Filter"
-Cohesion: 0.14
-Nodes (26): args(), build_minitest_summary(), filter_minitest_output(), is_failure_header(), looks_like_test_path(), MAX_RAKE_FAILURES, parse_minitest_summary(), run() (+18 more)
+### Community 153 - "README_fr.md"
+Cohesion: 0.03
+Nodes (59): Disclaimer, Limitation of Liability, No Warranty, Precompiled Binaries, Telemetry, Third-Party Dependencies, Use at Your Own Risk, Avertissement (+51 more)
 
 ### Community 154 - "Agents Md Block Rtk"
 Cohesion: 0.10
 Nodes (27): has_rtk_reference(), patch_agents_md(), remove_rtk_block(), remove_rtk_reference_from_agents(), RtkBlockUpsert, Added, Malformed, Unchanged (+19 more)
 
-### Community 155 - "Pipeline Log Path Dir"
-Cohesion: 0.12
-Nodes (20): append(), enabled(), entries_round_trip_and_render_without_content(), flush(), log_path(), LogEntry, marker_path(), queue() (+12 more)
+### Community 155 - "pipeline_log.rs"
+Cohesion: 0.30
+Nodes (12): append(), enabled(), entries_round_trip_and_render_without_content(), flush(), log_path(), LogEntry, marker_path(), queue() (+4 more)
 
 ### Community 156 - "Strategy Lines Chars Render"
-Cohesion: 0.12
-Nodes (25): annotations_never_collide_with_the_retrieve_marker(), code(), dedup_stops_before_lossy_when_under_floor(), ELIDE_MIN_GAP, flat_listing_gets_headtail(), interleaved_lines_are_not_collapsed(), JSON_SKELETON_MAX_CHARS, json_skeleton_reports_keys_and_lengths() (+17 more)
+Cohesion: 0.11
+Nodes (26): Features, annotations_never_collide_with_the_retrieve_marker(), code(), DecisionMeta, dedup_stops_before_lossy_when_under_floor(), ELIDE_MIN_GAP, flat_listing_gets_headtail(), interleaved_lines_are_not_collapsed() (+18 more)
 
 ### Community 158 - "Process Gate Names Extension"
 Cohesion: 0.13
 Nodes (16): BINARIES, candidate_names(), Gate, gate(), GATE, GateGuard, MAX_CONCURRENT, names_with_extensions() (+8 more)
 
-### Community 159 - "Position Parse Event Tool"
-Cohesion: 0.12
-Nodes (12): Event, AfterTool, BeforeTool, Request, Position, PositionError, UnknownEvent, UnknownSubject (+4 more)
+### Community 159 - "Changelog"
+Cohesion: 0.05
+Nodes (41): [0.15.0](https://github.com/rtk-ai/rtk/compare/v0.14.0...v0.15.0) (2026-02-12), [0.15.4](https://github.com/rtk-ai/rtk/compare/v0.15.3...v0.15.4) (2026-02-14), [0.18.1](https://github.com/rtk-ai/rtk/compare/v0.18.0...v0.18.1) (2026-02-15), [0.21.1](https://github.com/rtk-ai/rtk/compare/v0.21.0...v0.21.1) (2026-02-17), [0.22.0](https://github.com/rtk-ai/rtk/compare/v0.21.1...v0.22.0) (2026-02-18), [0.22.1](https://github.com/rtk-ai/rtk/compare/v0.22.0...v0.22.1) (2026-02-19), [0.27.1](https://github.com/rtk-ai/rtk/compare/v0.27.0...v0.27.1) (2026-03-06), [0.28.1](https://github.com/rtk-ai/rtk/compare/v0.28.0...v0.28.1) (2026-03-10) (+33 more)
 
 ### Community 160 - "Scratch Isolate Git Kept"
-Cohesion: 0.14
+Cohesion: 0.15
 Nodes (21): assert_user_dirs_agree_with_the_child(), in_scratch(), user_dirs_agree_with_the_child_redirect(), child_home(), inherited(), inherited_with_prefix(), isolate_environment(), isolate_environment_in() (+13 more)
 
 ### Community 161 - "Openai Tool Retrieve Compress"
-Cohesion: 0.16
-Nodes (24): CcrMetrics, compress_tool_result(), compress_tool_use(), CacheEntry, compress_request(), DecisionRecord, big_text(), build_followup() (+16 more)
+Cohesion: 0.18
+Nodes (19): RETRIEVE_TOOL_NAME, RetrieveCall, big_text(), build_followup(), build_followup_shapes_assistant_and_tool_messages(), detects_retrieve_calls_and_ignores_others(), has_foreign_tool_use(), inject_is_idempotent_and_appends() (+11 more)
 
 ### Community 162 - "Artisan Cmd Php Filter"
-Cohesion: 0.15
-Nodes (20): BOX_CHARS_RE, DOTS_RE, filter_artisan_output(), filter_artisan_test_output(), MULTI_BLANK_RE, MULTI_SPACE_RE, test_artisan_cleanup(), test_artisan_test_prefers_runner_filter() (+12 more)
+Cohesion: 0.08
+Nodes (35): BOX_CHARS_RE, DOTS_RE, filter_artisan_output(), filter_artisan_test_output(), MULTI_BLANK_RE, MULTI_SPACE_RE, test_artisan_cleanup(), test_artisan_test_prefers_runner_filter() (+27 more)
 
 ### Community 163 - "Session Cmd Count Commands"
-Cohesion: 0.13
-Nodes (21): count_rtk_commands(), make_cmd(), progress_bar(), run(), SessionSummary, test_count_all_rtk(), test_count_chained_all_supported(), test_count_chained_commands_split() (+13 more)
+Cohesion: 0.14
+Nodes (20): count_rtk_commands(), make_cmd(), progress_bar(), run(), SessionSummary, test_count_all_rtk(), test_count_chained_all_supported(), test_count_chained_commands_split() (+12 more)
 
 ### Community 164 - "Mvn Cmd Option Goal"
 Cohesion: 0.09
@@ -1160,13 +1390,13 @@ Nodes (25): binary_exists(), build_command(), CcusageMetrics, CcusagePeriod, Dai
 Cohesion: 0.11
 Nodes (21): DiffChange, Added, Modified, Removed, DiffResult, frame_legend(), Hunk, ListingCap (+13 more)
 
-### Community 172 - "Gh Cmd Run Passthrough"
-Cohesion: 0.13
-Nodes (25): has_json_flag(), has_non_diff_format_flag(), list_issues(), list_prs(), list_runs(), pr_checks(), pr_create(), pr_diff() (+17 more)
+### Community 172 - "index.md"
+Cohesion: 0.14
+Nodes (10): Discover and Session, rtk discover — find missed savings, rtk session — adoption tracking, Errors and Warnings, Errors fail closed, warnings load, Limits, Pipeline examples, Building (+2 more)
 
 ### Community 173 - "Glab Cmd Format List"
-Cohesion: 0.13
-Nodes (25): count_tokens(), format_ci_list(), format_ci_status(), format_issue_list(), format_mr_list(), format_mr_view(), parse_fixture(), pipeline_icon() (+17 more)
+Cohesion: 0.12
+Nodes (27): count_tokens(), format_ci_list(), format_ci_status(), format_issue_list(), format_issue_view(), format_mr_list(), format_mr_view(), parse_fixture() (+19 more)
 
 ### Community 174 - "Prisma Cmd Filter Migrate"
 Cohesion: 0.14
@@ -1185,8 +1415,8 @@ Cohesion: 0.14
 Nodes (17): ShellDialect, Fish, Posix, Zsh, find_script_end(), is_horizontal_space(), is_shell_wrapper_candidate(), parse_shell_wrapper() (+9 more)
 
 ### Community 178 - "Rewrite Cmd Tee Read"
-Cohesion: 0.11
-Nodes (12): check_command_with_rules(), expand_home(), run(), tee_read_slug(), TEE_READERS, test_allow_verdict_maps_to_allow_exit_code(), test_ask_verdict_maps_to_ask_exit_code(), test_default_verdict_maps_to_ask_exit_code() (+4 more)
+Cohesion: 0.10
+Nodes (13): check_command(), check_command_with_rules(), expand_home(), run(), tee_read_slug(), TEE_READERS, test_allow_verdict_maps_to_allow_exit_code(), test_ask_verdict_maps_to_ask_exit_code() (+5 more)
 
 ### Community 179 - "Mvn Cmd Package Savings"
 Cohesion: 0.10
@@ -1197,16 +1427,16 @@ Cohesion: 0.12
 Nodes (20): Attachment, AttachedOnly, AttachedOrSeparate, FlagPrefix, Dash, DashDash, Slash, is_digit_run() (+12 more)
 
 ### Community 181 - "Session Start Daemon Dead"
-Cohesion: 0.13
-Nodes (13): dead_daemon_is_started_and_reported(), dead_daemon_is_started_on_the_port_the_session_uses(), ensure_proxy(), ensure_proxy_impl(), failed_spawn_names_the_fix(), loopback_hostport(), probe(), remote_url_is_silent() (+5 more)
+Cohesion: 0.22
+Nodes (11): dead_daemon_is_started_and_reported(), dead_daemon_is_started_on_the_port_the_session_uses(), ensure_proxy(), ensure_proxy_impl(), failed_spawn_names_the_fix(), loopback_hostport(), probe(), remote_url_is_silent() (+3 more)
 
 ### Community 182 - "Directive Text Terse Output"
-Cohesion: 0.13
-Nodes (15): cost_tokens(), Directive, DirectiveCtx, DIRECTIVES, find(), merge(), merge_concatenates_in_order_and_drops_empties(), terse_output_is_registered_and_costed() (+7 more)
+Cohesion: 0.16
+Nodes (11): cost_tokens(), Directive, DirectiveCtx, DIRECTIVES, find(), merge(), merge_concatenates_in_order_and_drops_empties(), terse_output_is_registered_and_costed() (+3 more)
 
 ### Community 183 - "Hook Cmd Tool Rewrite"
-Cohesion: 0.17
-Nodes (20): audit_log(), audit_log_inner(), deny(), handle(), log(), read_gate(), shell_gate(), STDIN_CAP_AFTER_TOOL (+12 more)
+Cohesion: 0.16
+Nodes (21): audit_log(), audit_log_inner(), deny(), handle(), log(), read_gate(), shell_gate(), STDIN_CAP_AFTER_TOOL (+13 more)
 
 ### Community 184 - "Dotnet Cmd Has Arg"
 Cohesion: 0.14
@@ -1221,12 +1451,12 @@ Cohesion: 0.13
 Nodes (18): before_dashdash(), dashdash_index(), Dialect, .CommonsCli, .GoFlag, .Msbuild, .Posix, double_dash_flag_value() (+10 more)
 
 ### Community 187 - "Registry Classify Golangci Php"
-Cohesion: 0.09
-Nodes (24): classify_command(), extract_base_command(), golangci_flag_takes_separate_value(), GolangciRunParts, matches_php_tool_path(), matches_pnpm_rule(), normalize_php_tool_command(), normalize_php_tool_command_with_dirs() (+16 more)
+Cohesion: 0.05
+Nodes (42): Classification, Ignored, Supported, Unsupported, classify_command(), extract_base_command(), golangci_flag_takes_separate_value(), GolangciRunParts (+34 more)
 
 ### Community 188 - "Omp Init Test Run"
-Cohesion: 0.15
-Nodes (22): omp_dry_run_missing_includes_footer(), omp_dry_run_stock_includes_footer_and_real_uninstall_mentions_restart(), omp_modified_uninstall_dry_run_is_non_failing_preview(), omp_show_distinguishes_modified_and_unrelated_content(), omp_show_reports_unreadable_extension_and_continues(), omp_unreadable_install_is_recoverable_with_auto_patch(), omp_unreadable_uninstall_is_dry_run_preview_but_normal_failure(), pi_dry_run_modified_extension_previews_confirmation_without_error() (+14 more)
+Cohesion: 0.11
+Nodes (30): exit_code_from_output(), Output, omp_dry_run_missing_includes_footer(), omp_dry_run_stock_includes_footer_and_real_uninstall_mentions_restart(), omp_modified_uninstall_dry_run_is_non_failing_preview(), omp_show_distinguishes_modified_and_unrelated_content(), omp_show_reports_unreadable_extension_and_continues(), omp_unreadable_install_is_recoverable_with_auto_patch() (+22 more)
 
 ### Community 189 - "Gain Hook Warning Test"
 Cohesion: 0.19
@@ -1246,59 +1476,59 @@ Nodes (20): AgentProfile, anchors_are_denied_in_every_profile(), Capability, Bul
 
 ### Community 193 - "Wget Cmd Url Size"
 Cohesion: 0.11
-Nodes (11): compact_url(), extract_filename_from_output(), format_size(), get_file_size(), test_compact_url_truncates_long_url(), test_extract_filename_empty_url_fallback(), test_extract_filename_from_url_fallback(), test_format_size_kilobytes() (+3 more)
+Nodes (14): compact_url(), extract_filename_from_output(), format_size(), get_file_size(), parse_error(), run(), run_stdout(), test_compact_url_truncates_long_url() (+6 more)
 
 ### Community 194 - "Find Cmd Parse Native"
 Cohesion: 0.16
-Nodes (23): args(), bare_directory_positional_is_a_path(), capped_listing_at_exact_max_has_no_marker(), default_cap_stays_implicit(), leading_glob_token_is_rtk_pattern_syntax(), literal_name_that_is_not_a_directory_stays_a_pattern(), missing_path_with_separator_is_a_find_path_not_a_pattern(), native_syntax_cap_stays_implicit() (+15 more)
+Nodes (23): args(), bare_directory_positional_is_a_path(), capped_listing_no_truncation(), capped_listing_truncates_with_marker(), default_cap_stays_implicit(), leading_glob_token_is_rtk_pattern_syntax(), literal_name_that_is_not_a_directory_stays_a_pattern(), missing_path_with_separator_is_a_find_path_not_a_pattern() (+15 more)
 
-### Community 195 - "Hook Cmd Droid Command"
-Cohesion: 0.10
-Nodes (23): droid_execute_command(), droid_input(), droid_payload(), process_droid_payload(), run_droid(), run_droid_inner(), run_droid_inner_with_rules(), test_droid_allow_decision_emits_no_permission_decision() (+15 more)
+### Community 195 - "RTK Installation Guide - For AI Coding Assistants"
+Cohesion: 0.05
+Nodes (39): AI Assistant Checklist, Alternative: Local Project Setup, Alternative: Manual Installation, Apache-2.0 edition (open source only, commercial use allowed), Binary Removal, CI/CD or Automation, Common User Flows, Compilation error (+31 more)
 
 ### Community 196 - "Search Compress Test Matches"
 Cohesion: 0.26
 Nodes (21): after_context_uses_dash_separator_for_context_lines(), binary_match_is_skipped_unless_text_requested(), bulky_grep_yields_token_savings(), bundled_files_with_matches_cluster_lists_files(), capped_single_file_shows_header(), column_flag_output_has_no_nul(), count_tokens(), grep_available() (+13 more)
 
 ### Community 197 - "Strategy Applies Name Shape"
-Cohesion: 0.10
-Nodes (12): Shape, FlatUnique, Monolithic, Nested, Repetitive, Structured, Unknown, CharWindow (+4 more)
+Cohesion: 0.09
+Nodes (13): Shape, FlatUnique, Monolithic, Nested, Repetitive, Structured, Unknown, CharWindow (+5 more)
 
 ### Community 198 - "Curl Cmd Filter Binary"
-Cohesion: 0.15
-Nodes (16): filter_curl_output(), FilterResult, is_binary(), MAX_RESPONSE_SIZE, run(), test_filter_curl_exact_500_bytes(), test_filter_curl_json_small_no_tee_hint(), test_filter_curl_large_json_array_passthrough() (+8 more)
+Cohesion: 0.07
+Nodes (30): is_installed(), logs(), MECHANISM, poll_tail(), TASK_NAME, uninstall(), filter_curl_output(), FilterResult (+22 more)
 
 ### Community 199 - "Mod Command Rtk Stdin"
-Cohesion: 0.15
-Nodes (19): Command, Config, Service, Start, Stats, Status, Stop, show_usage_if_asked() (+11 more)
+Cohesion: 0.14
+Nodes (20): Command, Config, Service, Start, Stats, Status, Stop, isolate_git() (+12 more)
 
 ### Community 200 - "Models Default Cache Mult"
 Cohesion: 0.16
 Nodes (11): cache_read_mult(), DEFAULT_TOML, DefaultSpec, embedded_registry_ships_no_prices(), family(), install(), ModelSpec, operator_prices_resolve_with_dated_ids_and_default() (+3 more)
 
-### Community 201 - "Aws Cmd Filter Lambda"
-Cohesion: 0.13
-Nodes (21): filter_dynamodb_get_item(), filter_eks_cluster(), filter_lambda_get(), filter_logs_query_results(), filter_s3_ls(), filter_s3_transfer(), filter_secrets_get(), FilterResult (+13 more)
+### Community 201 - "filter_s3_ls"
+Cohesion: 0.15
+Nodes (13): filter_s3_ls(), filter_s3_transfer(), is_structured_operation(), run(), run_aws_filtered(), run_aws_json(), run_generic(), run_s3_ls() (+5 more)
 
 ### Community 202 - "Binlog Read String Event"
 Cohesion: 0.23
 Nodes (11): BinReader, BinReader<'a>, parse_event_record(), parse_events_from_binlog(), ParsedBinlog, ParsedEventFields, read_deduplicated_string(), read_event_fields() (+3 more)
 
-### Community 203 - "Glab Cmd Run List"
-Cohesion: 0.15
-Nodes (21): ci_list(), ci_status(), ci_trace(), has_output_flag(), issue_list(), issue_view(), mr_diff(), mr_list() (+13 more)
+### Community 203 - "RTK Token Savings Audit Guide"
+Cohesion: 0.06
+Nodes (36): Analysis Workflows, Backup & Restore, Best Practices, Classic Flags (still available), Cleanup, Command Options, CSV Export, Daily Breakdown (+28 more)
 
 ### Community 204 - "Mvn Cmd Quiet Surefire"
 Cohesion: 0.11
 Nodes (15): filter_quiet(), is_blank_separator(), is_framework_frame(), is_per_test_subline(), quiet_fail_strips_framework_and_boilerplate(), quiet_mode_classifies_module_prefixed_lines(), quiet_mode_keeps_thread_tagged_app_logs_for_plain_mvn(), quiet_unknown_error_line_kept_as_safety_net() (+7 more)
 
 ### Community 205 - "Toml Filter Match Find"
-Cohesion: 0.13
-Nodes (22): CompiledFilter, CompiledMatchOutputRule, CompiledReplaceRule, find_filter_in(), find_matching_filter(), make_filters(), test_builtin_all_expected_filters_present(), test_builtin_filter_count() (+14 more)
+Cohesion: 0.15
+Nodes (19): find_filter_in(), find_matching_filter(), make_filters(), test_builtin_all_expected_filters_present(), test_builtin_filter_count(), test_find_filter_matches_terraform(), test_find_filter_no_match_returns_none(), test_invalid_regex_returns_err() (+11 more)
 
-### Community 206 - "Rules Supported Rtk Final"
-Cohesion: 0.10
-Nodes (18): Classification, Ignored, Supported, Unsupported, RtkStatus, Existing, NotSupported, Passthrough (+10 more)
+### Community 206 - "compact_diff"
+Cohesion: 0.07
+Nodes (32): compact_diff(), diff_header_path(), flush_leading_context(), hunk_truncation_note(), HunkHeader, parse_hunk_header(), same_path_twice(), test_compact_diff() (+24 more)
 
 ### Community 207 - "Redact Scrubs Key Request"
 Cohesion: 0.16
@@ -1313,40 +1543,40 @@ Cohesion: 0.22
 Nodes (10): CacheAlignTransform, disabled_is_noop(), ephemeral(), falls_back_to_system_blocks(), flag(), has_cache_control(), mark_prefix(), marks_last_tool_when_no_cache_control() (+2 more)
 
 ### Community 210 - "Deno Cmd Filter Output"
-Cohesion: 0.17
+Cohesion: 0.18
 Nodes (18): chose_output_format(), filter_deno_output(), passthrough_subcmd(), run_check(), run_compile(), run_filtered_subcmd(), run_lint(), run_passthrough() (+10 more)
 
 ### Community 211 - "Store Fracture Metric Cache"
-Cohesion: 0.17
-Nodes (17): cache_health_spots_a_mid_session_fracture(), CacheHealth, ClientMetric, cold_open_alone_is_not_a_fracture(), context_summary_breakdown_includes_normalize_and_reconciles(), FRACTURE_MAX_IDLE_SECONDS, FRACTURE_MIN_PREFIX_TOKENS, healthy_session_reports_no_fracture() (+9 more)
+Cohesion: 0.10
+Nodes (19): cache_health_spots_a_mid_session_fracture(), CacheHealth, ClientMetric, cold_open_alone_is_not_a_fracture(), context_summary_breakdown_includes_normalize_and_reconciles(), DecisionRow, FRACTURE_MAX_IDLE_SECONDS, FRACTURE_MIN_PREFIX_TOKENS (+11 more)
 
 ### Community 212 - "Engine Rules Methods Resolved"
-Cohesion: 0.23
-Nodes (19): a_runnable_proxy_rule_turns_engine_methods_on(), ccr_still_activates_when_a_user_asks_for_it_by_name(), disabling_align_by_override_turns_it_off(), engine_methods_stay_off_for_shipped_pipelines(), EngineRules, floor_of(), from_resolved(), guard_min_size_reaches_the_daemon_only_when_set() (+11 more)
+Cohesion: 0.20
+Nodes (22): fires(), Resolved, a_runnable_proxy_rule_turns_engine_methods_on(), ccr_still_activates_when_a_user_asks_for_it_by_name(), disabling_align_by_override_turns_it_off(), engine_methods_stay_off_for_shipped_pipelines(), EngineRules, floor_of() (+14 more)
 
 ### Community 213 - "Context Analysis Tool Result"
-Cohesion: 0.17
+Cohesion: 0.15
 Nodes (16): analyze(), Analyzer, ContextComposition, counts_tool_result_and_total(), counts_tool_use_input_string_values(), detects_duplicate_blocks(), est_tokens(), hash_str() (+8 more)
 
 ### Community 214 - "Aws Cmd Filter Cfn"
-Cohesion: 0.12
-Nodes (20): filter_cfn_describe_stacks(), filter_cfn_list_stacks(), filter_ecs_describe_services(), filter_iam_users(), filter_rds_instances(), filter_s3_objects(), filter_sqs_messages(), test_filter_cfn_describe_stacks_no_outputs() (+12 more)
+Cohesion: 0.13
+Nodes (28): filter_cfn_describe_stacks(), filter_cfn_list_stacks(), filter_ecs_describe_services(), filter_ecs_list_services(), filter_ecs_tasks(), filter_eks_cluster(), filter_iam_users(), filter_rds_instances() (+20 more)
 
 ### Community 215 - "Diff Cmd Invisible Difference"
 Cohesion: 0.20
 Nodes (21): classic_fallback(), compare_files(), crlf_line_numbers(), describe_invisible_difference(), FileComparison, Identical, InvisibleDifference, Lines (+13 more)
 
-### Community 216 - "Playwright Cmd Parser Json"
-Cohesion: 0.19
-Nodes (17): collect_test_results(), extract_failures_regex(), extract_playwright_regex(), PlaywrightAttempt, PlaywrightError, PlaywrightExecution, PlaywrightJsonOutput, PlaywrightParser (+9 more)
+### Community 216 - "Ship Release"
+Cohesion: 0.06
+Nodes (30): 1. GitHub Actions CI/CD Pass, 1. Quality Checks Pass, 2. GitHub Release Created, 2. Performance Benchmarks Pass, 3. Installation Verification, 3. Integration Tests Pass, 4. Git Clean State, Automated Release Script (Optional) (+22 more)
 
-### Community 217 - "Format Cmd Filter Detect"
-Cohesion: 0.16
-Nodes (17): filter_prettier_output(), run(), test_filter_all_formatted(), test_filter_empty_output(), test_filter_files_need_formatting(), test_filter_many_files(), test_filter_whitespace_only_output(), detect_formatter() (+9 more)
+### Community 217 - "display_args"
+Cohesion: 0.09
+Nodes (52): run_format(), run_passthrough(), git_cmd(), run(), run_add(), run_branch(), run_checkout(), run_commit() (+44 more)
 
 ### Community 218 - "Lib Truncate Smart Exact"
-Cohesion: 0.12
-Nodes (11): test_smart_truncate_exact_limit(), test_smart_truncate_no_annotations(), test_smart_truncate_no_truncation_when_under_limit(), test_smart_truncate_overflow_count_exact(), estimate_tokens_from_len(), FUNC_SIGNATURE, IMPORT_PATTERN, is_func_signature() (+3 more)
+Cohesion: 0.13
+Nodes (10): test_smart_truncate_exact_limit(), test_smart_truncate_no_annotations(), test_smart_truncate_no_truncation_when_under_limit(), test_smart_truncate_overflow_count_exact(), FUNC_SIGNATURE, IMPORT_PATTERN, is_func_signature(), is_import_line() (+2 more)
 
 ### Community 219 - "Pipeline Config Oss Decision"
 Cohesion: 0.11
@@ -1369,24 +1599,24 @@ Cohesion: 0.12
 Nodes (20): caps_failed_test_entries_with_one_complete_section_tee(), caps_noisy_failure_output_head_and_tail(), caps_skipped_test_entries_with_recovery_hint(), caps_unparsed_raw_failed_entries_with_recovery_hint(), collect_framing_line_indices(), count_tokens(), failed_section_parts(), filter_ctest_output() (+12 more)
 
 ### Community 224 - "Find Cmd Rtk Flags"
-Cohesion: 0.13
-Nodes (19): class(), Dispatch, dispatch(), Compress, Native, Verbatim, FindArgs, has_glob_meta() (+11 more)
+Cohesion: 0.12
+Nodes (20): class(), Dispatch, dispatch(), Compress, Native, Verbatim, find_label(), FindArgs (+12 more)
 
-### Community 225 - "Pipe Cmd Auto Detect"
-Cohesion: 0.10
-Nodes (20): auto_detect_filter(), test_auto_detect_cargo_test(), test_auto_detect_ctest(), test_auto_detect_ctest_before_summary_enters_first_kilobyte(), test_auto_detect_ctest_rejects_keyword_only_output(), test_auto_detect_ctest_without_tests(), test_auto_detect_empty_input_is_identity(), test_auto_detect_find_absolute_paths() (+12 more)
+### Community 225 - "technical-writer.md"
+Cohesion: 0.07
+Nodes (28): Add to PATH, All tests should pass, enforcing ≥20% savings, Behavioral Mindset, Boundaries, CLI Usage Guides, Create fixture, Documentation Principles, Download rtk-windows-x86_64.exe (+20 more)
 
-### Community 226 - "Summary Output Summarize List"
-Cohesion: 0.15
-Nodes (19): detect_output_type(), extract_number(), MAX_SUMMARY_KEYS, MAX_SUMMARY_LIST, OutputType, BuildOutput, Generic, JsonOutput (+11 more)
+### Community 226 - "Performance Optimization Skill"
+Cohesion: 0.07
+Nodes (28): 1. Establish Baseline, 2. Make Changes, 3. Rebuild and Measure, 4. Compare Results, 5. Identify Regressions, Binary Size, CI/CD Integration, Common Performance Issues (+20 more)
 
-### Community 227 - "Permissions Command Check Split"
-Cohesion: 0.15
-Nodes (19): split_for_permissions(), test_split_perms_newline_inside_quotes_not_split(), check_command(), check_command_for(), check_command_for_agent(), check_command_with_rules_and_prefixes(), check_shell_wrapper_permissions(), command_matches_pattern() (+11 more)
+### Community 227 - "check_command_with_rules_and_prefixes"
+Cohesion: 0.21
+Nodes (12): split_for_permissions(), test_split_perms_newline_inside_quotes_not_split(), matching_readings(), MatchingReadings, check_command_with_rules_and_prefixes(), check_shell_wrapper_permissions(), command_matches_pattern(), glob_matches() (+4 more)
 
-### Community 228 - "Opencode Plugin Version Dir"
-Cohesion: 0.16
-Nodes (17): CONFIG_DIR, OPENCODE_PLUGIN_FILE, OPENCODE_SUBDIR, PLUGIN_SUBDIR, a_new_or_unreadable_opencode_still_gets_the_plugin(), an_old_opencode_leaves_the_plugin_file_untouched(), ensure_opencode_plugin_installed_for(), MIN_OPENCODE (+9 more)
+### Community 228 - "debugger.md"
+Cohesion: 0.07
+Nodes (26): 1. Capture Complete Context, 1. Root Cause Analysis, 2. Reproduce the Issue, 2. Specific Code Fix, 3. Form and Test Hypotheses, 3. Testing Approach, 4. Isolate the Failure, 4. Prevention Recommendations (+18 more)
 
 ### Community 229 - "Lib Commands Pipeline Log"
 Cohesion: 0.10
@@ -1397,24 +1627,24 @@ Cohesion: 0.25
 Nodes (18): a_caller_value_that_spells_a_help_token_is_not_a_request(), a_clustered_h_is_answered_by_git_once(), a_tools_own_dash_h_is_still_filtered(), a_usage_request_keeps_a_non_zero_exit(), a_wrapped_tools_own_help_survives_rtk(), an_arbitrary_commands_flags_are_not_rtks_to_read(), Case, CASES (+10 more)
 
 ### Community 231 - "Builtins Builtin Names Default"
-Cohesion: 0.14
-Nodes (15): builtin(), BUILTIN_NAMES, default_is_todays_oss_and_nothing_more(), delegate_reads_declares_tasks_without_upstreams(), github_extends_both_reference_pipelines(), LITERALS, parsed(), posthook_carries_the_branch_chains() (+7 more)
+Cohesion: 0.10
+Nodes (19): builtin(), BUILTIN_NAMES, default_is_todays_oss_and_nothing_more(), delegate_reads_declares_tasks_without_upstreams(), github_extends_both_reference_pipelines(), LITERALS, parsed(), posthook_carries_the_branch_chains() (+11 more)
 
 ### Community 232 - "Ingest Filter Dedup Marker"
 Cohesion: 0.18
 Nodes (12): collect_calls(), dedup_marker(), dedup_marker_is_identifying(), Filter, filter_message(), filter_tool_result_block(), filter_tool_use_block(), origin_label() (+4 more)
 
 ### Community 233 - "Runner Run Filtered Filter"
-Cohesion: 0.18
-Nodes (16): emit(), emit_guarded(), print_with_hint(), run(), run_captured_filter(), run_filtered(), run_filtered_with_exit(), run_inner() (+8 more)
+Cohesion: 0.22
+Nodes (12): run(), run_filtered(), run_filtered_with_exit(), run_inner(), run_passthrough(), run_streamed(), RunMode, Filtered (+4 more)
 
 ### Community 234 - "Settings Upstream Persisted Seed"
-Cohesion: 0.15
+Cohesion: 0.16
 Nodes (10): ANTHROPIC_UPSTREAM, blank_persisted_upstream_does_not_erase_the_seed(), CCR_ENABLED, COMPRESSION, non_empty(), OPENAI_UPSTREAM, persisted_overrides_seed(), PIXEL_COMPRESS (+2 more)
 
 ### Community 235 - "Gradlew Cmd Build Filter"
-Cohesion: 0.12
-Nodes (17): BuildLineFilter, count_tokens(), filter_build_line(), test_build_daemon_lines_stripped(), test_build_failed_fixture_token_savings(), test_build_failed_output_format(), test_build_failure_preserves_errors_strips_try(), test_build_filter_keeps_compiler_warnings() (+9 more)
+Cohesion: 0.15
+Nodes (16): count_tokens(), filter_build_line(), test_build_daemon_lines_stripped(), test_build_failed_fixture_token_savings(), test_build_failed_output_format(), test_build_failure_preserves_errors_strips_try(), test_build_filter_keeps_compiler_warnings(), test_build_filter_never_empty_on_success() (+8 more)
 
 ### Community 236 - "Registry Space Opt Compiled"
 Cohesion: 0.11
@@ -1429,7 +1659,7 @@ Cohesion: 0.11
 Nodes (17): AgentTarget, Antigravity, Claude, Cline, Cursor, Droid, Hermes, Kilocode (+9 more)
 
 ### Community 239 - "Hook Audit Cmd Base"
-Cohesion: 0.18
+Cohesion: 0.19
 Nodes (11): AuditEntry, base_command(), default_log_path(), filter_since_days(), make_entry(), parse_line(), run(), test_filter_since_days_does_not_panic_on_huge_value() (+3 more)
 
 ### Community 240 - "Cap Lines Marker Apply"
@@ -1437,8 +1667,8 @@ Cohesion: 0.15
 Nodes (11): apply(), blk(), Cap, ctx(), HEAD_LINES, MAX_LINE_CHARS, MAX_LINES, TAIL_LINES (+3 more)
 
 ### Community 241 - "Md Slim Badge Blank"
-Cohesion: 0.17
-Nodes (12): apply(), BADGE_DEF_LINE, BADGE_HOSTS, BARE_BADGE, blk(), collapse_blank_runs(), ctx(), HTML_COMMENT (+4 more)
+Cohesion: 0.13
+Nodes (14): apply(), BADGE_DEF_LINE, BADGE_HOSTS, BARE_BADGE, blk(), collapse_blank_runs(), ctx(), HTML_COMMENT (+6 more)
 
 ### Community 242 - "Web Md Html Markdown"
 Cohesion: 0.16
@@ -1448,41 +1678,45 @@ Nodes (11): WEB_MD, apply(), blk(), ctx(), looks_like_html(), TAG_DENSITY_THRESH
 Cohesion: 0.16
 Nodes (7): config_file_path(), ensure_loopback_bind(), install(), installed_bind(), log_file_path(), MECHANISM, state_dir()
 
-### Community 244 - "Lib Args Pnpm Run"
-Cohesion: 0.12
-Nodes (18): build_k8s_logs_args(), Cli, entry(), is_native_test_expression(), is_operational_command(), merge_pnpm_args(), merge_pnpm_args_os(), pings_telemetry() (+10 more)
+### Community 244 - "Rust Expert for RTK"
+Cohesion: 0.07
+Nodes (26): 1. Create Module, 2. Register Module, 3. Write Tests First (TDD), 4. Implement Filter, 5. Quality Checks, 6. Benchmark Performance, 7. Manual Testing, 8. Document (+18 more)
 
-### Community 245 - "Mod Parse Result Tier"
-Cohesion: 0.18
-Nodes (8): OutputParser, ParseResult, Degraded, Full, Passthrough, ParseResult<T>, test_parse_result_map(), test_parse_result_tier()
+### Community 245 - "extract_test_summary"
+Cohesion: 0.08
+Nodes (27): count_tokens(), coverage_table_lines(), coverage_table_of(), deno_output_fence(), extract_test_summary(), follow_recovery_hint(), is_bun_count_line(), shown_table_of() (+19 more)
 
 ### Community 246 - "Glab Argv Test Flag"
 Cohesion: 0.21
 Nodes (16): glab_argv(), glab_double_dash_after_subcommand_is_dropped(), glab_double_dash_after_subcommand_is_dropped_before_a_flag(), glab_double_dash_before_subcommand_is_dropped(), glab_double_dash_inside_trailing_region_is_preserved(), glab_escaped_flag_is_not_hoisted_into_flag_position(), glab_lone_escaped_flag_is_not_hoisted_into_flag_position(), glab_lone_escaped_identifier_is_still_hoisted() (+8 more)
 
 ### Community 247 - "Stderr Only Failure Test"
-Cohesion: 0.29
-Nodes (17): context(), dotnet_help_is_forwarded_without_the_injected_binlog(), fake_golangci(), fake_tool(), filtered_report_ends_with_exactly_one_newline(), go_tool_golangci_lint_probe_does_not_answer_for_the_lint_run(), golangci_lint_stderr_only_failure_reaches_the_user(), guard_fallback_emits_exactly_the_command_bytes() (+9 more)
+Cohesion: 0.32
+Nodes (16): dotnet_help_is_forwarded_without_the_injected_binlog(), fake_golangci(), fake_tool(), filtered_report_ends_with_exactly_one_newline(), go_tool_golangci_lint_probe_does_not_answer_for_the_lint_run(), golangci_lint_stderr_only_failure_reaches_the_user(), guard_fallback_emits_exactly_the_command_bytes(), injected_clean_output_prints_the_summary_once_terminated() (+8 more)
 
 ### Community 248 - "Toon Uniform Flat Array"
 Cohesion: 0.21
 Nodes (10): apply(), blk(), ctx(), fixture_content(), is_uniform_flat_array(), test_flat_uniform_array_encodes_to_toon(), test_flat_uniform_savings_at_least_20_percent(), test_nested_json_falls_back_to_minify() (+2 more)
 
+### Community 249 - "Installation by agent"
+Cohesion: 0.08
+Nodes (25): Claude Code, Cline / Roo Code, Codex CLI, Cursor, Factory Droid, Gemini CLI, GitHub Copilot (VS Code Chat + CLI), Google Antigravity (CLI, IDE & 2.0) (+17 more)
+
 ### Community 250 - "Git Cmd Help Passthrough"
 Cohesion: 0.12
 Nodes (16): GitCommand, Add, Branch, Checkout, Commit, Diff, Fetch, Log (+8 more)
 
-### Community 251 - "Glab Cmd Identifier Split"
-Cohesion: 0.12
-Nodes (16): escapes_a_bare_positional(), split_identifier(), test_mr_merge_message_is_not_the_mr_number(), test_mr_note_message_is_not_the_mr_number(), test_mr_update_keeps_an_explicit_mr_number(), test_mr_update_label_is_not_the_mr_number(), test_split_identifier_empty_yields_no_id(), test_split_identifier_only_flags_preserves_flags() (+8 more)
+### Community 251 - "run_show"
+Cohesion: 0.11
+Nodes (25): args_without_oneline(), blob_candidates(), commit_or_stat_route(), has_content_transform_flag(), has_trailing_pathspec(), is_blob_show_arg(), probe_is_blob(), run_show() (+17 more)
 
 ### Community 252 - "Mvn Cmd Compile Lane"
 Cohesion: 0.12
 Nodes (17): assert_root_lane_disarms_on_raw_trail_line(), compile_dedupes_warnings(), compile_handles_crlf_line_endings(), compile_preserves_error_continuation(), filter_compile(), filter_compile_daemon(), filter_compile_error_compact(), filter_compile_plain() (+9 more)
 
-### Community 253 - "Log Cmd Analyze Logs"
-Cohesion: 0.23
-Nodes (13): analyze_logs(), HEX_RE, normalize_log_line(), NUM_RE, PATH_RE, run_file(), run_stdin(), run_stdin_str() (+5 more)
+### Community 253 - "Regex"
+Cohesion: 0.11
+Nodes (31): BUILD_SUMMARY_RE, DIAGNOSTIC_CODE_RE, DURATION_RE, ERROR_COUNT_RE, FAILED_TEST_HEAD_RE, FALLBACK_ERROR_LINE_RE, FALLBACK_WARNING_LINE_RE, ISSUE_RE (+23 more)
 
 ### Community 254 - "Marker Stamp Round Parse"
 Cohesion: 0.19
@@ -1493,8 +1727,8 @@ Cohesion: 0.19
 Nodes (9): apply(), blk(), ctx(), fixture_content(), GrepGroup, test_all_matches_emitted_no_cap(), test_groups_real_grep_content_by_file(), test_large_truncated_fixture_savings_at_least_20_percent() (+1 more)
 
 ### Community 256 - "Rewrite Exit Code Test"
-Cohesion: 0.23
-Nodes (8): CASES, cases(), every_case_actually_goes_through_a_rewrite(), LS_MISSING, python3_available(), PYTHON_CASES, rewritten_commands_keep_the_raw_exit_code(), Sandbox
+Cohesion: 0.14
+Nodes (14): bang_before_a_command_still_runs_the_command(), commands_still_reach_the_test_runner(), fixture(), native_expressions_carry_the_test_exit_code(), native_expressions_keep_argument_boundaries(), negated_expressions_are_not_answered_backwards(), CASES, cases() (+6 more)
 
 ### Community 257 - "Diff Cmd Script Myers"
 Cohesion: 0.17
@@ -1508,37 +1742,37 @@ Nodes (12): append_skipped_list(), collect_unparsed_failed_entries(), CtestSumma
 Cohesion: 0.23
 Nodes (13): build_child_args(), canonical_long(), dangling_value_flag(), Flavor, Bsd, Gnu, HOST_FLAVOR, is_short_in() (+5 more)
 
-### Community 260 - "Mod Json Extract Object"
-Cohesion: 0.23
-Nodes (15): extract_json_object(), test_extract_json_object_cjk_prefix(), test_extract_json_object_cjk_values(), test_extract_json_object_clean(), test_extract_json_object_emoji_values(), test_extract_json_object_mixed_multibyte_nested(), test_extract_json_object_nested_braces(), test_extract_json_object_no_json() (+7 more)
+### Community 260 - "Command Filter Modules"
+Cohesion: 0.08
+Nodes (22): Adding a New Command Filter, Command Filter Modules, Cross-Command Dependencies, Cross-Cutting Behavior Contracts, Ecosystems, Execution Flow, Exit Code Propagation, Filter Failure Passthrough (+14 more)
 
 ### Community 261 - "Utils File Dir Private"
-Cohesion: 0.15
-Nodes (13): create_private_dir(), mode_already_correct(), open_private(), restrict_file(), restrict_file_never_chmods_a_directory(), set_owner_only(), test_create_private_dir_is_idempotent(), test_create_private_dir_is_owner_only() (+5 more)
+Cohesion: 0.20
+Nodes (12): create_private_dir(), mode_already_correct(), restrict_file(), restrict_file_never_chmods_a_directory(), set_owner_only(), test_create_private_dir_is_idempotent(), test_create_private_dir_is_owner_only(), test_create_private_dir_tightens_existing_dir() (+4 more)
 
 ### Community 262 - "Stream Block Handler Continuation"
-Cohesion: 0.13
-Nodes (3): CargoBuildHandler, BlockHandler, UpperHandler
+Cohesion: 0.11
+Nodes (4): BlockHandler, BlockStreamFilter<H>, TestHandler, UpperHandler
 
 ### Community 263 - "Retriever Record Tee Open"
-Cohesion: 0.23
-Nodes (12): db_path(), init_schema(), open(), open_existing(), record_tee_elision(), record_tee_recall(), record_tee_recall_with(), recovery_disabled_by_env() (+4 more)
+Cohesion: 0.18
+Nodes (15): db_path(), init_schema(), open(), open_existing(), record_tee_elision(), record_tee_recall(), record_tee_recall_with(), recovery_disabled_by_env() (+7 more)
 
-### Community 264 - "Runner Stderr Whole Forwarded"
-Cohesion: 0.15
-Nodes (15): a_cap_that_would_not_shrink_the_output_is_not_applied(), a_failing_run_forwards_stderr_whole(), a_non_ascii_stderr_is_sliced_without_panicking(), a_short_stderr_is_forwarded_whole(), a_stderr_under_the_recovery_floor_is_forwarded_whole(), a_successful_run_with_output_keeps_the_end_of_stderr(), an_empty_filtered_stdout_forwards_stderr_whole(), capping_does_not_rewrite_crlf_line_endings() (+7 more)
+### Community 264 - "PayloadAction"
+Cohesion: 0.11
+Nodes (25): claude_input_value(), codex_input(), codex_input_with_permission_mode(), is_supported_codex_permission_mode(), PayloadAction, Ignore, Rewrite, Skip (+17 more)
 
 ### Community 265 - "Hook Cmd Claude Input"
 Cohesion: 0.22
 Nodes (15): claude_input(), claude_input_with_fields(), run_claude_inner(), test_claude_compound_command(), test_claude_env_prefix_preserved(), test_claude_extremely_long_command(), test_claude_json_output_structure(), test_claude_pipeline_rewrites_only_safe_final_stage() (+7 more)
 
-### Community 266 - "Antigravity Mode Run Plugin"
-Cohesion: 0.23
-Nodes (14): ANTIGRAVITY_HOOKS_JSON, ANTIGRAVITY_PLUGIN_JSON, ANTIGRAVITY_RULES_FILE, run_antigravity_mode(), run_antigravity_mode_at(), test_antigravity_mode_creates_plugin_files_global(), test_antigravity_mode_creates_plugin_files_local(), test_antigravity_mode_dry_run_writes_nothing() (+6 more)
+### Community 266 - "user_dirs.rs"
+Cohesion: 0.09
+Nodes (22): ancestors(), current_dir(), data(), data_under(), in_working_dir(), project_root(), within_reach(), working_dir() (+14 more)
 
 ### Community 267 - "Permissions Settings Rules File"
-Cohesion: 0.13
-Nodes (15): append_bash_rules(), extract_bash_pattern(), get_settings_paths(), get_settings_paths_from(), load_permission_rules(), load_permission_rules_from(), rules_from_files(), test_get_settings_paths_uses_the_resolved_claude_dir() (+7 more)
+Cohesion: 0.22
+Nodes (9): append_bash_rules(), extract_bash_pattern(), get_settings_paths(), get_settings_paths_from(), load_permission_rules(), load_permission_rules_from(), test_get_settings_paths_uses_the_resolved_claude_dir(), test_get_settings_paths_without_a_claude_dir() (+1 more)
 
 ### Community 268 - "Lib Rtk Wrapper Commands"
 Cohesion: 0.20
@@ -1549,8 +1783,8 @@ Cohesion: 0.13
 Nodes (15): GitCommands, Add, Branch, Checkout, Commit, Diff, Fetch, Log (+7 more)
 
 ### Community 270 - "Level Cap Description Compression"
-Cohesion: 0.15
-Nodes (7): cap_for(), description(), CompressionLevel, Aggressive, Balanced, Light, Off
+Cohesion: 0.17
+Nodes (6): description(), CompressionLevel, Aggressive, Balanced, Light, Off
 
 ### Community 271 - "Dedup Apply Blk Ctx"
 Cohesion: 0.19
@@ -1585,7 +1819,7 @@ Cohesion: 0.35
 Nodes (12): count_with_list_is_verbatim(), fixture(), grep_big_l_folds_too(), grep_l_folds_shared_prefix_into_header(), no_match_list_exits_1_with_empty_stdout(), null_joined_list_is_verbatim(), rg_available(), rg_l_and_files_fold() (+4 more)
 
 ### Community 280 - "Dotnet Format Report Parse"
-Cohesion: 0.28
+Cohesion: 0.32
 Nodes (10): ChangeDetail, FileChange, FileWithChanges, fixture(), FormatReportEntry, FormatSummary, parse_format_report(), test_parse_format_report_all_formatted() (+2 more)
 
 ### Community 281 - "Package.Json Package Json Description"
@@ -1596,17 +1830,17 @@ Nodes (12): description, files, homepage, keywords, license, main, name, reposit
 Cohesion: 0.21
 Nodes (6): a_silent_upstream_socket_times_out(), CONNECT_TIMEOUT_SECS, effective_ccr(), http_client(), http_client_with(), READ_TIMEOUT_SECS
 
-### Community 283 - "Gh Cmd Filter Markdown"
-Cohesion: 0.15
-Nodes (13): filter_markdown_body(), filter_markdown_segment(), format_issue_view(), test_filter_markdown_body_badge_lines(), test_filter_markdown_body_blank_lines_collapse(), test_filter_markdown_body_code_block_preserved(), test_filter_markdown_body_horizontal_rules(), test_filter_markdown_body_html_comment_multiline() (+5 more)
+### Community 283 - "RTK Technical Documentation"
+Cohesion: 0.08
+Nodes (24): 1. Project Vision, 2. Architecture Overview, 3.1 Hook Installation (`rtk init`), 3.2 Hook Interception (Command Rewriting), 3.3 CLI Parsing and Routing, 3.4 Filter Execution, 3.5 Fallback Path, 3.6 Token Tracking (+16 more)
 
-### Community 284 - "Gh Cmd Format View"
-Cohesion: 0.18
-Nodes (12): format_issue_list(), format_pr_list(), format_pr_status(), format_pr_status_entry(), format_pr_view(), format_repo_view(), format_run_list(), state_icon() (+4 more)
+### Community 284 - "RTK - Complete Feature Reference"
+Cohesion: 0.08
+Nodes (24): About bash output reduction, Cloud and databases, Commands by category, Containers and orchestration, Coverage, Fallback mechanism, Formatting commands, GitHub CLI commands (+16 more)
 
-### Community 285 - "Golangci Cmd Filter Source"
-Cohesion: 0.15
-Nodes (13): compact_path(), filter_golangci_json(), test_filter_golangci_no_issues(), test_filter_golangci_v2_fields_parse_cleanly(), test_filter_golangci_with_issues(), test_filter_never_silent_on_go127_load_error(), test_filter_real_v2_issues_json(), test_filter_v1_does_not_show_source_lines() (+5 more)
+### Community 285 - "search_faithful_test.rs"
+Cohesion: 0.20
+Nodes (21): assert_streams_before_stdin_closes(), bulky_rg_yields_token_savings(), count_tokens(), grep_and_rg_use_their_own_regex_dialect(), grep_counts_piped_stdin_via_passthrough(), grep_dash_e_selects_extended_regex(), grep_passthrough_streams_before_stdin_closes(), grep_reads_piped_stdin() (+13 more)
 
 ### Community 286 - "Arg Tokenizer Not Flag"
 Cohesion: 0.15
@@ -1624,9 +1858,9 @@ Nodes (9): asks(), asks_for_usage(), fuzz_odd_argv_never_panics(), fuzz_the_boun
 Cohesion: 0.22
 Nodes (7): ChildArgExt, Command, is_batch_program(), push_child_arg(), quote_arg_for_child(), test_child_arg_leaves_batch_shims_on_stds_encoding(), test_child_arg_re_encodes_only_arguments_holding_a_quote()
 
-### Community 290 - "Hook Cmd Cli Copilot"
-Cohesion: 0.21
-Nodes (13): cli_args(), copilot_cli_response(), copilot_cli_response_from_decision(), end_to_end(), handle_copilot_cli(), test_copilot_cli_allow_rewrite_returns_allow(), test_copilot_cli_ask_rewrite_omits_permission_decision(), test_copilot_cli_cve_background_bypass_never_auto_allows() (+5 more)
+### Community 290 - "Engine"
+Cohesion: 0.14
+Nodes (19): Engine, engine_command(), Grep, Rg, grep_takes_value(), has_format_flag(), is_bare_file_list(), is_context_token() (+11 more)
 
 ### Community 291 - "Lib Bun Commands Other"
 Cohesion: 0.15
@@ -1644,12 +1878,12 @@ Nodes (11): cache_health_reads_from_a_current_schema(), count_cache_fractures(),
 Cohesion: 0.44
 Nodes (11): detect_arch(), detect_os(), error(), get_latest_version(), get_target(), info(), install(), main() (+3 more)
 
-### Community 295 - "Npm Cmd Filter Output"
-Cohesion: 0.24
-Nodes (8): exec(), exec_with(), filter_npm_output(), NPM_SUBCOMMANDS, run(), run_filtered(), test_filter_npm_output(), test_filter_npm_output_empty()
+### Community 295 - "Parser Infrastructure"
+Cohesion: 0.08
+Nodes (23): Architecture, Benefits, BuildOutput, Canonical Types, Compact (default, verbosity=0), Degradation Warnings, DependencyState, Error Handling (+15 more)
 
 ### Community 296 - "User Env Not Var"
-Cohesion: 0.29
+Cohesion: 0.23
 Nodes (7): another_thread_does_not_see_them(), set_while(), values_nest_and_come_back(), var(), var_os(), with_path(), with_vars()
 
 ### Community 297 - "Forward Sse Feed Tally"
@@ -1658,7 +1892,7 @@ Nodes (4): sse_tally_anthropic_split_across_start_and_delta(), sse_tally_openai_
 
 ### Community 298 - "Aws Cmd Dynamodb Filter"
 Cohesion: 0.17
-Nodes (11): filter_dynamodb_items(), format_sg_rule(), test_dynamodb_n_type_parsing(), test_dynamodb_ns_type_parsing(), test_filter_dynamodb_items(), test_filter_dynamodb_items_empty(), test_filter_dynamodb_items_with_capacity(), test_filter_dynamodb_items_with_pagination() (+3 more)
+Nodes (12): filter_dynamodb_get_item(), filter_dynamodb_items(), test_dynamodb_n_type_parsing(), test_dynamodb_ns_type_parsing(), test_filter_dynamodb_get_item(), test_filter_dynamodb_items(), test_filter_dynamodb_items_empty(), test_filter_dynamodb_items_with_capacity() (+4 more)
 
 ### Community 299 - "Find Cmd Root Capped"
 Cohesion: 0.18
@@ -1685,36 +1919,36 @@ Cohesion: 0.32
 Nodes (10): an_old_opencode_gets_no_plugin_and_no_plugin_path_in_any_install_mode(), hook_only_without_patching_leaves_no_claude_dir(), init(), opencode_claude_md_rerun_restores_missing_plugin(), opencode_dry_run_names_both_and_writes_nothing(), opencode_hook_only_installs_claude_hook_and_plugin(), opencode_installs_claude_hook_and_plugin(), path_with_opencode() (+2 more)
 
 ### Community 305 - "Tracking Project Filter Params"
-Cohesion: 0.22
-Nodes (6): GainSummary, project_filter_params(), test_get_by_command_weighted_savings_rate(), test_project_filter_params_glob_pattern(), test_project_filter_params_none(), test_project_filter_params_underscore_safe()
+Cohesion: 0.17
+Nodes (8): average_time_ms(), DayStats, project_filter_params(), test_get_by_command_weighted_savings_rate(), test_period_exec_time_excludes_zero_input_rows(), test_project_filter_params_glob_pattern(), test_project_filter_params_none(), test_project_filter_params_underscore_safe()
 
 ### Community 306 - "Find Cmd Entry Filtered"
 Cohesion: 0.22
 Nodes (10): a_filtered_row_keeps_the_find_arguments(), disclose_filtered(), entry_display(), glob_match(), glob_match_inner(), hidden_and_ignored_matches_are_collected_for_disclosure(), name_matches(), native_walk() (+2 more)
 
-### Community 307 - "Block Content Format Json"
-Cohesion: 0.20
-Nodes (10): ContentFormat, Json, Lockfile, Matches, Term, Web, block(), ORIGIN (+2 more)
+### Community 307 - "ContentFormat"
+Cohesion: 0.10
+Nodes (17): ContentFormat, Json, Lockfile, Matches, Term, Web, Produces, Format (+9 more)
 
 ### Community 308 - "Strategy Apply Range Key"
-Cohesion: 0.40
-Nodes (5): range_key(), range_note(), rle_collapse(), SLine, StrategyCtx
+Cohesion: 0.26
+Nodes (7): range_key(), range_note(), rle_collapse(), rle_only(), SLine, StrategyCtx, to_slines()
 
 ### Community 309 - "Aws Cmd Filter Ecs"
-Cohesion: 0.18
-Nodes (11): extract_assume_principals(), filter_ecs_list_services(), filter_ecs_tasks(), filter_iam_roles(), test_filter_ecs_list_services(), test_filter_ecs_tasks(), test_filter_ecs_tasks_empty(), test_filter_iam_roles() (+3 more)
+Cohesion: 0.25
+Nodes (7): extract_assume_principals(), filter_iam_roles(), format_sg_rule(), test_filter_iam_roles(), test_filter_iam_roles_empty(), test_filter_iam_roles_token_savings(), shorten_arn()
 
 ### Community 310 - "Gh Cmd Value Takes"
 Cohesion: 0.42
 Nodes (9): action_target(), gh_value(), inherited_takes_value(), pr_action(), pr_checks_takes_value(), pr_comment_takes_value(), pr_edit_takes_value(), run_view_takes_value() (+1 more)
 
 ### Community 311 - "Gh Cmd Checks Format"
-Cohesion: 0.18
-Nodes (11): format_pr_checks(), parse_pr_check_line(), PrCheckStatus, Failed, Other, Passed, Pending, test_format_pr_checks_counts_each_watch_snapshot_once() (+3 more)
+Cohesion: 0.33
+Nodes (6): parse_pr_check_line(), PrCheckStatus, Failed, Other, Passed, Pending
 
 ### Community 312 - "Git Cmd Status State"
-Cohesion: 0.18
-Nodes (10): detect_status_state(), GitStatusState, Am, Bisect, CherryPick, MergeConflicts, MergeReadyToCommit, Rebase (+2 more)
+Cohesion: 0.11
+Nodes (19): detect_status_state(), extract_state_header(), GitStatusState, Am, Bisect, CherryPick, MergeConflicts, MergeReadyToCommit (+11 more)
 
 ### Community 313 - "Gradlew Cmd Task Detect"
 Cohesion: 0.18
@@ -1748,29 +1982,29 @@ Nodes (8): bad_regex_surfaces_error_never_silent_no_match(), file_not_found_prop
 Cohesion: 0.36
 Nodes (7): BPE, byte_fallback(), count(), counts_are_token_scale_not_byte_scale(), elide_to_tokens(), large_text_is_token_elided_and_saves(), small_text_is_not_elided()
 
-### Community 321 - "Mod Store Ccr Transform"
-Cohesion: 0.24
-Nodes (3): CcrTransform, session_of(), store_entries()
+### Community 321 - "/diagnose"
+Cohesion: 0.09
+Nodes (22): 1. Vérifications parallèles, 2. Validate token analytics, 3. Quality checks (if in RTK repo), Actions suggérées, /diagnose, Détection automatique, Exemples de suggestion automatique, Exécution (+14 more)
 
 ### Community 322 - "Diff Cmd Classic Format"
 Cohesion: 0.24
 Nodes (10): changes_of(), format_classic_diff(), format_line_range(), test_classic_diff_anchors_a_deletion_in_file2(), test_classic_diff_covers_modified_line_boundary_cases(), test_classic_diff_groups_a_region_as_one_hunk(), test_classic_diff_groups_a_replacement_after_a_shift(), test_classic_diff_is_independent_of_the_pairing() (+2 more)
 
-### Community 323 - "Glab Cmd Value Takes"
-Cohesion: 0.44
-Nodes (8): glab_value(), inherited_takes_value(), mr_action(), mr_approve_takes_value(), mr_merge_takes_value(), mr_note_takes_value(), mr_update_takes_value(), view_takes_value()
+### Community 323 - "README_es.md"
+Cohesion: 0.09
+Nodes (21): Analiticas, Archivos, Build & Lint, Cargo, Comandos, Como funciona, Como funciona el ahorro, Contribuir (+13 more)
 
 ### Community 324 - "Constants Toml Days Dir"
 Cohesion: 0.20
 Nodes (9): CONFIG_TOML, DEFAULT_HISTORY_DAYS, FILTERS_TOML, HISTORY_DB, PIPELINE_TOML, RECALL_DB, RTK_DATA_DIR, RTK_META_COMMANDS (+1 more)
 
-### Community 325 - "Runner Hint Terminated Body"
-Cohesion: 0.27
-Nodes (10): already_terminated_hint_gains_nothing(), bulky_raw(), empty_body_with_hint_prints_the_hint_alone(), guard_stdout(), guarded_output(), hint_is_terminated_once(), terminated(), terminated_body_and_hint_gain_no_blank_line() (+2 more)
+### Community 325 - "README_ja.md"
+Cohesion: 0.09
+Nodes (21): Apache-2.0 エディション（オープンソースのみ、商用利用可）, Cargo, Git, Homebrew（推奨）, RTK がすること, winget（Windows）, インストール, クイックインストール（Linux/macOS） (+13 more)
 
-### Community 326 - "Toml Filter Rule Def"
-Cohesion: 0.22
-Nodes (10): compile_filter(), LineFilter, Keep, None, Strip, MatchOutputRule, ReplaceRule, TomlFilterDef (+2 more)
+### Community 326 - "README_pt.md"
+Cohesion: 0.09
+Nodes (21): Análises, Arquivos, Aviso Legal, Build & Lint, Cargo, Comandos, Como funciona, Como funciona a economia (+13 more)
 
 ### Community 327 - "Utils Decode Mixed Output"
 Cohesion: 0.20
@@ -1780,13 +2014,13 @@ Nodes (10): decode_line(), decode_mixed(), decode_process_output(), output_codep
 Cohesion: 0.31
 Nodes (8): Coverage, Estimated, Measured, extract_subcmd(), hook_coverage(), run(), truncate_command(), category_avg_tokens()
 
-### Community 329 - "Permissions Host Antigravity Claude"
-Cohesion: 0.20
-Nodes (10): Host, Antigravity, Claude, Codex, Cursor, Droid, Gemini, OpenCode (+2 more)
+### Community 329 - "Common Search Patterns"
+Cohesion: 0.10
+Nodes (20): Adding a new filter, "All command modules", Anti-Patterns, Common Search Patterns, Configuration issues, Debugging filter output, Dependency Check, "Find all LazyLock regex definitions" (+12 more)
 
-### Community 330 - "Gh Pr Checks Failure"
-Cohesion: 0.44
-Nodes (9): a_cancelled_run_does_not_read_as_nothing_wrong(), a_red_run_still_propagates_the_exit_code(), an_error_with_empty_stdout_does_not_become_an_all_zero_summary(), failing_checks_are_summarised_not_dumped_raw(), fake_gh(), fake_tool(), pending_checks_are_counted_and_exit_eight_survives(), RED_TABLE (+1 more)
+### Community 330 - "fs"
+Cohesion: 0.14
+Nodes (19): check_cmds_modules_declared(), main(), set_windows_stack_size(), a_cancelled_run_does_not_read_as_nothing_wrong(), a_red_run_still_propagates_the_exit_code(), an_error_with_empty_stdout_does_not_become_an_all_zero_summary(), failing_checks_are_summarised_not_dumped_raw(), fake_gh() (+11 more)
 
 ### Community 331 - "Isolate Rtk Test Inherits"
 Cohesion: 0.36
@@ -1797,16 +2031,16 @@ Cohesion: 0.42
 Nodes (7): assert_contains(), assert_fails(), assert_help(), assert_ok(), section(), test-all.sh script, skip_test()
 
 ### Community 333 - "Aws Cmd Filter Events"
-Cohesion: 0.22
-Nodes (9): filter_cfn_events(), test_filter_cfn_events(), test_filter_cfn_events_empty(), test_filter_cfn_events_failure_count_exceeds_max_items(), test_filter_cfn_events_token_savings(), test_filter_dynamodb_token_savings(), test_filter_logs_events_token_savings(), test_snapshot_cfn_events_format() (+1 more)
+Cohesion: 0.33
+Nodes (6): filter_cfn_events(), test_filter_cfn_events(), test_filter_cfn_events_empty(), test_filter_cfn_events_failure_count_exceeds_max_items(), test_filter_cfn_events_token_savings(), test_snapshot_cfn_events_format()
 
 ### Community 334 - "Dotnet Cmd Trx Merge"
 Cohesion: 0.36
 Nodes (9): merge_test_summary_from_trx(), test_merge_test_summary_from_trx_falls_back_to_testresults(), test_merge_test_summary_from_trx_ignores_stale_fallback_file(), test_merge_test_summary_from_trx_keeps_larger_existing_counts(), test_merge_test_summary_from_trx_overrides_smaller_existing_counts(), test_merge_test_summary_from_trx_returns_default_when_no_trx(), test_merge_test_summary_from_trx_uses_larger_project_count(), test_merge_test_summary_from_trx_uses_primary_and_cleans_file() (+1 more)
 
-### Community 335 - "Glab Cmd Filter Markdown"
-Cohesion: 0.22
-Nodes (9): filter_markdown_body(), filter_markdown_segment(), format_issue_view(), test_filter_markdown_body_badges_removed(), test_filter_markdown_body_blank_lines_collapse(), test_filter_markdown_body_code_block_preserved(), test_filter_markdown_body_html_comments(), test_filter_markdown_body_meaningful_content_preserved() (+1 more)
+### Community 335 - "Security Guardian"
+Cohesion: 0.10
+Nodes (20): 1. Threat Identification, 2. Code Audit Patterns, 3. Security Testing, Command Injection (🔴 Critical), Hook Security (🟡 High), Incident Response, Input Validation, Malicious Output (🟡 Medium) (+12 more)
 
 ### Community 336 - "Utils Binary Resolve Composer"
 Cohesion: 0.22
@@ -1840,9 +2074,9 @@ Nodes (9): bind_export_hint(), daemon_bind(), launch_plan(), LaunchPlan, KeepExi
 Cohesion: 0.50
 Nodes (8): after_context_lines_are_shown(), before_context_lines_are_shown(), count_output_has_no_nul_separator(), group_separator_between_non_adjacent_matches(), no_separator_without_context_flag(), only_matching_output_has_no_nul_separator(), rg_available(), rtk()
 
-### Community 344 - "Native Test Expression Test"
-Cohesion: 0.39
-Nodes (6): bang_before_a_command_still_runs_the_command(), commands_still_reach_the_test_runner(), fixture(), native_expressions_carry_the_test_exit_code(), native_expressions_keep_argument_boundaries(), negated_expressions_are_not_answered_backwards()
+### Community 344 - "Security Policy"
+Cohesion: 0.10
+Nodes (20): Automated Security Checks, Avoid These Anti-Patterns, Contact, Critical Files Requiring Enhanced Review, Dangerous Patterns Reviewers Look For, Dependency Security, Disclosure Timeline, Error Handling Guidelines (+12 more)
 
 ### Community 345 - "Test-Rtk-Rewrite.Sh Rewrite Input Rtk"
 Cohesion: 0.50
@@ -1860,17 +2094,17 @@ Nodes (8): format_dotnet_format_output(), format_fixture(), format_report_summar
 Cohesion: 0.25
 Nodes (8): jaccard(), pair_rewrites(), similarity(), test_pairing_leaves_dissimilar_lines_unpaired(), test_pairing_past_the_cell_cap_falls_back_to_position(), test_pairing_takes_the_best_score_first(), test_pairing_tie_breaks_toward_the_diagonal(), test_similarity_partial_overlap()
 
-### Community 349 - "Gh Cmd Confirmation Create"
-Cohesion: 0.25
-Nodes (8): test_ok_confirmation_pr_comment(), test_ok_confirmation_pr_create(), test_ok_confirmation_pr_edit(), test_ok_confirmation_pr_merge(), test_ok_confirmation_mr_approve(), test_ok_confirmation_mr_create(), test_ok_confirmation_mr_merge(), ok_confirmation()
+### Community 349 - "/test-routing"
+Cohesion: 0.10
+Nodes (19): Cas 1: Commande avec filtre, Cas 2: Commande sans filtre, Cas 3: RTK non installé, Exemples, Expected Output, Implémentation, Integration avec Claude Code, Limitations (+11 more)
 
-### Community 350 - "Golangci Cmd Run Invocation"
-Cohesion: 0.29
-Nodes (8): classify_invocation(), find_subcommand_index(), Invocation, FilteredRun, Passthrough, is_subcommand(), run(), run_passthrough()
+### Community 350 - "Issue Triage"
+Cohesion: 0.10
+Nodes (19): Affichage et validation, Analyse — 6 dimensions, Copie automatique, Data Gathering (commandes en parallèle), Exécution, Exécution de l'analyse, Gestion des cas limites, Génération des drafts (+11 more)
 
-### Community 351 - "Pipe Cmd Filter Resolve"
-Cohesion: 0.25
-Nodes (8): apply_filter(), resolve_filter(), run(), test_panicking_filter_returns_passthrough(), test_pipe_pytest_strips_ansi_before_parsing(), test_resolve_filter_cargo_test(), test_resolve_filter_find(), test_resolve_filter_grep()
+### Community 351 - "What is collected"
+Cohesion: 0.10
+Nodes (20): Activity, Configuration, Consent, Data Collector, Data Handling, Economics, Ecosystem distribution, Environment (+12 more)
 
 ### Community 352 - "Filter Str Level Aggressive"
 Cohesion: 0.25
@@ -1880,9 +2114,9 @@ Nodes (4): FilterLevel, Aggressive, Minimal, None
 Cohesion: 0.29
 Nodes (8): collect_test_outcomes(), run_filter_tests(), test_builtin_all_filters_have_inline_tests(), test_filters_without_tests_detected(), test_run_filter_tests_fails_on_wrong_expected(), test_run_filter_tests_passes_on_correct_expected(), TestOutcome, VerifyResults
 
-### Community 354 - "Toml Filter Filters Compile"
-Cohesion: 0.36
-Nodes (5): test_builtin_filters_compile(), test_schema_version_mismatch_errors(), test_unknown_field_typo_errors(), TomlFilterRegistry, user_filters_load_only_while_trusted()
+### Community 354 - "CompiledFilter"
+Cohesion: 0.19
+Nodes (13): compile_filter(), CompiledFilter, CompiledMatchOutputRule, CompiledReplaceRule, LineFilter, Keep, None, Strip (+5 more)
 
 ### Community 355 - "Provider Discover Sessions Project"
 Cohesion: 0.29
@@ -1908,13 +2142,17 @@ Nodes (8): PrismaCommands, DbPush, Generate, Migrate, PrismaMigrateCommands, Dep
 Cohesion: 0.25
 Nodes (8): LlmProxySubcommand, Config, Service, Setup, Start, Stats, Status, Stop
 
-### Community 361 - "Init Agent Cursor Test"
-Cohesion: 0.46
-Nodes (7): agent_cursor_dry_run_never_touches_claude(), agent_cursor_real_write_creates_no_claude_dir(), agent_cursor_with_opencode_dry_run_installs_both_without_claude(), default_dry_run_still_installs_claude(), dry_run(), explicit_claude_agent_dry_run_still_installs_claude(), rtk()
+### Community 361 - ".new"
+Cohesion: 0.13
+Nodes (11): block_handler_normalize_line_feeds_matching_and_emission(), BlockStreamFilter, LineStreamFilter, RegexBlockFilter, test_block_filter_emits_blocks(), test_block_filter_no_blocks(), test_regex_block_filter_emits_blocks(), test_regex_block_filter_indent_continuation() (+3 more)
 
 ### Community 362 - "Rewrite Shell Wrapper Test"
 Cohesion: 0.46
 Nodes (7): bash_command_string_rewrites_inner_commands(), fish_command_string_rewrites_portable_inner_commands(), fish_specific_inner_script_passes_through(), rewrite(), unsafe_inner_script_passes_through_without_output(), zsh_command_string_rewrites_inner_commands(), zsh_specific_inner_script_passes_through()
+
+### Community 363 - "JSON Formats by Agent"
+Cohesion: 0.06
+Nodes (30): isBashToolCallEvent(), StatusContext, Adding a New Agent Integration, Awareness files, Claude Code (Shell Hook), Codex CLI (Rust Binary), Command Rewrite Registry, Compound Command Handling (+22 more)
 
 ### Community 364 - "Test-Aristote.Sh Aristote Contains Output"
 Cohesion: 0.52
@@ -1924,13 +2162,13 @@ Nodes (6): assert_contains(), assert_ok(), assert_output(), section(), test-aris
 Cohesion: 0.29
 Nodes (7): detect_test_runner_mode_in_dir(), is_global_json_mtp_mode(), MtpProjectKind, None, VsTestBridge, parse_global_json_mtp_mode(), scan_mtp_kind_in_file()
 
-### Community 366 - "Cargo Cmd Command Build"
-Cohesion: 0.29
-Nodes (7): CargoCommand, Build, Check, Clippy, Install, Nextest, Test
+### Community 366 - "CargoCommand"
+Cohesion: 0.16
+Nodes (18): CargoCommand, Build, Check, Clippy, Install, Nextest, Test, has_json_message_format() (+10 more)
 
-### Community 367 - "Stream Stdin Filter Feed"
-Cohesion: 0.29
-Nodes (5): StdinFilter, StdinMode, Filter, Inherit, Null
+### Community 367 - "run_stash"
+Cohesion: 0.10
+Nodes (20): compact_stash_stat(), compress_stat_summary(), diffstat_row(), emits_word_diff(), filter_stash_list(), format_stash_message(), parse_stash_stat(), run_stash() (+12 more)
 
 ### Community 368 - "Utils Detect Package Manager"
 Cohesion: 0.29
@@ -1940,13 +2178,13 @@ Nodes (7): detect_package_manager(), detect_package_manager_in(), exec_runner(),
 Cohesion: 0.29
 Nodes (7): droid_rules_from_settings(), test_droid_allowlist_never_read(), test_droid_blocklist_and_denylist_both_deny(), test_droid_deny_lists_union_across_scopes(), test_droid_malformed_entries_filtered(), test_droid_no_settings_yields_no_rules(), test_droid_verdicts_deny_or_default_only()
 
-### Community 370 - "Aws Cmd Ec2 Filter"
-Cohesion: 0.33
-Nodes (6): filter_ec2_instances(), test_ec2_token_savings(), test_filter_ec2_instances(), test_filter_ec2_instances_empty(), test_filter_ec2_no_name_tag(), test_snapshot_ec2_instances()
+### Community 370 - "count_tokens"
+Cohesion: 0.13
+Nodes (15): days_to_ymd(), filter_ec2_instances(), filter_logs_events(), test_ec2_token_savings(), test_filter_dynamodb_token_savings(), test_filter_ec2_instances(), test_filter_ec2_instances_empty(), test_filter_ec2_no_name_tag() (+7 more)
 
-### Community 371 - "Golangci Cmd Filtered Major"
-Cohesion: 0.40
-Nodes (6): build_filtered_args(), detect_major_version(), has_output_flag(), parse_major_version(), run_filtered(), RunInvocation
+### Community 371 - "safety.rs"
+Cohesion: 0.14
+Nodes (15): FORBIDDEN_TOKENS, is_eligible_argv(), is_eligible_command(), SAFE_STANDALONE_BINARIES, SafetyViolation, BinaryMismatch, EmptyHealed, ForbiddenFlagOrToken (+7 more)
 
 ### Community 372 - "Find Cmd Run Args"
 Cohesion: 0.33
@@ -1976,9 +2214,13 @@ Nodes (6): OcCommands, Get, Logs, Other, Pods, Services
 Cohesion: 0.47
 Nodes (6): cli_name(), cli_name_is_a_bare_command_name(), is_reachable(), no_data_hint(), the_hint_names_every_launchable_agent_when_reachable(), the_hint_never_tells_you_to_start_a_running_daemon()
 
-### Community 379 - "Build Check Cmds Modules"
-Cohesion: 0.60
-Nodes (3): check_cmds_modules_declared(), main(), set_windows_stack_size()
+### Community 379 - "pipeline_from"
+Cohesion: 0.14
+Nodes (20): applied_carries_the_resolved_pipeline_name_for_attribution(), fixture(), json_reads_pipeline(), mcp_event(), mcp_pipeline(), pipeline_from(), test_after_tool_route_ignores_a_non_digest_task(), test_after_tool_route_without_an_upstream_passes_output_through() (+12 more)
+
+### Community 380 - "PR Triage"
+Cohesion: 0.11
+Nodes (18): Affichage et validation, Analyse, Copie automatique, Data Gathering (commandes en parallèle), Exécution des Reviews, Gestion des cas limites, Génération des drafts, Langue (+10 more)
 
 ### Community 381 - "Cargo.Toml Rtk Engine Plugin"
 Cohesion: 0.60
@@ -1996,21 +2238,21 @@ Nodes (5): filter_lambda_list(), test_filter_lambda_list(), test_filter_lambda_l
 Cohesion: 0.40
 Nodes (5): filter_security_groups(), test_filter_security_groups(), test_filter_security_groups_empty(), test_filter_security_groups_token_savings(), test_snapshot_security_groups_format()
 
-### Community 385 - "Phpstan Cmd Error Format"
-Cohesion: 0.40
-Nodes (5): detect_error_format(), ErrorFormat, Custom, Json, Unspecified
+### Community 385 - "Steps"
+Cohesion: 0.11
+Nodes (18): 1. Gather Data, 2. Determine Maintainers, 3. Analyze and Categorize, 4. Derive Recent Releases, 5. Executive Summary, 6. Format Output, 7. Copy to Clipboard, Detect overlaps: (+10 more)
 
-### Community 386 - "Pytest Cmd Parse State"
-Cohesion: 0.40
-Nodes (5): ParseState, Failures, Header, Summary, TestProgress
+### Community 386 - "README.md"
+Cohesion: 0.11
+Nodes (18): Contributing, Core team, Disclaimer, Documentation, How It Works, How Savings Work, Installation, License (+10 more)
 
-### Community 387 - "Rake Cmd Parse State"
-Cohesion: 0.40
-Nodes (5): ParseState, Failures, Header, Running, Summary
+### Community 387 - "Phase 3 — Analyse croisée (cœur de ce skill)"
+Cohesion: 0.11
+Nodes (17): 3.1 Double couverture — 2 PRs pour 1 issue, 3.2 Trous de couverture sécurité, 3.3 P0/P1 bugs sans PR, 3.4 Nos PRs dirty — causes probables, 3.5 PRs sans issue trackée, Afficher l'analyse croisée complète (sections 3.1 → 3.5), Format du fichier sauvegardé, Phase 0 — Préconditions (+9 more)
 
-### Community 388 - "Pipe Cmd Wrapper Find"
-Cohesion: 0.40
-Nodes (5): count_tokens(), find_wrapper(), grep_wrapper(), test_find_wrapper_token_savings(), test_grep_wrapper_token_savings()
+### Community 388 - "TaskOutcome"
+Cohesion: 0.13
+Nodes (7): generate_strips_code_fences_from_output(), Summarize, SUMMARIZE, TaskOutcome, Print, WriteFile, Checklist
 
 ### Community 389 - "Lib Commands Build Other"
 Cohesion: 0.40
@@ -2024,9 +2266,21 @@ Nodes (5): SbtCommands, Compile, Other, Run, Test
 Cohesion: 0.50
 Nodes (3): DOC, doc_name(), every_registered_harness_has_a_coverage_row()
 
+### Community 392 - "Windows Stack Reserve Test"
+Cohesion: 0.25
+Nodes (3): open_private(), HEADER_BYTES, STACK_RESERVE
+
+### Community 393 - ".install"
+Cohesion: 0.22
+Nodes (5): Rtk, Gradle (`gradlew_cmd.rs`), Integrity-check whitelist, JVM ecosystem filters, Maven (`mvn_cmd.rs`)
+
 ### Community 394 - "Test-Rtk-Rewrite.Sh Rewrite Rtk Script"
 Cohesion: 0.83
 Nodes (3): test-rtk-rewrite.sh script, test_audit_log(), test_rewrite()
+
+### Community 395 - "run"
+Cohesion: 0.13
+Nodes (16): clean_line(), compact_path(), fold_path_prefix(), fold_path_prefix_is_lossless(), grep_slug(), match_block(), match_block_stays_fully_qualified(), passthrough() (+8 more)
 
 ### Community 396 - "Arg Tokenizer Dash Ends"
 Cohesion: 0.50
@@ -2040,9 +2294,9 @@ Nodes (4): SingleDash, Atomic, AtomicAliasingLong, Cluster
 Cohesion: 0.50
 Nodes (4): PluginsCommands, Build, List, New
 
-### Community 404 - "Golangci Cmd Output Issue"
-Cohesion: 0.67
-Nodes (3): GolangciOutput, Issue, Position
+### Community 404 - "CLAUDE.md"
+Cohesion: 0.12
+Nodes (16): Architecture, Avoiding Rabbit Holes, Build & Run, Build Verification (Mandatory), Bypass Mode, Coding Rules, Development Commands, Linting & Quality (+8 more)
 
 ### Community 405 - "Arg Tokenizer Equals Attach"
 Cohesion: 0.67
@@ -2052,25 +2306,725 @@ Nodes (3): Attach, Equals, EqualsOrColon
 Cohesion: 0.67
 Nodes (3): NameCase, Folded, Sensitive
 
+### Community 417 - "Rules"
+Cohesion: 0.12
+Nodes (17): Actions, Anatomy, Hook subjects, Layout, Order, Overrides, `[pipeline]`, Proxy parts (+9 more)
+
+### Community 446 - "Contributing to the RTK engine and proxy"
+Cohesion: 0.12
+Nodes (15): Benchmarking a pipeline, Contributing to the RTK engine and proxy, Licensing, Not accepted, Process, Rules every PR must satisfy, Until pull requests open, What we accept from 18 October (+7 more)
+
+### Community 447 - "pint_cmd.rs"
+Cohesion: 0.20
+Nodes (14): filter_pint_json(), MAX_FILES_SHOWN, MAX_RULES_PER_FILE, PintFile, PintOutput, run(), test_pint_current_schema_path_fixers(), test_pint_file_truncation() (+6 more)
+
+### Community 448 - "RTK Testing Specialist"
+Cohesion: 0.12
+Nodes (15): Adding Test for New Filter, Anti-Patterns, Commands, Core Responsibilities, Cross-Platform Shell Escaping, Integration Tests (Real Commands), RTK Testing Specialist, Running Integration Tests (+7 more)
+
+### Community 449 - "Rust Patterns — RTK Development Rules"
+Cohesion: 0.12
+Nodes (15): Always context, always anyhow, Anti-Patterns (RTK-Specific), Builder for complex args, Error Handling, Fallback pattern (mandatory for all filters), Iterators Over Loops, Match — Exhaustive and Explicit, Module Structure (+7 more)
+
+### Community 450 - "Phase 2 — Pour chaque PR (une par une, dans l'ordre)"
+Cohesion: 0.12
+Nodes (15): Fichiers fréquemment en conflit (surveiller), Phase 0 — Préconditions, Phase 1 — Construire la liste de PRs (si pas de triage), Phase 2 — Pour chaque PR (une par une, dans l'ordre), Phase 3 — PRs bloquées : commentaire boldguy-adapt, Phase 4 — Récap de session, /pr-review, Quand utiliser (+7 more)
+
+### Community 451 - "RTK TDD Workflow"
+Cohesion: 0.12
+Nodes (15): Arrange-Act-Assert Pattern, Never Do This, RTK-Specific Test Patterns, RTK TDD Workflow, Step 1: Real Fixture First, Step 2: Write the Test (Red), Step 3: Minimum Implementation (Green), Step 4: Accept Snapshot (+7 more)
+
+### Community 452 - "Token Savings Analytics"
+Cohesion: 0.12
+Nodes (16): Analysis workflows, Attribution, Auto-launch, Daily breakdown, Database, Export formats, How token estimation works, Live dashboard (+8 more)
+
+### Community 453 - ".add"
+Cohesion: 0.18
+Nodes (6): Adopting a shared pipeline, Trying a pipeline silently (shadow installs), Calc, PassFiveTest, PassFourTest, PassThreeTest
+
+### Community 454 - "super"
+Cohesion: 0.14
+Nodes (8): HOOK_SUBJECTS, PROXY_PARTS, subject_names_are_the_frozen_tree_vocabulary(), cache_read_mult_of(), CACHE_WRITE_MULT, cost_usd_cached(), costs_exist_only_when_the_operator_supplies_prices(), PRICED
+
+### Community 455 - "Core Infrastructure"
+Cohesion: 0.12
+Nodes (16): Adding New Functionality, Argument Tokenizer (arg_tokenizer.rs), Command Construction (`shell`), Config Sections, Consumer Contracts, Core Infrastructure, Dialects, Output recovery (`tee_and_hint` + recall store) (+8 more)
+
+### Community 456 - "code-reviewer.md"
+Cohesion: 0.13
+Nodes (14): 1. Silent Fallback (🔴 CRITICAL), 2. Non-Lazy Regex (🔴 CRITICAL), 3. Exit Code Swallowed (🔴 CRITICAL), 4. Missing Context on Error (🟡 IMPORTANT), Adversarial Questions for RTK, Call-Site Analysis (🔴 MANDATORY), Defensive Code Patterns (RTK-specific), Expertise Areas (+6 more)
+
+### Community 457 - "Audit Codebase — Santé du Projet RTK"
+Cohesion: 0.13
+Nodes (14): Arguments, Audit Codebase — Santé du Projet RTK, Format de Sortie, Phase 1 : Audit Secrets (Poids: 2x), Phase 2 : Audit Sécurité (Poids: 2x), Phase 3 : Audit Dépendances (Poids: 1x), Phase 4 : Audit Structure (Poids: 1.5x), Phase 5 : Audit Tests (Poids: 2x) (+6 more)
+
+### Community 458 - "RTK Code Review"
+Cohesion: 0.13
+Nodes (14): 🟢 CAN SKIP (suggestions), Format compact (défaut), Mode Auto (--auto), 🔴 MUST FIX (bloquant), RTK Code Review, Règles anti-hallucination (CRITIQUE), Règles clés RTK, 🟡 SHOULD FIX (important) (+6 more)
+
+### Community 459 - "Installation"
+Cohesion: 0.13
+Nodes (15): Apache-2.0 edition, Cargo, Check before installing, Homebrew (macOS and Linux), Installation, Name collision warning, Native Windows (manual install), Pre-built binaries (Windows, Linux, macOS) (+7 more)
+
+### Community 460 - "Troubleshooting"
+Cohesion: 0.13
+Nodes (15): AI assistant not using RTK, `cargo install rtk` installs the wrong package, Compilation error during installation, Does RTK break Claude's prompt cache?, Double-clicking rtk.exe does nothing, Hook not working (no auto-rewrite), How to tell which rtk you have, Node.js tools not found (+7 more)
+
+### Community 461 - "What RTK Optimizes"
+Cohesion: 0.13
+Nodes (15): Cargo / Rust, Cloud and Data, Commands that are not rewritten, Docker / Kubernetes, Files and Search, Git, GitHub CLI, Global flags (+7 more)
+
+### Community 462 - "Git commands"
+Cohesion: 0.13
+Nodes (15): Git commands, Git passthrough, Overview, `rtk git add` -- Compact add, `rtk git branch` -- Compact branches, `rtk git commit` -- Compact commit, `rtk git diff` -- Compact diff, `rtk git fetch` -- Compact fetch (+7 more)
+
+### Community 463 - "RTK Plugin for OpenClaw"
+Cohesion: 0.13
+Nodes (14): Configuration, How it works, Install the plugin, Installation, License, Or install via OpenClaw CLI, Permissions, Prerequisites (+6 more)
+
+### Community 464 - ".on_request"
+Cohesion: 0.31
+Nodes (9): below_min_tokens_is_a_noop(), cfg(), compresses_an_eligible_tool_result_and_records_savings(), content_too_tall_for_the_long_edge_cap_is_left_untouched(), disabled_is_a_noop(), json_tool_result_is_left_untouched(), make_req(), PixelCompressTransform (+1 more)
+
+### Community 465 - "build_dotnet_args_for_test"
+Cohesion: 0.13
+Nodes (15): build_dotnet_args_for_test(), test_forwarded_args_do_not_suppress_injection(), test_forwarding_args_with_spaces(), test_forwarding_config_and_framework(), test_forwarding_no_build_and_no_restore(), test_forwarding_project_file(), test_second_of_multiple_loggers_being_trx_does_not_duplicate(), test_short_logger_alias_does_not_duplicate() (+7 more)
+
+### Community 466 - "filter_log_output"
+Cohesion: 0.13
+Nodes (15): filter_log_output(), test_filter_log_output(), test_filter_log_output_body_omission_indicator(), test_filter_log_output_cap_lines(), test_filter_log_output_emoji(), test_filter_log_output_multibyte(), test_filter_log_output_skips_trailers(), test_filter_log_output_token_savings() (+7 more)
+
+### Community 467 - "RTK System Architect"
+Cohesion: 0.14
+Nodes (13): Architectural Patterns (RTK Idioms), Behavioral Mindset, Boundaries, Focus Areas, Key Actions, Outputs, Pattern 1: New Filter Module, Pattern 2: Sub-Enum for Command Families (+5 more)
+
+### Community 468 - "Pipeline Commands"
+Cohesion: 0.14
+Nodes (14): Discovering shared pipelines, Evaluating a pipeline on your own usage, Explaining a decision, Inspecting what is active, Measuring a pipeline, Pipeline Commands, Publishing, Quick reference (+6 more)
+
+### Community 469 - "Telemetry"
+Cohesion: 0.14
+Nodes (12): Consent, Data Collector, Data Handling, Erasure Procedure, For contributors, How it works, Retention Policy, Server-side Requirements (+4 more)
+
+### Community 470 - "Simplification Patterns"
+Cohesion: 0.15
+Nodes (12): 1. Iterator chains over manual loops, 2. String building, 3. Option/Result chaining, 4. Struct destructuring, 5. Early returns over nesting, 6. Avoid redundant clones, 7. Use `if let` for single-variant match, Constraints (never simplify away) (+4 more)
+
+### Community 471 - "Build and lint commands"
+Cohesion: 0.15
+Nodes (13): Build and lint commands, `rtk cargo build` -- Rust build, `rtk cargo check` -- Rust check, `rtk cargo clippy` -- Rust Clippy, `rtk cargo install` -- Rust install, `rtk format` -- Universal formatter, `rtk golangci-lint` -- Go linter, `rtk lint` -- ESLint / Biome (+5 more)
+
+### Community 472 - "RTK Tracking"
+Cohesion: 0.15
+Nodes (13): Backup, Database locked error, Exporting, Privacy, Reset, Retention, RTK Tracking, See Also (+5 more)
+
+### Community 473 - "parse_match_line"
+Cohesion: 0.15
+Nodes (11): format_match_line(), parse_match_line(), SearchStreamFilter, test_parse_match_line_content_with_digit_colons(), test_parse_match_line_content_with_double_colon(), test_parse_match_line_context_line(), test_parse_match_line_empty_content(), test_parse_match_line_filename_with_colons() (+3 more)
+
+### Community 474 - "RTK Test Patterns"
+Cohesion: 0.17
+Nodes (11): High Priority (pure functions, trivial to test), Low Priority (heavy I/O, CLI wiring), Medium Priority (need tempfile or parsed input), Pattern 1: Filter Function (most common in RTK), Pattern 2: Pure Computation, Pattern 3: Validation / Security, Pattern 4: ANSI Stripping, RTK Test Patterns (+3 more)
+
+### Community 475 - "RTK Coding Practices v1.0"
+Cohesion: 0.17
+Nodes (12): Comments, Design Philosophy, Edge Cases, Error Handling, Files, Functions, and Documentation, Function and File Size, Imports and Dependencies, Quick Start for Contributors (+4 more)
+
+### Community 476 - "RTK Proxy"
+Cohesion: 0.17
+Nodes (12): Binding to another address, `--env` — one shell, by hand, Getting your agent onto the proxy, Install the daemon, Quick start, `rtk <harness>` — the launcher, `rtk init -g` — the guided setup, RTK Proxy (+4 more)
+
+### Community 477 - "Tool-Call Auto-Healing with Local/Fast Models"
+Cohesion: 0.17
+Nodes (11): 1. Overview & Motivation, 2.1 Why the Client/Hook Layer (PreToolUse)?, 2. Architecture & Components, 3.1 Subcommand: `rtk heal`, 3.2 Safety Envelope & Sanitization Gate, 3.3 LLM Client & Prompting, 3.4 Hook Integration (`src/hooks/decision.rs` & `src/hooks/hook_cmd.rs`), 3. Detailed Component Specifications (+3 more)
+
+### Community 478 - "write"
+Cohesion: 0.26
+Nodes (6): curl_forwards_piped_stdin_body(), read_one_request_body(), early_exit_preserves_output_and_status_when_stdin_is_closed(), run_with_stdin(), wc_preserves_native_failure_exit_code(), wc_reads_piped_stdin()
+
+### Community 479 - "smoke_binary.rs"
+Cohesion: 0.33
+Nodes (6): cli_subcommands_talk_to_a_running_daemon_then_stop_it(), free_port(), Kill, real_binary_boots_forwards_and_records(), run_cli(), wait_healthy()
+
+### Community 480 - "RTK Rust Design Patterns"
+Cohesion: 0.18
+Nodes (10): Anti-Patterns in RTK Context, Pattern 1: Newtype (Type Safety), Pattern 2: Builder (Complex Configuration), Pattern 3: State Machine (Parser/Filter Flows), Pattern 4: Trait Object (Command Dispatch), Pattern 5: RAII (Resource Management), Pattern 6: Strategy (Swappable Filter Logic), Pattern 7: Extension Trait (Add Methods to External Types) (+2 more)
+
+### Community 481 - "Python & Go Module Architecture"
+Cohesion: 0.18
+Nodes (11): Command Implementations, Command Implementations, Design Rationale, Format Strategy Decision Tree, Go Stack Architecture, Module Integration Checklist, Python & Go Module Architecture, Python Stack Architecture (+3 more)
+
+### Community 482 - "Configuration"
+Cohesion: 0.18
+Nodes (11): Awareness level, Choosing the recovery mode, Config file location, Configuration, Custom filters, Environment variables, Excluding commands from auto-rewrite, Full config structure (+3 more)
+
+### Community 483 - "What is collected"
+Cohesion: 0.18
+Nodes (11): Adoption, Configuration (user maturity), Economics, Ecosystem distribution, Environment, Feature adoption, Identity (anonymous), Quality (filter improvement) (+3 more)
+
+### Community 484 - "client.rs"
+Cohesion: 0.27
+Nodes (6): build_request_payload(), extract_command_tag(), request_healed_command(), test_request_healed_command_success_and_timeout(), test_truncate_stderr_respects_lines_bytes_and_utf8_boundaries(), truncate_stderr()
+
+### Community 485 - "minify_json.rs"
+Cohesion: 0.31
+Nodes (7): blk(), ctx(), minify(), MinifyJson, test_invalid_json_passes_through(), test_minifies_pretty_json(), MINIFY_JSON
+
+### Community 486 - "answer_with"
+Cohesion: 0.25
+Nodes (10): TaskDef, answer_call(), answer_with(), context_question(), context_question_carries_goal_intent_and_calls(), digest_output(), resolve_task(), ResolvedTask (+2 more)
+
+### Community 487 - "Config"
+Cohesion: 0.18
+Nodes (6): an_unreadable_explicit_config_fails_loudly(), bind_is_loopback(), Config, FileConfig, load_toml_file(), to_file_config_round_trips_every_field()
+
+### Community 488 - "blob_truncation"
+Cohesion: 0.24
+Nodes (11): blob_truncation(), Budget, compact_blob_show(), MAX_BLOB_BYTES, test_blob_truncation_large_windowed(), test_blob_truncation_no_trailing_newline(), test_blob_truncation_utf8_boundary_no_panic(), test_blob_windowing_token_savings() (+3 more)
+
+### Community 489 - "TimedExecution"
+Cohesion: 0.29
+Nodes (6): emit_raw_bytes_passthrough(), test_schema_migration_gated_by_user_version(), test_timed_execution_passthrough(), test_timed_execution_records_time(), TimedExecution, estimate_tokens_from_len()
+
+### Community 490 - "format_status_output"
+Cohesion: 0.18
+Nodes (11): format_status_inner(), format_status_output(), format_status_output_detached(), test_format_status_output_clean(), test_format_status_output_detached_head(), test_format_status_output_emoji_filename(), test_format_status_output_mixed_changes(), test_format_status_output_preserves_nested_untracked_paths() (+3 more)
+
+### Community 491 - "run_posthook"
+Cohesion: 0.24
+Nodes (11): bash_fixture(), posthook_pipeline(), run_posthook(), test_bash_ansi_output_stripped_and_rewrapped(), test_bash_interrupted_skipped(), test_bash_progress_frames_collapsed(), test_bash_recall_recovery_command_skipped(), test_bash_repetitive_lines_deduped() (+3 more)
+
+### Community 492 - "Hook System"
+Cohesion: 0.18
+Nodes (11): Atomicity and Safety, Exit Code Contract, Hook System, Implementation, Installation Modes, Integrity Verification, PatchMode Behavior, Per-tool support (+3 more)
+
+### Community 493 - "Git Worktree Setup"
+Cohesion: 0.20
+Nodes (9): Branch Naming Convention, Cleanup, `--fast` / `--no-check`, Flags, Git Worktree Setup, Implementation, Status Check, Troubleshooting (+1 more)
+
+### Community 494 - "Git Worktree Setup"
+Cohesion: 0.20
+Nodes (9): `--check`, Cleanup, Environment Files, `--fast`, Flags, Git Worktree Setup, Implementation, Troubleshooting (+1 more)
+
+### Community 495 - "Pull Request Process"
+Cohesion: 0.20
+Nodes (10): 1. Create Your Branch, 2. Make Your Changes, 3. Add Tests, 4. Add Documentation, 5. Merge into `develop`, 6. Review Process, 7. Integration & Release, Contributor License Agreement (CLA) (+2 more)
+
+### Community 496 - "Contributing to rtk"
+Cohesion: 0.20
+Nodes (10): Branch Naming Convention, Commit format, Commit Messages & Changelog, Contributing to rtk, Documentation, Examples, Questions?, Quick Links (+2 more)
+
+### Community 497 - "rtk Architecture Documentation"
+Cohesion: 0.20
+Nodes (10): Code Filtering Levels (src/core/filter.rs), Extensibility Guide, Filtering Strategies, Global Flags Architecture, Glossary, Resources, rtk Architecture Documentation, Strategy Matrix (+2 more)
+
+### Community 498 - "File commands"
+Cohesion: 0.20
+Nodes (10): File commands, `rtk ast-grep` -- Structural (AST) search, `rtk diff` -- Condensed diff, `rtk find` -- File search, `rtk grep` -- Content search, `rtk ls` -- Directory listing, `rtk read` -- File reading, `rtk smart` -- Heuristic summary (+2 more)
+
+### Community 500 - "Worktree Status Check"
+Cohesion: 0.22
+Nodes (8): Failed, Implementation, Integration, Output Examples, Passed, Still Running, Usage, Worktree Status Check
+
+### Community 501 - "Rust TDD Workflow"
+Cohesion: 0.22
+Nodes (8): Idiomatic Rust Test Patterns, Naming Convention, Patterns by Code Type, Pre-Commit Gate, Red-Green-Refactor Steps, Rust TDD Workflow, Three Laws of TDD, When NOT to Use Pure TDD
+
+### Community 502 - "RTK — Rust Token Killer"
+Cohesion: 0.22
+Nodes (9): Analyze your usage, Further reading, Get started, Go further, How it works, Measure your savings, RTK — Rust Token Killer, What RTK optimizes (+1 more)
+
+### Community 503 - "How to apply guide"
+Cohesion: 0.22
+Nodes (8): 🔧 Core Maintainers (once we've fully integrated some Ecosystem Maintainers), 🌱 Ecosystem Maintainers, ✍️ How to Apply, How to apply guide, ✅ Requirements, RTK Maintainers Application, What Maintainers Do, 👀 What to Expect
+
+### Community 504 - "Review Focus"
+Cohesion: 0.22
+Nodes (8): Global Constraints, Review Focus, Task 1: Configuration & Environment Overrides (`HealConfig`), Task 2: Safety Envelope & Command Sanitization (`src/cmds/system/heal_cmd/safety.rs`), Task 3: Prompt Builder, Tag Parser & Synchronous LLM Client (`src/cmds/system/heal_cmd/client.rs`), Task 4: `rtk heal` Execution Runner & CLI Subcommand Wiring, Task 5: `PreToolUse` Hook Integration (`src/hooks/decision.rs`), Tool-Call Auto-Healing Implementation Plan
+
+### Community 505 - "Test commands"
+Cohesion: 0.22
+Nodes (9): `rtk cargo nextest` -- Rust tests (nextest), `rtk cargo test` -- Rust tests, `rtk err` -- Errors/warnings only, `rtk go test` -- Go tests, `rtk jest` / `rtk vitest` -- Jest/Vitest tests, `rtk playwright test` -- Playwright E2E tests, `rtk pytest` -- Python tests, `rtk test` -- Generic test wrapper (+1 more)
+
+### Community 506 - "ansi.rs"
+Cohesion: 0.39
+Nodes (5): Ansi, blk(), ctx(), test_plain_text_unchanged(), test_strips_ansi_codes()
+
+### Community 507 - "filter_test"
+Cohesion: 0.22
+Nodes (9): filter_test(), is_framework_frame(), test_test_failed_fixture_shows_user_code(), test_test_failed_output_format(), test_test_success_output_format(), test_try_section_stripped_from_test_output(), test_unit_test_gradle_default_no_testlogging(), test_unit_test_report_path_preserved() (+1 more)
+
+### Community 508 - "TestEcosystem"
+Cohesion: 0.22
+Nodes (8): TestEcosystem, Bun, Cargo, Deno, Go, Jest, Pytest, Unknown
+
+### Community 509 - "Built-in Filters"
+Cohesion: 0.22
+Nodes (9): Adding a filter, Available filter fields, Build and runtime pipeline, Built-in Filters, Custom filters and trust, File format, Filter lookup priority, Naming convention (+1 more)
+
+### Community 510 - "Output Examples"
+Cohesion: 0.25
+Nodes (7): Failed, Implementation, Output Examples, Still Running, Success, Usage, Worktree Status Check
+
+### Community 511 - "CLI Testing Strategy"
+Cohesion: 0.25
+Nodes (7): Anti-Patterns, CLI Testing Strategy, Cross-Platform Testing (🔴 Critical), Platform-Specific Tests, Shell Differences, Test Organization, Testing Platforms
+
+### Community 512 - "Quick Start"
+Cohesion: 0.25
+Nodes (8): Next steps, Prerequisites, Preview without writing: `--dry-run`, Quick Start, Step 1: Initialize for your AI assistant, Step 2: Use your tools normally, Step 3: Check your savings, Step 4: Unsupported commands
+
+### Community 513 - "Hook system"
+Cohesion: 0.25
+Nodes (8): Automatically rewritten commands, Excluding commands, Hook system, How it works, Installation, Installed files, `rtk rewrite` -- Command rewriting, `rtk verify` -- Integrity check
+
+### Community 514 - "Data and network"
+Cohesion: 0.25
+Nodes (8): Data and network, `rtk bypass` -- Passthrough with tracking, `rtk curl` -- HTTP with truncation, `rtk env` -- Environment variables, `rtk json` -- JSON structure, `rtk log` -- Deduplicated logs, `rtk summary` -- Heuristic summary, `rtk wget` -- Compact download
+
+### Community 515 - "classify_commit_outcome"
+Cohesion: 0.29
+Nodes (8): classify_commit_outcome(), CommitOutcome, Failed, Ok, test_classify_commit_hook_abort_propagates_exit_code(), test_classify_commit_nothing_to_commit_is_failure(), test_classify_commit_success_empty_stdout(), test_classify_commit_success_extracts_hash()
+
+### Community 518 - "AttributionRow"
+Cohesion: 0.32
+Nodes (3): AttributionRow, test_attribution_upserts_and_aggregates(), warn_if_missing_table()
+
+### Community 519 - "Discover — History Analysis & Command Rewrite"
+Cohesion: 0.25
+Nodes (7): Adding a New Rewrite Rule, Discover — History Analysis & Command Rewrite, Env Prefix Handling, How Command Rewriting Works, How History Analysis Works, Process Wrapper Handling, What This Module Does
+
+### Community 520 - "[0.47.0](https://github.com/rtk-ai/rtk/compare/v0.46.0...v0.47.0) (2026-09-01)"
+Cohesion: 0.29
+Nodes (7): [0.47.0](https://github.com/rtk-ai/rtk/compare/v0.46.0...v0.47.0) (2026-09-01), ⚠ BREAKING CHANGES, Bug Fixes, Code Refactoring, Features, Miscellaneous Chores, Performance Improvements
+
+### Community 521 - "Clean Worktrees (Automatic)"
+Cohesion: 0.29
+Nodes (6): Clean Worktrees (Automatic), Implementation, Manual Removal (unmerged branch), Safety Features, Usage, When to Use
+
+### Community 522 - "Issue Comment Templates"
+Cohesion: 0.29
+Nodes (6): Formatting Rules, Issue Comment Templates, Template 1 — Acknowledgment + Request Info, Template 2 — Duplicate, Template 3 — Close (Stale), Template 4 — Close (Out of Scope)
+
+### Community 523 - "Conditions and Judges"
+Cohesion: 0.29
+Nodes (7): A judge before the tool, Call context, Conditions and Judges, Hook conditions, Judges — conditions on meaning, Operators, Proxy conditions
+
+### Community 524 - "Methods"
+Cohesion: 0.29
+Nodes (7): Built-in (hook + proxy sites), Chains — shipped composites, usable anywhere a method is, Methods, Proxy-resident, Your own chains, Your own command filters, Your own methods in Rust
+
+### Community 525 - "The RTK pipeline"
+Cohesion: 0.29
+Nodes (7): The RTK pipeline, Three files you might write, Upgrading from RTK ≤ 0.51, Version skew: what degrades, what refuses, What it provides, Where things land on disk, Where to go next
+
+### Community 526 - "Reference Pipelines"
+Cohesion: 0.29
+Nodes (7): Reference Pipelines, `rtk:default` — RTK exactly as it works today, `rtk:delegate-reads` — route oversize reads to a cheaper model, `rtk:posthook` — compress every tool's output, `rtk:proxy` — cache alignment in the proxy, `rtk:terse` — terse prose, `rtk:verbatim-diffs` — no line numbers, diffs untouched
+
+### Community 527 - "How RTK Savings Work"
+Cohesion: 0.29
+Nodes (7): How RTK Savings Work, How to read `rtk gain`, See also, The savings chain, What RTK does not reduce, What RTK filters, Why the token counts are estimates
+
+### Community 528 - "Analytics and tracking"
+Cohesion: 0.29
+Nodes (7): Analytics and tracking, `rtk cc-economics` -- Claude Code economics, `rtk discover` -- Missed opportunities, `rtk gain` -- Bash output reduction statistics, `rtk hook-audit` -- Hook metrics, `rtk learn` -- Learn from errors, Tracking system
+
+### Community 529 - "Package managers"
+Cohesion: 0.29
+Nodes (7): Package managers, `rtk deps` -- Dependency summary, `rtk npm` -- npm, `rtk npx` -- npx with smart routing, `rtk pip` -- pip / uv, `rtk pnpm` -- pnpm, `rtk prisma` -- Prisma ORM
+
+### Community 530 - "Commandes"
+Cohesion: 0.29
+Nodes (7): Analytics, Build & Lint, Commandes, Conteneurs, Fichiers, Git, Tests
+
+### Community 531 - "命令"
+Cohesion: 0.29
+Nodes (7): Git, 分析, 命令, 容器, 文件, 构建 & 检查, 测试
+
+### Community 532 - "TokenKind"
+Cohesion: 0.48
+Nodes (5): branch_takes_value(), checkout_takes_value(), diff_takes_value(), log_takes_value(), shared_long_takes_value()
+
+### Community 533 - "run_push_filter"
+Cohesion: 0.29
+Nodes (7): run_push_filter(), test_push_filter_drops_progress_phases(), test_push_filter_first_ref_wins_for_summary(), test_push_filter_no_summary_on_failure(), test_push_filter_passes_remote_messages_through(), test_push_filter_token_savings_on_verbose_output(), test_push_filter_up_to_date_summary()
+
+### Community 534 - "filter_lint"
+Cohesion: 0.29
+Nodes (7): filter_lint(), test_lint_fixture_token_savings(), test_lint_no_violations_success(), test_lint_output_format(), test_lint_preserves_code_context(), test_lint_preserves_violations(), test_lint_preserves_warnings()
+
+### Community 535 - "from_json_str"
+Cohesion: 0.29
+Nodes (6): from_json_str(), read_composer_bin_dir(), test_from_json_str_borrowed_type(), test_from_json_str_no_bom(), test_from_json_str_strips_bom(), binary_hook_registered()
+
+### Community 536 - "read_window_bytes_test.rs"
+Cohesion: 0.43
+Nodes (4): read_stdin(), read_windows_accept_invalid_bytes_outside_the_selected_window(), read_windows_preserve_binary_boundaries_for_files_and_stdin(), read_windows_still_apply_text_filtering_and_line_numbers()
+
+### Community 537 - "Clean Worktree (Interactive)"
+Cohesion: 0.33
+Nodes (5): Clean Worktree (Interactive), Implementation, Manual Force Remove (unmerged branch), Safety, Usage
+
+### Community 538 - "Clean Worktree (Interactive)"
+Cohesion: 0.33
+Nodes (5): Clean Worktree (Interactive), Implementation, Manual Override, Safety, Usage
+
+### Community 539 - "Clean Worktrees (Automatic)"
+Cohesion: 0.33
+Nodes (5): Clean Worktrees (Automatic), Implementation, Safety Features, Usage, When to Use
+
+### Community 540 - "Remove Worktree"
+Cohesion: 0.33
+Nodes (5): Implementation, Manual Override, Remove Worktree, Safety Features, Usage
+
+### Community 541 - "Design Philosophy"
+Cohesion: 0.33
+Nodes (6): Correctness VS Token Savings, Design Philosophy, Extensibility, Never Block, Transparency, Zero Overhead
+
+### Community 542 - "Plugins — your own methods and task kinds"
+Cohesion: 0.33
+Nodes (6): Plugins — your own methods and task kinds, Requirements and notes, The workflow, Upgrading rtk, What you write, Your own task kinds
+
+### Community 543 - "Agent Coverage"
+Cohesion: 0.33
+Nodes (6): Agent Coverage, Agents that cannot be made agnostic, Checking your own setup, Footnotes — where the detail matters, The table, What this means per pipeline position
+
+### Community 544 - "CI/CD Flows"
+Cohesion: 0.33
+Nodes (5): CI/CD Flows, Manual release (release.yml), Merge to develop — pre-release (cd.yml), Merge to master — stable release (cd.yml), PR Quality Gates (ci.yml)
+
+### Community 545 - "RTK — Copilot Integration (VS Code Copilot Chat + Copilot CLI)"
+Cohesion: 0.33
+Nodes (5): How the hook works, Installation verification, Meta commands (always use directly), RTK — Copilot Integration (VS Code Copilot Chat + Copilot CLI), What's automatic
+
+### Community 546 - "RTK Plugin for Hermes"
+Cohesion: 0.33
+Nodes (5): Fail-open behavior, How it works, Installation, Limitations, RTK Plugin for Hermes
+
+### Community 547 - "detected"
+Cohesion: 0.40
+Nodes (6): detected(), detected_for(), DetectedFlags, recursion_alone_still_asks_for_the_filename(), test_has_context_flag_long(), test_has_context_flag_short()
+
+### Community 548 - "exec_capture_unguarded"
+Cohesion: 0.53
+Nodes (5): engine_capture(), capture(), CaptureResult, exec_capture_stdin(), exec_capture_unguarded()
+
+### Community 549 - "rules_from_files"
+Cohesion: 0.33
+Nodes (6): rules_from_files(), test_unparseable_settings_file_fails_closed_to_ask(), test_unparseable_settings_file_keeps_other_files_deny_rules(), test_unreadable_settings_file_fails_closed_to_ask(), test_unreadable_settings_file_keeps_other_files_deny_rules(), test_valid_settings_file_rules_apply()
+
+### Community 550 - "Learn — CLI Correction Detection"
+Cohesion: 0.33
+Nodes (5): Dependencies, Detection Algorithm, Key Types, Learn — CLI Correction Detection, Purpose
+
+### Community 551 - "search_stdin_test.rs"
+Cohesion: 0.73
+Nodes (5): a_single_matching_file_still_gets_its_name(), both_engines_read_a_redirected_file_on_stdin(), engine_available(), rg_shows_filenames_when_stdin_is_not_a_pipe(), rtk()
+
+### Community 552 - "[0.44.0](https://github.com/rtk-ai/rtk/compare/v0.43.0...v0.44.0) (2026-07-26)"
+Cohesion: 0.40
+Nodes (5): [0.44.0](https://github.com/rtk-ai/rtk/compare/v0.43.0...v0.44.0) (2026-07-26), Bug Fixes, Features, Performance Improvements, Reverts
+
+### Community 553 - "[Unreleased]"
+Cohesion: 0.40
+Nodes (5): Breaking Changes, Features, ⚠️ Migration Required, Tests, [Unreleased]
+
+### Community 554 - "Unit Testing (🔴 Critical)"
+Cohesion: 0.40
+Nodes (5): Basic Unit Test, Example Workflow, Fixture strategy, Unit Testing (🔴 Critical), When to Use
+
+### Community 555 - "Testing Checklist"
+Cohesion: 0.40
+Nodes (5): Before Merge, Before Release, Implementation Phase, Quality Checks, Testing Checklist
+
+### Community 556 - "Performance Testing (🟡 Important)"
+Cohesion: 0.40
+Nodes (5): Benchmark Startup Time, Memory Usage, Performance Targets, Performance Testing (🟡 Important), Regression Detection
+
+### Community 557 - "Common Testing Patterns"
+Cohesion: 0.40
+Nodes (5): Common Testing Patterns, Pattern: Edge Case Testing, Pattern: `include_str!` Fixture (real captured output), Pattern: Inline Fixture + Token Accuracy, Pattern: Integration Test
+
+### Community 558 - "Integration Tests (🟡 Important)"
+Cohesion: 0.40
+Nodes (5): Integration Tests (🟡 Important), Machine independence (🔴 Critical), Real Command Execution, Running Integration Tests, When to Run
+
+### Community 559 - "What Belongs in RTK?"
+Cohesion: 0.40
+Nodes (5): Adding a Filter, In Scope, Out of Scope, TOML vs Rust: Which One?, What Belongs in RTK?
+
+### Community 560 - "Architecture Decision Records"
+Cohesion: 0.40
+Nodes (5): Architecture Decision Records, Why anyhow for Error Handling?, Why Clap for CLI Parsing?, Why Rust?, Why SQLite for Tracking?
+
+### Community 561 - "Directives"
+Cohesion: 0.40
+Nodes (5): Directives, How they land, Shipped, Trust, What they cost
+
+### Community 562 - "What the Proxy Compresses"
+Cohesion: 0.40
+Nodes (5): Large tool results: CCR, Proxy rules must be cache-stable, What ships on, What the Proxy Compresses, Your own methods on tool results
+
+### Community 563 - "Proxy Configuration"
+Cohesion: 0.40
+Nodes (5): Attribution headers, HTTP endpoints, Provider dialects, Proxy Configuration, Settings
+
+### Community 564 - "Editions and Licensing"
+Cohesion: 0.40
+Nodes (5): Editions and Licensing, Installing the Apache-2.0 edition, Licence terms, What the Apache-2.0 edition leaves out, Which one should I install?
+
+### Community 565 - "Serde &emsp; [![Build Status]][actions] [![Latest Version]][crates.io] [![serde msrv]][Rust 1.56] [![serde_derive msrv]][Rust 1.71]"
+Cohesion: 0.40
+Nodes (4): Getting help, License, Serde &emsp; [![Build Status]][actions] [![Latest Version]][crates.io] [![serde msrv]][Rust 1.56] [![serde_derive msrv]][Rust 1.71], Serde in action
+
+### Community 566 - "Copilot Instructions for rtk"
+Cohesion: 0.40
+Nodes (5): Architecture, Build, Test & Lint, Copilot Instructions for rtk, Key Conventions, Using rtk in this session
+
+### Community 567 - "RTK Documentation — Interface Contract"
+Cohesion: 0.40
+Nodes (4): Conventions, Frontmatter (required on every .md), RTK Documentation — Interface Contract, Structure
+
+### Community 568 - "Analytics"
+Cohesion: 0.40
+Nodes (4): Adding New Functionality, Analytics, Purpose, Scope
+
+### Community 569 - "filter_connected"
+Cohesion: 0.40
+Nodes (5): filter_connected(), test_connected_fixture_token_savings(), test_connected_no_device_error(), test_connected_output_format(), test_connected_strips_device_noise()
+
+### Community 570 - "Serde &emsp; [![Build Status]][actions] [![Latest Version]][crates.io] [![serde msrv]][Rust 1.56] [![serde_derive msrv]][Rust 1.71]"
+Cohesion: 0.40
+Nodes (4): Getting help, License, Serde &emsp; [![Build Status]][actions] [![Latest Version]][crates.io] [![serde msrv]][Rust 1.56] [![serde_derive msrv]][Rust 1.71], Serde in action
+
+### Community 572 - "[0.49.0](https://github.com/rtk-ai/rtk/compare/v0.48.0...v0.49.0) (2026-09-11)"
+Cohesion: 0.50
+Nodes (4): [0.49.0](https://github.com/rtk-ai/rtk/compare/v0.48.0...v0.49.0) (2026-09-11), Bug Fixes, Features, Reverts
+
+### Community 573 - "[0.7.1](https://github.com/pszymkowiak/rtk/compare/v0.7.0...v0.7.1) (2026-02-02)"
+Cohesion: 0.50
+Nodes (4): [0.7.1](https://github.com/pszymkowiak/rtk/compare/v0.7.0...v0.7.1) (2026-02-02), Bug Fixes, Documentation, Features
+
+### Community 574 - "[Unreleased]"
+Cohesion: 0.50
+Nodes (4): Bug Fixes, Bug Fixes, Features, [Unreleased]
+
+### Community 575 - "Token Accuracy Testing (🔴 Critical)"
+Cohesion: 0.50
+Nodes (4): Creating Fixtures, Savings Target, Token Accuracy Testing (🔴 Critical), Token Count Test
+
+### Community 576 - "Review Comment Template"
+Cohesion: 0.50
+Nodes (3): Formatting Rules, Review Comment Template, Template
+
+### Community 577 - "Testing"
+Cohesion: 0.50
+Nodes (4): PR Testing Checklist, Pre-Commit Gate (mandatory), Test Types, Testing
+
+### Community 578 - "Shared Infrastructure"
+Cohesion: 0.50
+Nodes (4): Argument Handling, Package Manager Detection Pattern, Shared Infrastructure, Utilities Layer
+
+### Community 579 - "Module Organization"
+Cohesion: 0.50
+Nodes (4): Module Breakdown, Module Count Breakdown, Module Map, Module Organization
+
+### Community 580 - "Tasks and Upstreams"
+Cohesion: 0.50
+Nodes (4): Cost, Tasks, Tasks and Upstreams, Upstreams
+
+### Community 581 - "Configuration"
+Cohesion: 0.50
+Nodes (4): Configuration, Configuration file, Environment variables, Full structure
+
+### Community 582 - "rtk-engine"
+Cohesion: 0.50
+Nodes (4): Contributing, License, rtk-engine, User documentation
+
+### Community 583 - "rtk-awareness-full.md"
+Cohesion: 0.50
+Nodes (3): About RTK, Command output, RTK
+
+### Community 584 - "Git and VCS"
+Cohesion: 0.50
+Nodes (4): Cross-command, Git and VCS, glab vs gh JSON schema quick-ref, Specifics
+
+### Community 585 - "is_safe_pipe_consumer"
+Cohesion: 0.50
+Nodes (4): arg_matches_unsafe_flag(), is_safe_pipe_consumer(), SAFE_PIPE_CONSUMERS, SafePipeConsumer
+
+### Community 588 - "[0.14.0](https://github.com/rtk-ai/rtk/compare/v0.13.1...v0.14.0) (2026-02-12)"
+Cohesion: 0.67
+Nodes (3): [0.14.0](https://github.com/rtk-ai/rtk/compare/v0.13.1...v0.14.0) (2026-02-12), Bug Fixes, Features
+
+### Community 589 - "[0.23.0](https://github.com/rtk-ai/rtk/compare/v0.22.2...v0.23.0) (2026-02-28)"
+Cohesion: 0.67
+Nodes (3): [0.23.0](https://github.com/rtk-ai/rtk/compare/v0.22.2...v0.23.0) (2026-02-28), Bug Fixes, Features
+
+### Community 590 - "[0.24.0](https://github.com/rtk-ai/rtk/compare/v0.23.0...v0.24.0) (2026-03-04)"
+Cohesion: 0.67
+Nodes (3): [0.24.0](https://github.com/rtk-ai/rtk/compare/v0.23.0...v0.24.0) (2026-03-04), Bug Fixes, Features
+
+### Community 591 - "[0.25.0](https://github.com/rtk-ai/rtk/compare/v0.24.0...v0.25.0) (2026-03-05)"
+Cohesion: 0.67
+Nodes (3): [0.25.0](https://github.com/rtk-ai/rtk/compare/v0.24.0...v0.25.0) (2026-03-05), Bug Fixes, Features
+
+### Community 592 - "[0.26.0](https://github.com/rtk-ai/rtk/compare/v0.25.0...v0.26.0) (2026-03-05)"
+Cohesion: 0.67
+Nodes (3): [0.26.0](https://github.com/rtk-ai/rtk/compare/v0.25.0...v0.26.0) (2026-03-05), Bug Fixes, Features
+
+### Community 593 - "[0.27.0](https://github.com/rtk-ai/rtk/compare/v0.26.0...v0.27.0) (2026-03-05)"
+Cohesion: 0.67
+Nodes (3): [0.27.0](https://github.com/rtk-ai/rtk/compare/v0.26.0...v0.27.0) (2026-03-05), Bug Fixes, Features
+
+### Community 594 - "[0.30.0](https://github.com/rtk-ai/rtk/compare/v0.29.0...v0.30.0) (2026-03-16)"
+Cohesion: 0.67
+Nodes (3): [0.30.0](https://github.com/rtk-ai/rtk/compare/v0.29.0...v0.30.0) (2026-03-16), Bug Fixes, Features
+
+### Community 595 - "[0.33.0-rc.54](https://github.com/rtk-ai/rtk/compare/v0.32.0-rc.54...v0.33.0-rc.54) (2026-03-24)"
+Cohesion: 0.67
+Nodes (3): [0.33.0-rc.54](https://github.com/rtk-ai/rtk/compare/v0.32.0-rc.54...v0.33.0-rc.54) (2026-03-24), Bug Fixes, Features
+
+### Community 596 - "[0.34.0](https://github.com/rtk-ai/rtk/compare/v0.33.1...v0.34.0) (2026-03-26)"
+Cohesion: 0.67
+Nodes (3): [0.34.0](https://github.com/rtk-ai/rtk/compare/v0.33.1...v0.34.0) (2026-03-26), Bug Fixes, Features
+
+### Community 597 - "[0.35.0](https://github.com/rtk-ai/rtk/compare/v0.34.3...v0.35.0) (2026-04-06)"
+Cohesion: 0.67
+Nodes (3): [0.35.0](https://github.com/rtk-ai/rtk/compare/v0.34.3...v0.35.0) (2026-04-06), Bug Fixes, Features
+
+### Community 598 - "[0.35.0](https://github.com/rtk-ai/rtk/compare/v0.34.3...v0.35.0) (2026-04-06)"
+Cohesion: 0.67
+Nodes (3): [0.35.0](https://github.com/rtk-ai/rtk/compare/v0.34.3...v0.35.0) (2026-04-06), Bug Fixes, Features
+
+### Community 599 - "[0.36.0](https://github.com/rtk-ai/rtk/compare/v0.35.0...v0.36.0) (2026-04-13)"
+Cohesion: 0.67
+Nodes (3): [0.36.0](https://github.com/rtk-ai/rtk/compare/v0.35.0...v0.36.0) (2026-04-13), Bug Fixes, Features
+
+### Community 600 - "[0.37.0](https://github.com/rtk-ai/rtk/compare/v0.36.0...v0.37.0) (2026-04-17)"
+Cohesion: 0.67
+Nodes (3): [0.37.0](https://github.com/rtk-ai/rtk/compare/v0.36.0...v0.37.0) (2026-04-17), Bug Fixes, Features
+
+### Community 601 - "[0.38.0](https://github.com/rtk-ai/rtk/compare/v0.37.2...v0.38.0) (2026-04-29)"
+Cohesion: 0.67
+Nodes (3): [0.38.0](https://github.com/rtk-ai/rtk/compare/v0.37.2...v0.38.0) (2026-04-29), Bug Fixes, Features
+
+### Community 602 - "[0.39.0](https://github.com/rtk-ai/rtk/compare/v0.38.0...v0.39.0) (2026-05-06)"
+Cohesion: 0.67
+Nodes (3): [0.39.0](https://github.com/rtk-ai/rtk/compare/v0.38.0...v0.39.0) (2026-05-06), Bug Fixes, Features
+
+### Community 603 - "[0.3.0](https://github.com/pszymkowiak/rtk/compare/v0.2.1...v0.3.0) (2026-01-29)"
+Cohesion: 0.67
+Nodes (3): [0.3.0](https://github.com/pszymkowiak/rtk/compare/v0.2.1...v0.3.0) (2026-01-29), Bug Fixes, Features
+
+### Community 604 - "[0.40.0](https://github.com/rtk-ai/rtk/compare/v0.39.0...v0.40.0) (2026-05-13)"
+Cohesion: 0.67
+Nodes (3): [0.40.0](https://github.com/rtk-ai/rtk/compare/v0.39.0...v0.40.0) (2026-05-13), Bug Fixes, Features
+
+### Community 605 - "[0.41.0](https://github.com/rtk-ai/rtk/compare/v0.40.0...v0.41.0) (2026-05-22)"
+Cohesion: 0.67
+Nodes (3): [0.41.0](https://github.com/rtk-ai/rtk/compare/v0.40.0...v0.41.0) (2026-05-22), Bug Fixes, Features
+
+### Community 606 - "[0.42.0](https://github.com/rtk-ai/rtk/compare/v0.41.0...v0.42.0) (2026-05-24)"
+Cohesion: 0.67
+Nodes (3): [0.42.0](https://github.com/rtk-ai/rtk/compare/v0.41.0...v0.42.0) (2026-05-24), Bug Fixes, Features
+
+### Community 607 - "[0.43.0](https://github.com/rtk-ai/rtk/compare/v0.42.4...v0.43.0) (2026-06-28)"
+Cohesion: 0.67
+Nodes (3): [0.43.0](https://github.com/rtk-ai/rtk/compare/v0.42.4...v0.43.0) (2026-06-28), Bug Fixes, Features
+
+### Community 608 - "[0.45.0](https://github.com/rtk-ai/rtk/compare/v0.44.2...v0.45.0) (2026-08-07)"
+Cohesion: 0.67
+Nodes (3): [0.45.0](https://github.com/rtk-ai/rtk/compare/v0.44.2...v0.45.0) (2026-08-07), Bug Fixes, Features
+
+### Community 609 - "[0.46.0](https://github.com/rtk-ai/rtk/compare/v0.45.0...v0.46.0) (2026-08-26)"
+Cohesion: 0.67
+Nodes (3): [0.46.0](https://github.com/rtk-ai/rtk/compare/v0.45.0...v0.46.0) (2026-08-26), Bug Fixes, Features
+
+### Community 610 - "[0.48.0](https://github.com/rtk-ai/rtk/compare/v0.47.0...v0.48.0) (2026-09-04)"
+Cohesion: 0.67
+Nodes (3): [0.48.0](https://github.com/rtk-ai/rtk/compare/v0.47.0...v0.48.0) (2026-09-04), Bug Fixes, Features
+
+### Community 611 - "[0.5.0](https://github.com/pszymkowiak/rtk/compare/v0.4.0...v0.5.0) (2026-01-30)"
+Cohesion: 0.67
+Nodes (3): [0.5.0](https://github.com/pszymkowiak/rtk/compare/v0.4.0...v0.5.0) (2026-01-30), Bug Fixes, Features
+
+### Community 612 - "[0.7.0](https://github.com/pszymkowiak/rtk/compare/v0.6.0...v0.7.0) (2026-02-01)"
+Cohesion: 0.67
+Nodes (3): [0.7.0](https://github.com/pszymkowiak/rtk/compare/v0.6.0...v0.7.0) (2026-02-01), Bug Fixes, Features
+
+### Community 613 - "[0.9.0](https://github.com/rtk-ai/rtk/compare/v0.8.1...v0.9.0) (2026-02-03)"
+Cohesion: 0.67
+Nodes (3): [0.9.0](https://github.com/rtk-ai/rtk/compare/v0.8.1...v0.9.0) (2026-02-03), Bug Fixes, Features
+
+### Community 614 - "[Unreleased]"
+Cohesion: 0.67
+Nodes (3): Added, Changed, [Unreleased]
+
+### Community 615 - "[Unreleased]"
+Cohesion: 0.67
+Nodes (3): Added, Changed, [Unreleased]
+
+### Community 616 - "[Unreleased]"
+Cohesion: 0.67
+Nodes (3): Bug Fixes, Features, [Unreleased]
+
+### Community 617 - "Common Patterns"
+Cohesion: 0.67
+Nodes (3): 1. Package Manager Detection (JS/TS modules), 2. Verbosity Guards, Common Patterns
+
+### Community 618 - "Error Handling"
+Cohesion: 0.67
+Nodes (3): anyhow::Result<()> Propagation Chain, Error Handling, Exit Code Preservation (Critical for CI/CD)
+
+### Community 619 - "Build Optimizations"
+Cohesion: 0.67
+Nodes (3): Build Optimizations, Performance Targets, Release Profile (Cargo.toml)
+
+### Community 620 - "Command Lifecycle"
+Cohesion: 0.67
+Nodes (3): Command Lifecycle, Six-Phase Execution Flow, Verbosity Levels
+
+### Community 621 - "Configuration System"
+Cohesion: 0.67
+Nodes (3): Configuration, Configuration System, Initialization Flow
+
+### Community 622 - "System Overview"
+Cohesion: 0.67
+Nodes (3): Design Principles, Hook Architecture (v0.9.5+), System Overview
+
+### Community 623 - "Token Tracking System"
+Cohesion: 0.67
+Nodes (3): SQLite-Based Metrics, Thread Safety, Token Tracking System
+
+### Community 626 - "filter_logs_query_results"
+Cohesion: 0.67
+Nodes (3): filter_logs_query_results(), test_filter_logs_query_results(), test_filter_logs_query_results_empty()
+
+### Community 628 - "filter_dependencies"
+Cohesion: 0.67
+Nodes (3): filter_dependencies(), test_dependencies_filter_extracts_top_level(), test_dependencies_filter_no_deps()
+
 ## Knowledge Gaps
-- **810 isolated node(s):** `UserPrompt`, `SkillsMcp`, `AgentMessage`, `Read`, `Write` (+805 more)
-  These have ≤1 connection - possible missing edges. (Counts symbols only; 3945 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **53 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **816 isolated node(s):** `UserPrompt`, `SkillsMcp`, `AgentMessage`, `Read`, `Write` (+811 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 5456 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **98 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Regex` connect `Binlog Parse Text Build` to `Registry Rewrite Classify Wrapper`, `Search Extract Flag Line`, `Stream Filter Capture Streaming`, `Mvn Cmd Mvnd Phase`, `Psql Cmd Filter Table`, `Label Scan Len Comment`, `Posthook Bash Output Pipeline`, `Diff Cmd Raw Back`, `Runner Bun Coverage Not`, `Ls Lazy Lock`, `Artisan Cmd Php Filter`, `Gh Cmd View Passthrough`, `Pipeline Cmd Run Card`, `Conditions Keys Check Key`, `Lockfile Lock Head Parse`, `Detector Error Command Corrections`, `Phpunit Cmd Failure Summary`, `Tracking Program Label Word`, `Rspec Cmd Filter Text`, `Gradlew Cmd Detect Filter`, `Gt Cmd Filter Log`, `Base64 Elide Elided Run`, `Tsc Cmd Stream Error`, `Ls Compact Plan Octal`, `Sbt Cmd Filter Run`, `Ctest Cmd Fixture Without`, `Glab Cmd Release Filter`, `Toml Filter Match Find`, `Redact Scrubs Key Request`, `Uv Cmd Filter Run`, `Mod Rtk Read Entered`, `Lib Truncate Smart Exact`, `Ast Grep Cmd Run`, `Registry Space Opt Compiled`, `Filter Minimal Python Comment`, `Toml Filter Command Match`, `Md Slim Badge Blank`, `Web Md Html Markdown`, `Aws Cmd Filter Json`, `Registry Rewrite Pipeline Analyze`, `Pytest Cmd Filter Summary`, `Log Cmd Analyze Logs`, `Marker Stamp Round Parse`?**
-  _High betweenness centrality (0.030) - this node is a cross-community bridge._
+- **Why does `Adding New Functionality` connect `hooks/constants.rs` to `Decision Agent Only Rewrite`, `Hook System`?**
+  _High betweenness centrality (0.087) - this node is a cross-community bridge._
 - **Are the 99 inferred relationships involving `resolved_command()` (e.g. with `build_command()` and `run_aws_json()`) actually correct?**
   _`resolved_command()` has 99 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `UserPrompt`, `SkillsMcp`, `AgentMessage` to the rest of the system?**
-  _810 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _816 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Registry Rewrite Classify Wrapper` be split into smaller, more focused modules?**
-  _Cohesion score 0.00411522633744856 - nodes in this community are weakly interconnected._
-- **Why does `Command` connect `Mod Command Rtk Stdin` to `Rewrite Exit Code Test`, `Git Cmd Diff Output`, `Search Extract Flag Line`, `Stream Filter Capture Streaming`, `Mvn Cmd Mvnd Phase`, `Lib Rtk Wrapper Commands`, `Run Shell Test Exit`, `Container Run Format Compose`, `Git Cmd Diff Raw`, `Search File List Fold`, `Pint Cmd Filter Run`, `Utils Format Decode Quote`, `Runner Bun Coverage Not`, `Runner Help Asks Usage`, `Scratch Isolate Git Kept`, `Artisan Cmd Php Filter`, `Gh Cmd View Passthrough`, `Mvn Cmd Option Goal`, `Utils Child Arg Args`, `Functional Stdin Upstream Grep`, `Ccusage Parse Daily Monthly`, `Gh Cmd Run Passthrough`, `Prisma Cmd Filter Migrate`, `Init Opencode Test Plugin`, `Rspec Cmd Filter Text`, `Antigravity Hook Test Stdin`, `Gradlew Cmd Task Detect`, `Gradlew Cmd Detect Filter`, `Shell Word Command Quote`, `Search Compress Test Matches`, `Glab Cmd Run List`, `Isolate Rtk Test Inherits`, `Glab Cmd Release Filter`, `Mod Rtk Read Entered`, `Grep Context Test Separator`, `Format Cmd Filter Detect`, `Git Show Blob Differential`, `Main Run Service Config`, `Help Passthrough Fuzz Test`, `Runner Run Filtered Filter`, `Git Log Cap Notice`, `Init Agent Cursor Test`, `Guard Integration Test Git`, `Runner Run Unrunnable Exit`?**
-  _High betweenness centrality (0.027) - this node is a cross-community bridge._
-- **Should `Git Cmd Diff Output` be split into smaller, more focused modules?**
-  _Cohesion score 0.01310843373493976 - nodes in this community are weakly interconnected._
-- **Why does `Commands` connect `Lib Commands Grep Config` to `Lib Commands Build Other`, `Lib Sbt Commands Compile`, `Lib Parse Grep Try`, `Lib Git Commands Add`, `Lib Plugins Commands Build`, `Lib Bun Commands Other`, `Telemetry Cmd Hash Device`, `Lib Hook Commands Antigravity`, `Lib Compose Commands Logs`, `Lib Agent Dir Root`, `Lib Deno Commands Check`, `Filter Str Level Aggressive`, `Lib Cargo Commands Build`, `Lib Commands Branch Create`, `Lib Commands Pipeline Log`, `Lib Pnpm Typecheck Validate`, `Lib Prisma Commands Migrate`, `Llm Proxy Subcommand Config`, `Lib Uninstall Hermes Init`, `Lib Args Pnpm Run`, `Lib Kubectl Commands Logs`, `Lib Commands Logs Other`?**
-  _High betweenness centrality (0.018) - this node is a cross-community bridge._
+  _Cohesion score 0.004123711340206186 - nodes in this community are weakly interconnected._
+- **Why does `Hook System` connect `Hook System` to `TECHNICAL.md`, `hooks/constants.rs`?**
+  _High betweenness centrality (0.087) - this node is a cross-community bridge._
+- **Should `git_cmd.rs` be split into smaller, more focused modules?**
+  _Cohesion score 0.018412698412698412 - nodes in this community are weakly interconnected._
+- **Why does `check_command_for()` connect `Decision Agent Only Rewrite` to `Permissions Deny Allow Wrapper`, `Rewrite Cmd Tee Read`, `hooks/constants.rs`?**
+  _High betweenness centrality (0.056) - this node is a cross-community bridge._

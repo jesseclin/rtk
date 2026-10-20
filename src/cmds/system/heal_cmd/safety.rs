@@ -21,6 +21,7 @@ const SAFE_STANDALONE_BINARIES: &[&str] = &[
 /// Tokens, flags, or subcommands that are strictly forbidden anywhere in argv.
 const FORBIDDEN_TOKENS: &[&str] = &[
     "--delete", "-delete", "--hard", "-exec", "-execdir", "-ok", "-okdir",
+    "-fls", "-fprint", "-fprint0", "-fprintf",
 ];
 
 /// Split a command into simple arguments, refusing shell operators or metacharacters.
@@ -89,6 +90,9 @@ pub fn is_eligible_argv(argv: &[String]) -> bool {
             return false;
         }
         if arg.starts_with('>') || arg.starts_with('<') {
+            return false;
+        }
+        if arg.starts_with("--output") || arg == "-o" {
             return false;
         }
     }
@@ -160,27 +164,41 @@ pub fn validate_healed_command(
     }
 
     let orig_raw_bin = &original_argv[0];
-    let orig_bin = Path::new(orig_raw_bin)
+    let healed_raw_bin = &healed_argv[0];
+
+    // Enforce exact binary invocation path match to prevent path spoofing (/tmp/cat vs cat)
+    if orig_raw_bin != healed_raw_bin {
+        return Err(SafetyViolation::BinaryMismatch {
+            expected: orig_raw_bin.to_string(),
+            actual: healed_raw_bin.to_string(),
+        });
+    }
+
+    // For subcommand-scoped tools, the healed subcommand must match the original subcommand
+    let bin = Path::new(orig_raw_bin)
         .file_name()
         .and_then(|n| n.to_str())
         .unwrap_or(orig_raw_bin);
 
-    let healed_raw_bin = &healed_argv[0];
-    let healed_bin = Path::new(healed_raw_bin)
-        .file_name()
-        .and_then(|n| n.to_str())
-        .unwrap_or(healed_raw_bin);
-
-    if orig_bin != healed_bin {
-        return Err(SafetyViolation::BinaryMismatch {
-            expected: orig_bin.to_string(),
-            actual: healed_bin.to_string(),
-        });
+    match bin {
+        "git" | "cargo" | "npm" | "go" => {
+            if original_argv.get(1) != healed_argv.get(1) {
+                return Err(SafetyViolation::ForbiddenFlagOrToken(
+                    "Subcommand drift not allowed".to_string(),
+                ));
+            }
+        }
+        _ => {}
     }
 
     // Check for forbidden tokens
     for arg in &healed_argv {
-        if FORBIDDEN_TOKENS.contains(&arg.as_str()) {
+        if FORBIDDEN_TOKENS.contains(&arg.as_str())
+            || arg.starts_with("--output")
+            || arg == "-o"
+            || arg.starts_with('>')
+            || arg.starts_with('<')
+        {
             return Err(SafetyViolation::ForbiddenFlagOrToken(arg.clone()));
         }
     }
@@ -263,6 +281,51 @@ mod tests {
         );
         assert!(matches!(
             validate_healed_command(&["find".into(), ".".into()], "find . -delete"),
+            Err(SafetyViolation::ForbiddenFlagOrToken(_))
+        ));
+    }
+
+    #[test]
+    fn test_validate_healed_rejects_binary_path_spoofing() {
+        let orig = vec!["cat".to_string(), "file.txt".to_string()];
+        assert_eq!(
+            validate_healed_command(&orig, "/tmp/cat file.txt"),
+            Err(SafetyViolation::BinaryMismatch {
+                expected: "cat".to_string(),
+                actual: "/tmp/cat".to_string(),
+            })
+        );
+        assert_eq!(
+            validate_healed_command(&orig, "./cat file.txt"),
+            Err(SafetyViolation::BinaryMismatch {
+                expected: "cat".to_string(),
+                actual: "./cat".to_string(),
+            })
+        );
+    }
+
+    #[test]
+    fn test_validate_healed_rejects_output_redirection_flags() {
+        let orig_diff = vec!["git".to_string(), "diff".to_string()];
+        assert!(validate_healed_command(&orig_diff, "git diff --output=/etc/passwd").is_err());
+        assert!(validate_healed_command(&orig_diff, "git diff --output /etc/passwd").is_err());
+
+        let orig_find = vec!["find".to_string(), ".".to_string()];
+        assert!(validate_healed_command(&orig_find, "find . -fls /tmp/out").is_err());
+        assert!(validate_healed_command(&orig_find, "find . -fprint /tmp/out").is_err());
+    }
+
+    #[test]
+    fn test_validate_healed_rejects_subcommand_drift() {
+        let orig_test = vec!["cargo".to_string(), "test".to_string(), "test_fooo".to_string()];
+        assert!(matches!(
+            validate_healed_command(&orig_test, "cargo check"),
+            Err(SafetyViolation::ForbiddenFlagOrToken(_))
+        ));
+
+        let orig_status = vec!["git".to_string(), "status".to_string()];
+        assert!(matches!(
+            validate_healed_command(&orig_status, "git diff"),
             Err(SafetyViolation::ForbiddenFlagOrToken(_))
         ));
     }

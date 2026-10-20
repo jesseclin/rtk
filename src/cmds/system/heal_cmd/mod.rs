@@ -15,32 +15,43 @@ pub struct HealOutcome {
     pub healed_to: Option<String>,
 }
 
-fn run_command_raw(command: &[String]) -> Result<(String, String, i32)> {
+fn run_command_raw(command: &[String]) -> Result<(String, String, i32, bool)> {
     match command_from_args(command, None).context("Failed to prepare command")? {
         Launch::Ready(mut cmd) => {
             let output = cmd.output().context("Failed to execute command")?;
             let stdout = String::from_utf8_lossy(&output.stdout).to_string();
             let stderr = String::from_utf8_lossy(&output.stderr).to_string();
-            let exit_code = output.status.code().unwrap_or(1);
-            Ok((stdout, stderr, exit_code))
+            let is_signal = output.status.code().is_none();
+            let exit_code = crate::core::utils::exit_code_from_output(&output, "heal");
+            Ok((stdout, stderr, exit_code, is_signal))
         }
-        Launch::Unrunnable(outcome) => Ok((String::new(), outcome.message, outcome.code)),
+        Launch::Unrunnable(outcome) => Ok((String::new(), outcome.message, outcome.code, false)),
     }
 }
 
 pub fn execute_with_config(command: &[String], cfg: &ResolvedHealConfig) -> Result<HealOutcome> {
-    let (stdout, stderr, exit_code) = run_command_raw(command)?;
-    if exit_code == 0 {
+    let (stdout, stderr, exit_code, is_signal) = run_command_raw(command)?;
+    if exit_code == 0 || is_signal {
         return Ok(HealOutcome {
             stdout,
             stderr,
-            exit_code: 0,
+            exit_code,
             healed_to: None,
         });
     }
 
     // Check if command is eligible for healing
     if !safety::is_eligible_argv(command) {
+        return Ok(HealOutcome {
+            stdout,
+            stderr,
+            exit_code,
+            healed_to: None,
+        });
+    }
+
+    // If stderr is empty (e.g. grep found no matches with exit 1), there is no error diagnosis to heal.
+    if stderr.trim().is_empty() {
         return Ok(HealOutcome {
             stdout,
             stderr,
@@ -58,7 +69,7 @@ pub fn execute_with_config(command: &[String], cfg: &ResolvedHealConfig) -> Resu
         client::request_healed_command(cfg, &cwd, &orig_display, exit_code, &stderr)
     {
         if let Ok(healed_argv) = safety::validate_healed_command(command, &healed_str) {
-            if let Ok((healed_out, healed_err, healed_code)) = run_command_raw(&healed_argv) {
+            if let Ok((healed_out, healed_err, healed_code, _)) = run_command_raw(&healed_argv) {
                 if healed_code == 0 {
                     let banner = format!("[rtk: auto-corrected to `{healed_str}`]\n");
                     return Ok(HealOutcome {
@@ -179,5 +190,24 @@ mod tests {
         assert_ne!(out.exit_code, 0);
         assert!(out.healed_to.is_none());
         assert!(out.stderr.contains("not-a-real-flag-xyz"));
+    }
+
+    #[test]
+    fn test_heal_empty_stderr_fails_open_without_calling_llm() {
+        let cfg = ResolvedHealConfig {
+            enabled: true,
+            endpoint: "http://127.0.0.1:1".to_string(), // unreachable port
+            model: "test".to_string(),
+            api_key: None,
+            timeout_ms: 5000,
+        };
+        let cmd = vec![
+            "grep".to_string(),
+            "this_string_definitely_does_not_exist_xyz_123".to_string(),
+            "Cargo.toml".to_string(),
+        ];
+        let out = execute_with_config(&cmd, &cfg).expect("execution succeeds");
+        assert_eq!(out.exit_code, 1);
+        assert!(out.healed_to.is_none());
     }
 }

@@ -193,7 +193,8 @@ pub(crate) fn decide_with_heal(
     }
 
     if heal && crate::cmds::system::heal_cmd::safety::is_eligible_command(cmd) {
-        let is_excluded = excluded.iter().any(|ex| cmd.contains(ex));
+        let compiled = crate::discover::registry::compile_exclude_patterns(excluded);
+        let is_excluded = crate::discover::registry::is_excluded(trimmed, &compiled);
         if !is_excluded {
             let rewritten = format!("rtk heal -- {trimmed}");
             return match verdict {
@@ -883,6 +884,20 @@ mod tests {
         assert_eq!(
             decide_with_heal("cargo test", PermissionVerdict::Allow, &[], &[], false),
             HookDecision::AllowRewrite("rtk cargo test".to_string())
+        );
+    }
+
+    #[test]
+    fn test_decide_with_heal_does_not_exclude_commands_with_argument_containing_git() {
+        assert_eq!(
+            decide_with_heal(
+                "cargo test test_git_sync",
+                PermissionVerdict::Allow,
+                &["git".to_string()],
+                &[],
+                true
+            ),
+            HookDecision::AllowRewrite("rtk heal -- cargo test test_git_sync".to_string())
         );
     }
 }
